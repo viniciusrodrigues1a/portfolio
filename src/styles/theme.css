@@ -1,0 +1,7 @@
+:root {
+  --primary: red;
+}
+
+#theme-switch-input:checked ~ * {
+  --primary: green;
+}
