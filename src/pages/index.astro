@@ -1,10 +1,13 @@
 ---
+import { Icon } from "astro-icon";
+
 import DefaultLayout from "@layouts/Default.Layout.astro";
 
 import TypographyComponent from "@components/Typography";
 ---
 
 <DefaultLayout>
+  {/* Typography component */}
   <TypographyComponent variant="h1-sans"
     >VINÍCIUS RODRIGUES DE ARO</TypographyComponent
   >
@@ -14,4 +17,7 @@ import TypographyComponent from "@components/Typography";
   >
   <TypographyComponent variant="button">LinkedIn</TypographyComponent>
   <TypographyComponent variant="body">Body text</TypographyComponent>
+
+  {/* Icon component */}
+  <Icon name="github" size={24} />
 </DefaultLayout>
