@@ -3,9 +3,11 @@
     "browser": true,
     "es2021": true
   },
+  "plugins": ["@typescript-eslint"],
   "extends": [
     "standard-with-typescript",
     "plugin:astro/recommended",
+    "plugin:@typescript-eslint/recommended",
     "prettier"
   ],
   "overrides": [
