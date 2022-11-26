@@ -1,11 +1,17 @@
 ---
 import DefaultLayout from "@layouts/Default.Layout.astro";
 
-import TypographyComponent from "@components/Typography.Component.astro";
-import ThemeSwitchButtonComponent from "@components/ThemeSwitch/ThemeSwitchButton.Component.astro";
+import TypographyComponent from "@components/Typography";
 ---
 
 <DefaultLayout>
-  <ThemeSwitchButtonComponent />
-  <TypographyComponent />
+  <TypographyComponent variant="h1-sans"
+    >VINÍCIUS RODRIGUES DE ARO</TypographyComponent
+  >
+  <TypographyComponent variant="h2-sans">MOBILE DEVELOPER</TypographyComponent>
+  <TypographyComponent variant="h1-serif"
+    >Let's work together</TypographyComponent
+  >
+  <TypographyComponent variant="button">LinkedIn</TypographyComponent>
+  <TypographyComponent variant="body">Body text</TypographyComponent>
 </DefaultLayout>

@@ -1,4 +1,6 @@
 :root {
+  --serif-font-family: "Lora", serif;
+  --sans-serif-font-family: "Poppins", sans-serif;
   --primary: red;
 }
 
