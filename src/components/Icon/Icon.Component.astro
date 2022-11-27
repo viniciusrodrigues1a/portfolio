@@ -11,8 +11,8 @@ const { name, size, color } = Astro.props as Props;
 
 const { default: rawSvg } = await import(`../../icons/svgs/${name}.svg?raw`);
 const svgWithPropsApplied = rawSvg
-  .replace(/\{color\}/g, `"${color}"`)
-  .replace(/\{size\}/g, size);
+  .replace(/\{color\}/g, `"${color ?? "#141414"}"`)
+  .replace(/\{size\}/g, size ?? 16);
 ---
 
 <Fragment set:html={svgWithPropsApplied} />
