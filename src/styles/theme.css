@@ -1,10 +1,22 @@
 :root {
   --serif-font-family: "Lora", serif;
   --sans-serif-font-family: "Poppins", sans-serif;
+  --background: #efefef;
   --foreground: #141414;
+  --foreground1: #333333;
   --primary: #f35f52;
+  --gradient: linear-gradient(90deg, #6993ff 0%, #86a8ff 100%);
+  --gradient1: linear-gradient(90deg, #1846bc 0%, #6993ff 100%);
+}
+
+* {
+  transition: all 0.2s ease;
 }
 
 #theme-switch-input:checked ~ * {
-  --primary: green;
+  --background: #141414;
+  --foreground: #efefef;
+  --foreground1: #efefef;
+  --gradient: linear-gradient(90deg, #1846bc 0%, #6993ff 100%);
+  --gradient1: linear-gradient(90deg, #6993ff 0%, #86a8ff 100%);
 }

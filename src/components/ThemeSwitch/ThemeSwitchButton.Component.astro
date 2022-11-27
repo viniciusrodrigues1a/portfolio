@@ -1,4 +1,92 @@
 ---
+import IconComponent from "@components/Icon";
 ---
 
-<label for="theme-switch-input">dark mode</label>
+<style>
+  label {
+    cursor: pointer;
+    background-color: var(--foreground1);
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 22px;
+    padding: 10px 12px;
+    border-radius: 9999px;
+    position: relative;
+  }
+
+  .active-indicator {
+    width: 38px;
+    height: 38px;
+    background: var(--gradient1);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 6px;
+    border-radius: 9999px;
+    transition: left 0.25s ease-out;
+    opacity: 0;
+  }
+
+  :global(#theme-switch-input:checked ~ *) .active-indicator {
+    left: calc(100% - 38px - 6px);
+    animation: stretch 0.2s ease-out, showContent 0.1s forwards;
+  }
+
+  :global(#theme-switch-input:not(:checked) ~ *) .active-indicator {
+    left: 6px;
+    animation: stretch1 0.2s ease-in, showContent 0.2s forwards;
+  }
+
+  @keyframes showContent {
+    0%,
+    99% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes stretch {
+    0% {
+      width: 38px;
+    }
+    50% {
+      width: 54px;
+    }
+    100% {
+      width: 38px;
+    }
+  }
+
+  @keyframes stretch1 {
+    0% {
+      width: 38px;
+    }
+    50% {
+      width: 54px;
+    }
+    100% {
+      width: 38px;
+    }
+  }
+
+  .bring-to-front {
+    display: flex;
+    z-index: 1;
+  }
+</style>
+
+<label for="theme-switch-input">
+  <div class="active-indicator"></div>
+
+  <div class="bring-to-front">
+    <IconComponent name="sun" size={26} color="var(--background)" />
+  </div>
+
+  <div class="bring-to-front">
+    <IconComponent name="moon" size={26} color="var(--background)" />
+  </div>
+</label>

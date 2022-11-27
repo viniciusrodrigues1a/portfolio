@@ -4,6 +4,7 @@ import DefaultLayout from "@layouts/Default.Layout.astro";
 import TypographyComponent from "@components/Typography";
 import ButtonComponent from "@components/Button";
 import IconComponent from "@components/Icon";
+import { ThemeSwitchButtonComponent } from "@components/ThemeSwitch";
 ---
 
 <DefaultLayout>
@@ -51,4 +52,7 @@ import IconComponent from "@components/Icon";
     iconPosition="right"
     iconName="linkedin"
   />
+
+  {/* Theme switch button component */}
+  <ThemeSwitchButtonComponent />
 </DefaultLayout>
