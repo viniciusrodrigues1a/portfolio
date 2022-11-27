@@ -1,0 +1,79 @@
+---
+import TypographyComponent from "@components/Typography";
+import IconComponent from "src/icons/Icon.Component.astro";
+
+import type { ButtonProps } from "./types";
+
+type Props = ButtonProps;
+
+const {
+  variant = "contained",
+  title,
+  showIcon,
+  iconPosition,
+  iconName,
+  iconColor,
+  iconSize,
+  color,
+  fontFamily,
+  fontSize,
+  fontWeight,
+  letterSpacing,
+} = Astro.props as ButtonProps;
+
+const defaultFgColor = variant === "text" ? "var(--foreground)" : "#efefef";
+const fgColor = color ?? defaultFgColor;
+---
+
+<style>
+  button {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+  }
+
+  .contained {
+    background-color: var(--primary);
+    padding: 1rem 1.875rem;
+    border-radius: 4px;
+  }
+</style>
+
+<button class:list={[{ contained: variant === "contained" }]}>
+  {!title && <slot />}
+  {
+    title && (
+      <>
+        {showIcon && iconPosition === "left" && (
+          <IconComponent
+            name={iconName}
+            color={iconColor ?? fgColor}
+            size={iconSize ?? 28}
+          />
+        )}
+
+        <TypographyComponent
+          variant="button"
+          color={fgColor}
+          fontSize={fontSize}
+          fontFamily={fontFamily}
+          fontWeight={fontWeight}
+          letterSpacing={letterSpacing}
+        >
+          {title}
+        </TypographyComponent>
+
+        {showIcon && iconPosition === "right" && (
+          <IconComponent
+            name={iconName}
+            color={iconColor ?? fgColor}
+            size={iconSize ?? 28}
+          />
+        )}
+      </>
+    )
+  }
+</button>

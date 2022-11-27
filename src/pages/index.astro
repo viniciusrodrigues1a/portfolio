@@ -1,9 +1,9 @@
 ---
-import { Icon } from "astro-icon";
-
 import DefaultLayout from "@layouts/Default.Layout.astro";
 
 import TypographyComponent from "@components/Typography";
+import ButtonComponent from "@components/Button";
+import IconComponent from "src/icons/Icon.Component.astro";
 ---
 
 <DefaultLayout>
@@ -19,5 +19,36 @@ import TypographyComponent from "@components/Typography";
   <TypographyComponent variant="body">Body text</TypographyComponent>
 
   {/* Icon component */}
-  <Icon name="github" size={24} />
+  <IconComponent name="github" color="var(--foreground)" size={64} />
+
+  {/* Button component */}
+  <ButtonComponent title="LinkedIn" />
+  <ButtonComponent
+    title="LinkedIn"
+    showIcon
+    iconPosition="left"
+    iconName="linkedin"
+  />
+  <ButtonComponent
+    title="LinkedIn"
+    showIcon
+    iconPosition="right"
+    iconName="linkedin"
+  />
+
+  <ButtonComponent variant="text" title="LinkedIn" />
+  <ButtonComponent
+    variant="text"
+    title="LinkedIn"
+    showIcon
+    iconPosition="left"
+    iconName="linkedin"
+  />
+  <ButtonComponent
+    variant="text"
+    title="LinkedIn"
+    showIcon
+    iconPosition="right"
+    iconName="linkedin"
+  />
 </DefaultLayout>

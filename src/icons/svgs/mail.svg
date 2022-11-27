@@ -1,0 +1,4 @@
+<svg width={size} height={size} viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4.33329 4.33337H21.6666C22.8583 4.33337 23.8333 5.30837 23.8333 6.50004V19.5C23.8333 20.6917 22.8583 21.6667 21.6666 21.6667H4.33329C3.14163 21.6667 2.16663 20.6917 2.16663 19.5V6.50004C2.16663 5.30837 3.14163 4.33337 4.33329 4.33337Z" stroke={color} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M23.8333 6.5L13 14.0833L2.16663 6.5" stroke={color} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

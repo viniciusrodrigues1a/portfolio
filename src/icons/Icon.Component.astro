@@ -1,0 +1,18 @@
+---
+import type { svgIconNames } from "./svgs/_types";
+
+type Props = {
+  name: svgIconNames;
+  size?: number;
+  color?: string;
+};
+
+const { name, size, color } = Astro.props as Props;
+
+const { default: rawSvg } = await import(`./svgs/${name}.svg?raw`);
+const svgWithPropsApplied = rawSvg
+  .replace(/\{color\}/g, `"${color}"`)
+  .replace(/\{size\}/g, size);
+---
+
+<Fragment set:html={svgWithPropsApplied} />
