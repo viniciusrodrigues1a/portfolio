@@ -1,4 +1,5 @@
 ---
+import i18next from "i18next";
 import "@styles/global.css";
 
 import BodyWrappedAroundThemeInputLayout from "@layouts/BodyWrappedAroundThemeInput.Layout.astro";
@@ -7,7 +8,7 @@ const { title = "Vinícius Rodrigues de Aro" } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={i18next.language}>
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
