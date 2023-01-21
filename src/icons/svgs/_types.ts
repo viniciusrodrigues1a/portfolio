@@ -16,4 +16,8 @@ export type svgIconNames =
   | "moon"
   | "moreHorizontal"
   | "sun"
-  | "user";
+  | "user"
+  | "person"
+  | "lamp"
+  | "twoCirclesPattern"
+  | "dotPattern";
