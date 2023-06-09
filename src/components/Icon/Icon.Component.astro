@@ -5,13 +5,15 @@ type Props = {
   name: svgIconNames;
   size?: number;
   color?: string;
+  color1?: string;
 };
 
-const { name, size, color } = Astro.props as Props;
+const { name, size, color, color1 } = Astro.props as Props;
 
 const { default: rawSvg } = await import(`../../icons/svgs/${name}.svg?raw`);
 const svgWithPropsApplied = rawSvg
   .replace(/\{color\}/g, `"${color ?? "#141414"}"`)
+  .replace(/\{color1\}/g, `"${color1 ?? "#141414"}"`)
   .replace(/\{size\}/g, size ?? 16);
 ---
 
