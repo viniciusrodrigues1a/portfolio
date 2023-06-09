@@ -1,0 +1,10 @@
+---
+import { getCssPropertiesByStyleProps } from "./mappers";
+import type { SpaceProps } from "./types";
+
+const props = Astro.props as SpaceProps;
+
+const styles = getCssPropertiesByStyleProps(props);
+---
+
+<div style={styles} class="space"></div>
