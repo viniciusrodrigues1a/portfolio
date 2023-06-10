@@ -9,16 +9,17 @@ import {
 type Props = TypographyProps;
 
 const props = Astro.props as TypographyProps;
-const { variant = "body" } = props;
+const { variant = "body", class: className } = props;
 const As = getElementByTypographyVariant(variant);
 
 const styles = getCssPropertiesByStyleProps(props);
-const classList = getClassListByVariant(variant);
+const classListByVariant = getClassListByVariant(variant);
+const classList = [...classListByVariant, className?.split(" ") ?? []];
 ---
 
 <style>
   .h1-sans {
-    font-size: 2.75rem;
+    font-size: 1.35rem;
     font-weight: 700;
     font-family: var(--sans-serif-font-family);
     color: var(--foreground);
@@ -26,7 +27,7 @@ const classList = getClassListByVariant(variant);
   }
 
   .h2-sans {
-    font-size: 1.875rem;
+    font-size: 1rem;
     font-weight: 700;
     font-family: var(--sans-serif-font-family);
     color: var(--foreground);
@@ -53,6 +54,16 @@ const classList = getClassListByVariant(variant);
     font-family: var(--sans-serif-font-family);
     color: var(--foreground);
     letter-spacing: 0.04rem;
+  }
+
+  @media (min-width: 1000px) {
+    .h1-sans {
+      font-size: 2rem;
+    }
+
+    .h2-sans {
+      font-size: 1.3rem;
+    }
   }
 </style>
 

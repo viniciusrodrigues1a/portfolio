@@ -18,6 +18,7 @@ export const getCssPropertiesByStyleProps = (styleProps: SpaceProps) => {
   const cssProperties = {
     width: sizeStyle,
     height: styleProps.direction === "horizontal" ? "1px" : sizeStyle,
+    display: styleProps.direction === "vertical" ? "block" : "inline-block",
   };
 
   removeUndefinedFieldsFromObject(cssProperties);

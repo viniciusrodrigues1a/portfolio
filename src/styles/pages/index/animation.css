@@ -1,0 +1,24 @@
+@keyframes hovering {
+  0% {
+    transform: translateY(-15%);
+  }
+  25% {
+    transform: translateY(15%);
+  }
+  50% {
+    transform: translateY(-15%);
+  }
+  75% {
+    transform: translateY(15%);
+  }
+  100% {
+    transform: translateY(-15%);
+  }
+}
+
+.chevrons-down-wrapper {
+  animation-name: hovering;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+}

@@ -1,83 +1,94 @@
 ---
+import IconComponent from "@components/Icon";
+import SpaceComponent from "@components/Space";
+import TypographyComponent from "@components/Typography";
 import DefaultLayout from "@layouts/Default.Layout.astro";
 
-import TypographyComponent from "@components/Typography";
-import ButtonComponent from "@components/Button";
-import IconComponent from "@components/Icon";
-import { ThemeSwitchButtonComponent } from "@components/ThemeSwitch";
+import "../styles/pages/index/styles.css";
+
+import { t } from "i18next";
+
+import profileImage from "../assets/profile.jpg";
 ---
 
+<style>
+  :global(.mobile-bottom-bar-active-item-typography) {
+    color: var(--foreground) !important;
+  }
+
+  .mobile-bottom-bar-active-item :global(svg *) {
+    stroke: var(--foreground) !important;
+  }
+</style>
+
 <DefaultLayout>
-  {/* Typography component */}
-  <TypographyComponent variant="h1-sans"
-    >VINÍCIUS RODRIGUES DE ARO</TypographyComponent
-  >
-  <TypographyComponent variant="h2-sans">MOBILE DEVELOPER</TypographyComponent>
-  <TypographyComponent variant="h1-serif"
-    >Let's work together</TypographyComponent
-  >
-  <TypographyComponent variant="button">LinkedIn</TypographyComponent>
-  <TypographyComponent variant="body">Body text</TypographyComponent>
+  <section class="intro">
+    <div class="profile-image-wrapper">
+      <img class="profile-image" src={profileImage} alt="" />
+    </div>
 
-  {/* Icon component */}
-  <IconComponent name="archive" color="var(--foreground)" size={64} />
-  <IconComponent name="briefcase" color="var(--foreground)" size={64} />
-  <IconComponent name="chevronDown" color="var(--foreground)" size={64} />
-  <IconComponent name="chevronsDown" color="var(--foreground)" size={64} />
-  <IconComponent name="close" color="var(--foreground)" size={64} />
-  <IconComponent name="edit2" color="var(--foreground)" size={64} />
-  <IconComponent name="externalLink" color="var(--foreground)" size={64} />
-  <IconComponent name="github" color="var(--foreground)" size={64} />
-  <IconComponent name="globe" color="var(--foreground)" size={64} />
-  <IconComponent name="home" color="var(--foreground)" size={64} />
-  <IconComponent name="instagram" color="var(--foreground)" size={64} />
-  <IconComponent name="linkedin" color="var(--foreground)" size={64} />
-  <IconComponent name="mail" color="var(--foreground)" size={64} />
-  <IconComponent name="menu" color="var(--foreground)" size={64} />
-  <IconComponent name="moon" color="var(--foreground)" size={64} />
-  <IconComponent name="moreHorizontal" color="var(--foreground)" size={64} />
-  <IconComponent name="sun" color="var(--foreground)" size={64} />
-  <IconComponent name="user" color="var(--foreground)" size={64} />
-  <div></div>
-  <IconComponent name="dotPattern" color="#4663AC" size={64} />
-  <div></div>
-  <IconComponent name="person" color="var(--foreground)" size={64} />
-  <div></div>
-  <IconComponent name="twoCirclesPattern" color="var(--foreground)" size={64} />
-  <div></div>
-  <IconComponent name="lamp" color="var(--foreground)" size={64} />
+    <div class="profile-info">
+      <TypographyComponent class="title" variant="h1-sans"
+        >VINÍCIUS RODRIGUES DE ARO</TypographyComponent
+      >
 
-  {/* Button component */}
-  <ButtonComponent title="LinkedIn" />
-  <ButtonComponent
-    title="LinkedIn"
-    showIcon
-    iconPosition="left"
-    iconName="linkedin"
-  />
-  <ButtonComponent
-    title="LinkedIn"
-    showIcon
-    iconPosition="right"
-    iconName="linkedin"
-  />
+      <div class="subtitle-separator"></div>
 
-  <ButtonComponent variant="text" title="LinkedIn" />
-  <ButtonComponent
-    variant="text"
-    title="LinkedIn"
-    showIcon
-    iconPosition="left"
-    iconName="linkedin"
-  />
-  <ButtonComponent
-    variant="text"
-    title="LinkedIn"
-    showIcon
-    iconPosition="right"
-    iconName="linkedin"
-  />
+      <TypographyComponent color="var(--foreground1)" variant="h2-sans"
+        >MOBILE DEVELOPER</TypographyComponent
+      >
 
-  {/* Theme switch button component */}
-  <ThemeSwitchButtonComponent />
+      <div class="social-links-wrapper">
+        <IconComponent size={32} name="linkedin" color="var(--foreground)" />
+        <SpaceComponent direction="horizontal" size={24} />
+        <IconComponent size={32} name="github" color="var(--foreground)" />
+      </div>
+    </div>
+
+    <div class="chevrons-down-wrapper">
+      <IconComponent size={64} name="chevronsDown" color="var(--foreground1)" />
+    </div>
+  </section>
+
+  <div class="bottom-bar-wrapper">
+    <div class="bottom-bar">
+      <div class="bottom-bar-item mobile-bottom-bar-active-item">
+        <IconComponent size={26} name="home" color="var(--foreground2)" />
+        <TypographyComponent
+          class="mobile-bottom-bar-active-item-typography"
+          color="var(--foreground2)"
+          fontSize={14}
+          fontFamily="var(--sans-serif-font-family)">home</TypographyComponent
+        >
+      </div>
+
+      <div class="bottom-bar-item">
+        <IconComponent size={26} name="user" color="var(--foreground2)" />
+        <TypographyComponent
+          color="var(--foreground2)"
+          fontSize={14}
+          fontFamily="var(--sans-serif-font-family)">about</TypographyComponent
+        >
+      </div>
+
+      <div class="bottom-bar-item">
+        <IconComponent size={26} name="briefcase" color="var(--foreground2)" />
+        <TypographyComponent
+          color="var(--foreground2)"
+          fontSize={14}
+          fontFamily="var(--sans-serif-font-family)">about</TypographyComponent
+        >
+      </div>
+
+      <div class="bottom-bar-item">
+        <IconComponent size={26} name="archive" color="var(--foreground2)" />
+        <TypographyComponent
+          color="var(--foreground2)"
+          fontSize={14}
+          fontFamily="var(--sans-serif-font-family)"
+          color="var(--foreground2)">about</TypographyComponent
+        >
+      </div>
+    </div>
+  </div>
 </DefaultLayout>

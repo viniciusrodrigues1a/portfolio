@@ -15,6 +15,7 @@ export type FontStyleProps = Partial<{
 
 type TypographyStyleProps = FontStyleProps & {
   variant?: TypographyVariants;
+  class?: string;
 };
 
 export type TypographyProps = TypographyStyleProps;
