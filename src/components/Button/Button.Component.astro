@@ -7,6 +7,8 @@ import type { ButtonProps } from "./types";
 type Props = ButtonProps;
 
 const {
+  id,
+  redirectTo,
   variant = "contained",
   title,
   showIcon,
@@ -33,6 +35,23 @@ const fgColor = color ?? defaultFgColor;
     align-items: center;
     gap: 1rem;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  :global(span.ripple) {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 200ms linear;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+
+  @keyframes ripple {
+    to {
+      transform: scale(1.33);
+      opacity: 0;
+    }
   }
 
   .contained {
@@ -42,7 +61,15 @@ const fgColor = color ?? defaultFgColor;
   }
 </style>
 
-<button class:list={[{ contained: variant === "contained" }]}>
+<button
+  id={id}
+  class:list={[
+    {
+      contained: variant === "contained",
+      "button-with-ripple-animation": variant === "contained",
+    },
+  ]}
+>
   {!title && <slot />}
   {
     title && (
@@ -77,3 +104,51 @@ const fgColor = color ?? defaultFgColor;
     )
   }
 </button>
+
+<script define:vars={{ id, redirectTo }}>
+  if (!id) {
+    return;
+  }
+
+  const button = document.querySelector(`#${id}`);
+
+  button.addEventListener("click", withRippleEffect(withRedirect(redirectTo)));
+
+  function withRippleEffect(callback) {
+    return (e) => {
+      const event = e;
+      const button = event.currentTarget;
+
+      const circle = document.createElement("span");
+      const diameter = Math.max(button.clientWidth, button.clientHeight);
+      const radius = diameter / 2;
+
+      const rect = button.getBoundingClientRect();
+      circle.style.width = circle.style.height = `${diameter}px`;
+      circle.style.left = `${event.clientX - rect.left - radius}px`;
+      circle.style.top = `${event.clientY - rect.top - radius}px`;
+      circle.classList.add("ripple");
+      circle.onanimationend = () => {
+        callback();
+      };
+
+      const ripple = button.getElementsByClassName("ripple")[0];
+
+      if (ripple) {
+        ripple.remove();
+      }
+
+      button.appendChild(circle);
+    };
+  }
+
+  function withRedirect(link) {
+    return () => {
+      if (!link) {
+        return;
+      }
+
+      window.open(link, "_blank");
+    };
+  }
+</script>

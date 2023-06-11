@@ -36,6 +36,8 @@ type ButtonPropsIconProps =
   | ButtonPropsWithoutShowIcon;
 
 interface ButtonBaseProps {
+  id?: string;
+  redirectTo?: string;
   variant?: "contained" | "text";
   color?: string;
   fontSize?: TypographyProps["fontSize"];
