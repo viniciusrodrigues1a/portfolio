@@ -1,0 +1,92 @@
+@media (min-width: 1180px) {
+  .intro {
+    padding: 3rem 5.625rem 5.625rem;
+  }
+
+  .profile-image-wrapper {
+    display: none;
+  }
+
+  .bottom-bar {
+    display: none;
+  }
+
+  .mobile-social-links-wrapper {
+    display: none;
+  }
+
+  .intro-hero-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .intro-hero {
+    margin-top: 0px;
+  }
+
+  .intro-hero-right-side {
+    display: block;
+    position: relative;
+  }
+
+  .intro-hero-right-side svg {
+    width: 24rem;
+    height: auto;
+    height: min-content;
+  }
+
+  .lamp-icon-wrapper {
+    position: absolute;
+    bottom: -6rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .lamp-theme-switch {
+    width: 180px;
+    height: 180px;
+    position: absolute;
+    bottom: 22rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .desktop-social-links-wrapper {
+    display: flex;
+    margin-top: 4rem;
+  }
+
+  .top-bar {
+    display: flex;
+    width: max-content;
+    flex-direction: row;
+    align-items: center;
+    flex-gap: 16px;
+  }
+
+  .nav-item + .nav-item {
+    margin-left: 3.5rem;
+  }
+
+  .two-circles-icon-wrapper {
+    display: block;
+    margin-top: -7rem;
+    margin-left: -7rem;
+    position: absolute;
+  }
+
+  .on-top-of-absolute-icon {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+@media (min-width: 1500px) {
+  .intro-hero-right-side svg {
+    width: 28rem;
+  }
+
+  .lamp-theme-switch {
+    bottom: 26rem;
+  }
+}

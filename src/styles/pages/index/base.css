@@ -25,8 +25,16 @@
   border-radius: 99999px;
 }
 
-.social-links-wrapper {
+.intro-hero-right-side {
+  display: none;
+}
+
+.mobile-social-links-wrapper {
   margin-top: 1rem;
+}
+
+.desktop-social-links-wrapper {
+  display: none;
 }
 
 .chevrons-down-wrapper {
@@ -45,6 +53,14 @@
   bottom: 0;
   left: 0;
   padding: 24px 20px;
+}
+
+.two-circles-icon-wrapper {
+  display: none;
+}
+
+.top-bar {
+  display: none;
 }
 
 .bottom-bar {

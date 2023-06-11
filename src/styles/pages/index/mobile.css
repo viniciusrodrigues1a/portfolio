@@ -5,7 +5,7 @@
       padding-bottom: 40%;
     }
 
-    .social-links-wrapper {
+    .mobile-social-links-wrapper {
       margin-top: 3rem;
     }
 
@@ -24,7 +24,7 @@
       padding-bottom: 40%;
     }
 
-    .social-links-wrapper {
+    .mobile-social-links-wrapper {
       margin-top: 4rem;
     }
 
@@ -48,13 +48,13 @@
 }
 
 @media (min-width: 550px) {
-  .profile-info {
+  .intro-hero {
     margin-top: 2rem;
   }
 }
 
 @media (min-width: 550px) {
-  .profile-info {
+  .intro-hero {
     margin-top: 2rem;
   }
 
