@@ -1,3 +1,9 @@
+#theme-switch-input:not(:checked) ~ * #light-bulb-on,
+#theme-switch-input:not(:checked) ~ * #light-centered-focus,
+#theme-switch-input:not(:checked) ~ * #light-disperse-focus {
+  display: none;
+}
+
 @media (min-width: 1180px) {
   .intro {
     padding: 3rem 5.625rem 5.625rem;
@@ -25,8 +31,12 @@
   }
 
   .intro-hero-right-side {
-    display: block;
     position: relative;
+  }
+
+  .intro-hero-right-side,
+  .clock {
+    display: block;
   }
 
   .intro-hero-right-side svg {

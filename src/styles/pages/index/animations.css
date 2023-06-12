@@ -1,0 +1,72 @@
+@keyframes hovering {
+  0% {
+    transform: translateY(-15%);
+  }
+  25% {
+    transform: translateY(15%);
+  }
+  50% {
+    transform: translateY(-15%);
+  }
+  75% {
+    transform: translateY(15%);
+  }
+  100% {
+    transform: translateY(-15%);
+  }
+}
+
+.chevrons-down-wrapper {
+  animation-name: hovering;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+}
+
+@keyframes lightBlinking {
+  0% {
+    opacity: 1;
+  }
+  3% {
+    opacity: 0;
+  }
+  6% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+  }
+  24% {
+    opacity: 0;
+  }
+  28% {
+    opacity: 1;
+  }
+  36% {
+    opacity: 1;
+  }
+  39% {
+    opacity: 0;
+  }
+  43% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 1;
+  }
+  58% {
+    opacity: 0;
+  }
+  62% {
+    opacity: 1;
+  }
+}
+
+#theme-switch-input:checked ~ * #light-bulb-on,
+#theme-switch-input:checked ~ * #light-centered-focus,
+#theme-switch-input:checked ~ * #light-disperse-focus {
+  animation-name: lightBlinking;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}

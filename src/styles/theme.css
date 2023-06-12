@@ -4,7 +4,7 @@
   --background: #efefef;
   --foreground: #141414;
   --foreground1: #333333;
-  --foreground2: #14141480;
+  --foreground2: #818181;
   --primary: #f35f52;
   --gradient-stop-color-0: #6993ff;
   --gradient-stop-color-1: #86a8ff;
@@ -17,7 +17,7 @@
   --background: #141414;
   --foreground: #efefef;
   --foreground1: #efefef;
-  --foreground2: #efefef80;
+  --foreground2: #7e7e7e;
   --gradient-stop-color-0: #1846bc;
   --gradient-stop-color-1: #6993ff;
   --gradient: linear-gradient(90deg, #1846bc 0%, #6993ff 100%);

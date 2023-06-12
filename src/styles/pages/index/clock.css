@@ -1,0 +1,108 @@
+.clock {
+  margin: 0 auto;
+  width: 10%;
+  aspect-ratio: 1;
+  position: relative;
+  background-color: #c4daf2;
+  border: 4px solid #134150;
+  border-radius: 50%;
+  position: absolute;
+  top: 48px;
+  right: 80px;
+}
+
+.clock-hour-hand {
+  width: 1px;
+  height: 24%;
+  top: 50%;
+  left: 50%;
+  transform-origin: top center;
+  background-color: #1e4150;
+  position: absolute;
+  transition-property: all;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+}
+
+.clock-minute-hand {
+  width: 1px;
+  height: 34%;
+  top: 50%;
+  left: 50%;
+  transform-origin: top center;
+  background-color: #1e4150;
+  position: absolute;
+  transition-property: all;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+}
+
+#theme-switch-input:checked ~ * .clock-hour-hand {
+  transform: rotate(340deg);
+}
+
+#theme-switch-input:not(:checked) ~ * .clock-hour-hand {
+  transform: rotate(140deg);
+}
+
+#theme-switch-input:checked ~ * .clock-minute-hand {
+  transform: rotate(1500deg);
+}
+
+#theme-switch-input:not(:checked) ~ * .clock-minute-hand {
+  transform: rotate(340deg);
+}
+
+.clock-center-marker {
+  background-color: green;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 9999px;
+  background-color: #1e4150;
+}
+
+.clock-hour-0,
+.clock-hour-1,
+.clock-hour-2,
+.clock-hour-3 {
+  position: absolute;
+  background-color: #1e4150;
+}
+
+.clock-hour-0,
+.clock-hour-2 {
+  width: 1px;
+  height: 14%;
+  transform: translateX(-50%);
+}
+
+.clock-hour-1,
+.clock-hour-3 {
+  transform: translateY(-50%);
+  width: 14%;
+  height: 1px;
+}
+
+.clock-hour-0 {
+  left: 50%;
+  top: -1px;
+}
+
+.clock-hour-1 {
+  right: -1px;
+  top: 50%;
+}
+
+.clock-hour-2 {
+  left: 50%;
+  bottom: -1px;
+}
+
+.clock-hour-3 {
+  left: -1px;
+  top: 50%;
+}
