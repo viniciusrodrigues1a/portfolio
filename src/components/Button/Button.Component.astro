@@ -129,6 +129,7 @@ const fgColor = color ?? defaultFgColor;
       circle.style.top = `${event.clientY - rect.top - radius}px`;
       circle.classList.add("ripple");
       circle.onanimationend = () => {
+        circle.remove();
         callback();
       };
 
