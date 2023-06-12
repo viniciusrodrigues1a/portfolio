@@ -37,19 +37,19 @@
   transition-timing-function: linear;
 }
 
-#theme-switch-input:checked ~ * .clock-hour-hand {
+#theme-switch-input:not(:checked) ~ * .clock-hour-hand {
   transform: rotate(340deg);
 }
 
-#theme-switch-input:not(:checked) ~ * .clock-hour-hand {
+#theme-switch-input:checked ~ * .clock-hour-hand {
   transform: rotate(140deg);
 }
 
-#theme-switch-input:checked ~ * .clock-minute-hand {
+#theme-switch-input:not(:checked) ~ * .clock-minute-hand {
   transform: rotate(1500deg);
 }
 
-#theme-switch-input:not(:checked) ~ * .clock-minute-hand {
+#theme-switch-input:checked ~ * .clock-minute-hand {
   transform: rotate(340deg);
 }
 

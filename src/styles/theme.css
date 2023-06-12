@@ -1,19 +1,7 @@
 :root {
   --serif-font-family: "Lora", serif;
   --sans-serif-font-family: "Poppins", sans-serif;
-  --background: #efefef;
-  --foreground: #141414;
-  --foreground1: #333333;
-  --foreground2: #818181;
   --primary: #f35f52;
-  --gradient-stop-color-0: #6993ff;
-  --gradient-stop-color-1: #86a8ff;
-  --gradient: linear-gradient(90deg, #6993ff 0%, #86a8ff 100%);
-  --gradient1: linear-gradient(90deg, #1846bc 0%, #6993ff 100%);
-  --dot-pattern-color: #4663ac;
-}
-
-#theme-switch-input:checked ~ * {
   --background: #141414;
   --foreground: #efefef;
   --foreground1: #efefef;
@@ -22,7 +10,17 @@
   --gradient-stop-color-1: #6993ff;
   --gradient: linear-gradient(90deg, #1846bc 0%, #6993ff 100%);
   --gradient1: linear-gradient(90deg, #6993ff 0%, #86a8ff 100%);
-  --dot-pattern-color: #4d74d8;
+}
+
+#theme-switch-input:checked ~ * {
+  --background: #efefef;
+  --foreground: #141414;
+  --foreground1: #333333;
+  --foreground2: #818181;
+  --gradient-stop-color-0: #6993ff;
+  --gradient-stop-color-1: #86a8ff;
+  --gradient: linear-gradient(90deg, #6993ff 0%, #86a8ff 100%);
+  --gradient1: linear-gradient(90deg, #1846bc 0%, #6993ff 100%);
 }
 
 * {

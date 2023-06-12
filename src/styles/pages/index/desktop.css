@@ -1,6 +1,6 @@
-#theme-switch-input:not(:checked) ~ * #light-bulb-on,
-#theme-switch-input:not(:checked) ~ * #light-centered-focus,
-#theme-switch-input:not(:checked) ~ * #light-disperse-focus {
+#theme-switch-input:checked ~ * #light-bulb-on,
+#theme-switch-input:checked ~ * #light-centered-focus,
+#theme-switch-input:checked ~ * #light-disperse-focus {
   display: none;
 }
 
