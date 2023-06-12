@@ -7,8 +7,8 @@
   border: 4px solid #134150;
   border-radius: 50%;
   position: absolute;
-  top: 48px;
-  right: 80px;
+  top: 3rem;
+  right: 5rem;
 }
 
 .clock-hour-hand {
@@ -75,7 +75,7 @@
 
 .clock-hour-0,
 .clock-hour-2 {
-  width: 1px;
+  width: 2px;
   height: 14%;
   transform: translateX(-50%);
 }
@@ -84,7 +84,7 @@
 .clock-hour-3 {
   transform: translateY(-50%);
   width: 14%;
-  height: 1px;
+  height: 2px;
 }
 
 .clock-hour-0 {

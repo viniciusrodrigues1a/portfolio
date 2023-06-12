@@ -24,6 +24,7 @@
   .intro-hero-wrapper {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
   .intro-hero {
@@ -39,7 +40,8 @@
     display: block;
   }
 
-  .intro-hero-right-side svg {
+  .intro-hero-right-side .intro-hero-svg svg,
+  .intro-hero-right-side .lamp-icon-wrapper svg {
     width: 24rem;
     height: auto;
     height: min-content;
@@ -92,11 +94,86 @@
 }
 
 @media (min-width: 1500px) {
-  .intro-hero-right-side svg {
+  .intro-hero-right-side .intro-hero-svg svg {
     width: 28rem;
+  }
+}
+
+@media (min-width: 1800px) {
+  .intro {
+    padding: 5.625rem;
+  }
+
+  .lamp-icon-wrapper {
+    bottom: 1rem;
+  }
+
+  .intro-hero-right-side .intro-hero-svg svg {
+    width: 44rem;
+  }
+
+  .intro-hero-right-side .lamp-icon-wrapper svg {
+    width: 30.625rem;
+    height: auto;
   }
 
   .lamp-theme-switch {
-    bottom: 26rem;
+    bottom: 30rem;
+  }
+
+  .clock {
+    top: 5rem;
+    right: 12rem;
+  }
+}
+
+@media (min-width: 2500px) {
+  .intro {
+    padding: 7.625rem;
+  }
+
+  .intro-hero-right-side .intro-hero-svg svg {
+    width: 52rem;
+  }
+
+  .clock {
+    right: 13rem;
+  }
+
+  .lamp-theme-switch {
+    bottom: 34rem;
+  }
+
+  .intro-hero-right-side .lamp-icon-wrapper svg {
+    width: 34rem;
+    height: auto;
+  }
+}
+
+@media (min-width: 2900px) {
+  .two-circles-icon-wrapper {
+    display: none;
+  }
+}
+
+@media (min-width: 3600px) {
+  .intro-hero-right-side .intro-hero-svg svg {
+    width: 62rem;
+  }
+
+  .intro-hero-right-side .lamp-icon-wrapper svg {
+    width: 46rem;
+    height: auto;
+  }
+
+  .lamp-theme-switch {
+    bottom: 46rem;
+    width: 260px;
+    height: 260px;
+  }
+
+  .clock {
+    right: 15rem;
+    top: 6rem;
   }
 }

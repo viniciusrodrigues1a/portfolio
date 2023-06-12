@@ -24,96 +24,109 @@ import {
   </div>
 
   <section id="intro" class="intro">
-    <div class="profile-image-wrapper">
-      <img class="profile-image" src={profileImage} alt="" />
-    </div>
-
-    <nav class="top-bar on-top-of-absolute-icon">
-      <div class="nav-item">
-        <ButtonComponent variant="text" fontWeight="bold" title="home" />
+    <div class="intro-content">
+      <div class="profile-image-wrapper">
+        <img class="profile-image" src={profileImage} alt="" />
       </div>
-      <div class="nav-item">
-        <ButtonComponent variant="text" fontWeight="bold" title="about me" />
-      </div>
-      <div class="nav-item">
-        <ButtonComponent variant="text" fontWeight="bold" title="projects" />
-      </div>
-      <div class="nav-item">
-        <ButtonComponent variant="text" fontWeight="bold" title="blog" />
-      </div>
-      <div class="nav-item">
-        <ThemeSwitchButtonComponent />
-      </div>
-    </nav>
 
-    <div class="intro-hero-wrapper">
-      <div class="intro-hero on-top-of-absolute-icon">
-        <TypographyComponent class="title" variant="h1-sans"
-          >VINÍCIUS RODRIGUES DE ARO</TypographyComponent
-        >
+      <nav class="top-bar on-top-of-absolute-icon">
+        <div class="nav-item">
+          <ButtonComponent variant="text" fontWeight="bold" title="home" />
+        </div>
+        <div class="nav-item">
+          <ButtonComponent variant="text" fontWeight="bold" title="about me" />
+        </div>
+        <div class="nav-item">
+          <ButtonComponent variant="text" fontWeight="bold" title="projects" />
+        </div>
+        <div class="nav-item">
+          <ButtonComponent variant="text" fontWeight="bold" title="blog" />
+        </div>
+        <div class="nav-item">
+          <ThemeSwitchButtonComponent />
+        </div>
+      </nav>
 
-        <div class="subtitle-separator"></div>
+      <div class="intro-hero-wrapper">
+        <div class="intro-hero on-top-of-absolute-icon">
+          <TypographyComponent class="title" variant="h1-sans"
+            >VINÍCIUS RODRIGUES DE ARO</TypographyComponent
+          >
 
-        <TypographyComponent color="var(--foreground1)" variant="h2-sans"
-          >MOBILE DEVELOPER</TypographyComponent
-        >
+          <div class="subtitle-separator"></div>
 
-        <div class="mobile-social-links-wrapper">
-          <IconComponent size={32} name="linkedin" color="var(--foreground)" />
-          <SpaceComponent direction="horizontal" size={24} />
-          <IconComponent size={32} name="github" color="var(--foreground)" />
+          <TypographyComponent color="var(--foreground1)" variant="h2-sans"
+            >MOBILE DEVELOPER</TypographyComponent
+          >
+
+          <div class="mobile-social-links-wrapper">
+            <IconComponent
+              size={32}
+              name="linkedin"
+              color="var(--foreground)"
+            />
+            <SpaceComponent direction="horizontal" size={24} />
+            <IconComponent size={32} name="github" color="var(--foreground)" />
+          </div>
+
+          <div class="desktop-social-links-wrapper">
+            <ButtonComponent
+              redirectTo="https://www.linkedin.com/in/vinicius-rodrigues-aro/"
+              id="linkedin-button"
+              showIcon={true}
+              iconName="linkedin"
+              iconPosition="left"
+              title="LinkedIn"
+            />
+
+            <SpaceComponent direction="vertical" size="2rem" />
+
+            <ButtonComponent
+              id="github-button"
+              showIcon={true}
+              iconName="linkedin"
+              iconPosition="left"
+              title="GitHub"
+            />
+          </div>
         </div>
 
-        <div class="desktop-social-links-wrapper">
-          <ButtonComponent
-            redirectTo="https://www.linkedin.com/in/vinicius-rodrigues-aro/"
-            id="linkedin-button"
-            showIcon={true}
-            iconName="linkedin"
-            iconPosition="left"
-            title="LinkedIn"
-          />
+        <div class="intro-hero-right-side">
+          <div class="clock">
+            <div class="clock-hour-0"></div>
+            <div class="clock-hour-1"></div>
+            <div class="clock-hour-2"></div>
+            <div class="clock-hour-3"></div>
+            <div class="clock-center-marker"></div>
+            <div class="clock-minute-hand"></div>
+            <div class="clock-hour-hand"></div>
+          </div>
 
-          <SpaceComponent direction="vertical" size="2rem" />
+          <div class="intro-hero-svg">
+            <IconComponent
+              name="person"
+              color="var(--gradient-stop-color-0)"
+              color1="var(--gradient-stop-color-1)"
+            />
+          </div>
 
-          <ButtonComponent
-            id="github-button"
-            showIcon={true}
-            iconName="linkedin"
-            iconPosition="left"
-            title="GitHub"
-          />
+          <div class="lamp-icon-wrapper">
+            <IconComponent name="lamp" />
+
+            <ThemeSwitchButtonUnstyledWrapper>
+              <div class="lamp-theme-switch"></div>
+            </ThemeSwitchButtonUnstyledWrapper>
+          </div>
         </div>
       </div>
 
-      <div class="intro-hero-right-side">
-        <div class="clock">
-          <div class="clock-hour-0"></div>
-          <div class="clock-hour-1"></div>
-          <div class="clock-hour-2"></div>
-          <div class="clock-hour-3"></div>
-          <div class="clock-center-marker"></div>
-          <div class="clock-minute-hand"></div>
-          <div class="clock-hour-hand"></div>
-        </div>
-
+      <div class="chevrons-down-wrapper">
         <IconComponent
-          name="person"
-          color="var(--gradient-stop-color-0)"
-          color1="var(--gradient-stop-color-1)"
+          size={64}
+          name="chevronsDown"
+          color="var(--foreground1)"
         />
-        <div class="lamp-icon-wrapper">
-          <IconComponent name="lamp" />
-
-          <ThemeSwitchButtonUnstyledWrapper>
-            <div class="lamp-theme-switch"></div>
-          </ThemeSwitchButtonUnstyledWrapper>
-        </div>
       </div>
-    </div>
-
-    <div class="chevrons-down-wrapper">
-      <IconComponent size={64} name="chevronsDown" color="var(--foreground1)" />
     </div>
   </section>
 
