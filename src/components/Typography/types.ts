@@ -11,6 +11,7 @@ export type FontStyleProps = Partial<{
   fontFamily: string;
   color: string;
   letterSpacing: number;
+  textAlign: "left" | "center" | "right" | "justify";
 }>;
 
 type TypographyStyleProps = FontStyleProps & {

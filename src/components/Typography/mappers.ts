@@ -33,6 +33,7 @@ export const getCssPropertiesByStyleProps = (styleProps: FontStyleProps) => {
     "font-size": styleProps.fontSize ? `${styleProps.fontSize}px` : undefined,
     "font-weight": styleProps.fontWeight,
     "letter-spacing": styleProps.letterSpacing,
+    "text-align": styleProps.textAlign ?? "left",
     color: styleProps.color,
   };
 

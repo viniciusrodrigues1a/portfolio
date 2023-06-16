@@ -23,7 +23,7 @@ const classList = [...classListByVariant, className?.split(" ") ?? []];
     font-weight: 700;
     font-family: var(--sans-serif-font-family);
     color: var(--foreground);
-    letter-spacing: 0.04rem;
+    letter-spacing: 0.12rem;
   }
 
   .h2-sans {
@@ -31,7 +31,7 @@ const classList = [...classListByVariant, className?.split(" ") ?? []];
     font-weight: 700;
     font-family: var(--sans-serif-font-family);
     color: var(--foreground);
-    letter-spacing: 0.04rem;
+    letter-spacing: 0.12rem;
   }
 
   .h1-serif {
@@ -42,7 +42,7 @@ const classList = [...classListByVariant, className?.split(" ") ?? []];
   }
 
   .body {
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-weight: 400;
     font-family: var(--sans-serif-font-family);
     color: var(--foreground);
@@ -53,7 +53,7 @@ const classList = [...classListByVariant, className?.split(" ") ?? []];
     font-weight: 400;
     font-family: var(--sans-serif-font-family);
     color: var(--foreground);
-    letter-spacing: 0.04rem;
+    letter-spacing: 0.08rem;
   }
 
   @media (min-width: 1000px) {
@@ -64,6 +64,10 @@ const classList = [...classListByVariant, className?.split(" ") ?? []];
     .h2-sans {
       font-size: 1.3rem;
     }
+
+    .body {
+      font-size: 1.125rem;
+    }
   }
 
   @media (min-width: 1800px) {
@@ -73,6 +77,10 @@ const classList = [...classListByVariant, className?.split(" ") ?? []];
 
     .h2-sans {
       font-size: 1.875rem;
+    }
+
+    .body {
+      font-size: 1.35rem;
     }
   }
 
@@ -87,6 +95,10 @@ const classList = [...classListByVariant, className?.split(" ") ?? []];
 
     .button {
       font-size: 2rem;
+    }
+
+    .body {
+      font-size: 1.5rem;
     }
   }
 </style>
