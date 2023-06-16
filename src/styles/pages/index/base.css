@@ -98,3 +98,55 @@
 .bottom-bar-item svg {
   margin-bottom: 4px;
 }
+
+.about-me {
+  background-color: var(--background2);
+  padding: 2.875rem 2.25rem;
+}
+
+.title-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.title-typography {
+  position: relative;
+  z-index: 2;
+}
+
+.title-underline {
+  width: 100%;
+  height: 0.6rem;
+  background: var(--gradient1);
+  opacity: 0.5;
+  position: absolute;
+  bottom: 0.25rem;
+  left: -8px;
+  width: 160%;
+}
+
+.about-me-info {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2.5rem;
+}
+
+.about-me-img {
+  display: none;
+}
+
+.about-me-description-wrapper {
+  position: relative;
+}
+
+.about-me-social-icons-wrapper {
+  margin-top: 2.25rem;
+}
+
+.about-me-social-icons-wrapper svg:not(:first-child) {
+  margin-left: 1.5rem;
+}
+
+footer {
+  padding-bottom: 8rem;
+}

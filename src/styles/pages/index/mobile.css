@@ -72,4 +72,9 @@
   .intro {
     padding-bottom: 16%;
   }
+
+  .about-me {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
 }

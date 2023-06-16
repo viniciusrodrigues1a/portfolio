@@ -130,6 +130,46 @@ import {
     </div>
   </section>
 
+  <section class="about-me">
+    <div class="title-wrapper">
+      <div class="title-underline"></div>
+      <div class="title-typography">
+        <TypographyComponent color="var(--foreground)" variant="h1-sans"
+          >ABOUT ME</TypographyComponent
+        >
+      </div>
+    </div>
+
+    <div class="about-me-info">
+      <img class="about-me-img" src={profileImage} alt="" />
+
+      <div>
+        <div class="about-me-description-wrapper">
+          <TypographyComponent
+            color="var(--foreground)"
+            variant="body"
+            textAlign="justify"
+            >Em busca do meu primeiro emprego como desenvolvedor, procuro
+            crescer com a empresa e adquirir experiência. Possuo uma base sólida
+            de conhecimento em Git/GitHub; Bash e Linux/Unix. Já desenvolvi
+            projetos completos, expostos no meu GitHub, utilizando NodeJS e
+            ReactJS com TypeScript, seguindo padrões de projeto.</TypographyComponent
+          >
+        </div>
+
+        <div class="about-me-social-icons-wrapper">
+          <IconComponent color="var(--foreground)" size={32} name="linkedin" />
+          <IconComponent color="var(--foreground)" size={32} name="github" />
+          <IconComponent color="var(--foreground)" size={32} name="mail" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <h1>footer</h1>
+  </footer>
+
   <div class="bottom-bar-wrapper">
     <div class="bottom-bar">
       <div class="bottom-bar-item mobile-bottom-bar-active-item">
