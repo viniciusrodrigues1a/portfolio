@@ -30,7 +30,7 @@
     padding: 3rem 5.625rem 5.625rem;
   }
 
-  .about-me {
+  .section {
     padding: 8rem;
   }
 
@@ -131,6 +131,68 @@
   .about-me-info {
     margin-top: 3.5rem;
   }
+
+  .experience-content-container {
+    display: flex;
+  }
+
+  .experience-type-tabs {
+    display: flex;
+    flex-direction: column;
+    height: min-content;
+    width: auto;
+    margin-right: 3.5rem;
+    background-color: transparent;
+  }
+
+  .experience-type-button-container {
+    width: 100%;
+    border-bottom: none;
+    border-left-width: 4px;
+    border-left-color: #484848;
+    border-left-style: solid;
+    padding-left: 1.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .experience-type-button-text {
+    text-align: left !important;
+  }
+
+  .experience-type-radio-label {
+    width: 100%;
+    height: 50%;
+  }
+
+  .experience-type-radio-label:nth-child(2) {
+    left: 0px;
+    top: 50%;
+  }
+
+  .experience-type-indicator {
+    left: 0px;
+    top: 0px;
+    height: 50%;
+
+    border-bottom: none;
+    border-left-width: 4px;
+    border-left-color: #6993ff66;
+    border-left-style: solid;
+  }
+
+  .experience-type-radio#work:checked
+    ~ .experience-type-tabs
+    .experience-type-indicator {
+    left: 0px;
+    top: 0px;
+  }
+
+  .experience-type-radio#education:checked
+    ~ .experience-type-tabs
+    .experience-type-indicator {
+    left: 0px;
+    top: 50%;
+  }
 }
 
 @media (min-width: 1500px) {
@@ -138,12 +200,16 @@
     width: 28rem;
   }
 
-  .about-me {
+  .section {
     padding: 8rem 10rem;
   }
 
   .about-me-info {
     margin-top: 4rem;
+  }
+
+  .experience-content-container {
+    margin-top: 3rem;
   }
 }
 
@@ -152,7 +218,7 @@
     padding: 5.625rem;
   }
 
-  .about-me {
+  .section {
     padding: 8rem 16rem;
   }
 
@@ -181,6 +247,10 @@
   .about-me-info {
     margin-top: 5rem;
   }
+
+  .experience-type-button-text {
+    font-size: 1.75rem;
+  }
 }
 
 @media (min-width: 2500px) {
@@ -188,7 +258,7 @@
     padding: 7.625rem;
   }
 
-  .about-me {
+  .section {
     padding: 12rem 16rem;
   }
 
@@ -207,6 +277,18 @@
   .intro-hero-right-side .lamp-icon-wrapper svg {
     width: 34rem;
     height: auto;
+  }
+
+  .experience-type-button-text {
+    font-size: 2rem;
+  }
+
+  .experience-type-button-container {
+    padding-right: 5rem;
+  }
+
+  .experience-content-container {
+    margin-top: 5rem;
   }
 }
 

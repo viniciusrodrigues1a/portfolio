@@ -73,8 +73,12 @@
     padding-bottom: 16%;
   }
 
-  .about-me {
+  .section {
     padding-left: 6rem;
     padding-right: 6rem;
+  }
+
+  .experience-type-button-text {
+    font-size: 1.5rem;
   }
 }

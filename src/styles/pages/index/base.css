@@ -99,9 +99,12 @@
   margin-bottom: 4px;
 }
 
+.section {
+  padding: 2.875rem 2.25rem;
+}
+
 .about-me {
   background-color: var(--background2);
-  padding: 2.875rem 2.25rem;
 }
 
 .title-wrapper {
@@ -118,7 +121,7 @@
   width: 100%;
   height: 0.6rem;
   background: var(--gradient1);
-  opacity: 0.5;
+  opacity: 0.4;
   position: absolute;
   bottom: 0.25rem;
   left: -8px;
@@ -149,4 +152,105 @@
 
 footer {
   padding-bottom: 8rem;
+}
+
+.experience {
+  background-color: var(--background1);
+}
+
+.experience-content-container {
+  margin-top: 2.5rem;
+}
+
+.experience-type-tabs {
+  width: 100%;
+  background-color: #343434;
+  display: flex;
+  position: relative;
+  margin-bottom: 0.25rem;
+}
+
+.experience-type-button-container {
+  width: 50%;
+  background-color: transparent;
+  padding: 1rem 0px;
+  border-bottom-width: 4px;
+  border-bottom-color: #484848;
+  border-bottom-style: solid;
+  position: relative;
+}
+
+.experience-type-button-text {
+  text-align: center !important;
+  font-size: 1.125rem;
+}
+
+.experience-type-radio {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: none;
+}
+
+.experience-type-radio-label {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 99;
+  opacity: 1;
+  opacity: 0;
+}
+
+.experience-type-radio-label:nth-child(2) {
+  left: 50%;
+}
+
+.experience-type-indicator {
+  width: 50%;
+  background-color: #6993ff33;
+  border-bottom-width: 4px;
+  border-bottom-color: #6993ff66;
+  border-bottom-style: solid;
+  opacity: 0.5;
+  position: absolute;
+  z-index: 1;
+  bottom: 0px;
+}
+
+.experience-type-radio#work:checked
+  ~ .experience-type-tabs
+  .experience-type-radio-label:nth-child(2) {
+  cursor: pointer;
+}
+
+.experience-type-radio#education:checked
+  ~ .experience-type-tabs
+  .experience-type-radio-label:first-child {
+  cursor: pointer;
+}
+
+.experience-type-radio#work:checked
+  ~ .experience-type-tabs
+  .experience-type-indicator {
+  left: 0px;
+}
+
+.experience-type-radio#education:checked
+  ~ .experience-type-tabs
+  .experience-type-indicator {
+  left: 50%;
+}
+
+.experience-type-radio#work:checked ~ .experience-education-content {
+  display: none;
+}
+
+.experience-type-radio#education:checked ~ .experience-work-content {
+  display: none;
+}
+
+.experience-type-indicator * {
+  visibility: hidden;
 }

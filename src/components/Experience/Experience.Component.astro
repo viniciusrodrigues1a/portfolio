@@ -1,0 +1,78 @@
+---
+import TypographyComponent from "@components/Typography";
+
+import type { ExperienceProps } from "./types";
+
+type Props = ExperienceProps;
+
+const { title, formattedDate, company, companyLink, description } =
+  Astro.props as Props;
+---
+
+<style>
+  .experience-container {
+    margin-top: 2.25rem;
+  }
+
+  .experience-date-text {
+    margin-top: 0.25rem;
+  }
+
+  .experience-company-text {
+    margin-top: 0.75rem;
+    color: var(--secondary);
+    opacity: 0.9;
+    position: relative;
+    display: inline-block;
+  }
+
+  .experience-company-text:hover {
+    opacity: 1;
+  }
+
+  .experience-company-text:after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: var(--secondary);
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+  }
+
+  .experience-company-description {
+    margin-top: 1rem;
+  }
+
+  @media (min-width: 1180px) {
+    .experience-container {
+      margin-top: 0px;
+    }
+
+    .experience-container + .experience-container {
+      margin-top: 2.25rem;
+    }
+  }
+</style>
+
+<div class="experience-container">
+  <TypographyComponent variant="h2-sans" letterSpacing="0px"
+    >{title}</TypographyComponent
+  >
+
+  <TypographyComponent
+    class="experience-date-text"
+    variant="body"
+    color="var(--foreground2)">{formattedDate}</TypographyComponent
+  >
+
+  <a href={companyLink} target="_blank">
+    <TypographyComponent class="experience-company-text" variant="body"
+      >{company}</TypographyComponent
+    >
+  </a>
+
+  <TypographyComponent class="experience-company-description" variant="body"
+    >{description}</TypographyComponent
+  >
+</div>

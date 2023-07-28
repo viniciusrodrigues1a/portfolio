@@ -2,6 +2,7 @@
 import IconComponent from "@components/Icon";
 import SpaceComponent from "@components/Space";
 import TypographyComponent from "@components/Typography";
+import ExperienceComponent from "@components/Experience";
 import DefaultLayout from "@layouts/Default.Layout.astro";
 
 import "../styles/pages/index/styles.css";
@@ -130,7 +131,7 @@ import {
     </div>
   </section>
 
-  <section class="about-me">
+  <section class="section about-me">
     <div class="title-wrapper">
       <div class="title-underline"></div>
       <div class="title-typography">
@@ -162,6 +163,87 @@ import {
           <IconComponent color="var(--foreground)" size={32} name="github" />
           <IconComponent color="var(--foreground)" size={32} name="mail" />
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section experience">
+    <div class="title-wrapper">
+      <div class="title-underline"></div>
+      <div class="title-typography">
+        <TypographyComponent color="var(--foreground)" variant="h1-sans"
+          >EXPERIENCE</TypographyComponent
+        >
+      </div>
+    </div>
+
+    <div class="experience-content-container">
+      <input
+        class="experience-type-radio"
+        type="radio"
+        id="work"
+        name="experience"
+        value="work"
+        checked
+      />
+      <input
+        class="experience-type-radio"
+        type="radio"
+        id="education"
+        name="experience"
+        value="education"
+      />
+
+      <div class="experience-type-tabs">
+        <label class="experience-type-radio-label" for="work"></label>
+        <label class="experience-type-radio-label" for="education"></label>
+
+        <div class="experience-type-button-container experience-type-indicator">
+          <TypographyComponent
+            class="experience-type-button-text"
+            variant="button">-</TypographyComponent
+          >
+        </div>
+        <div class="experience-type-button-container">
+          <TypographyComponent
+            class="experience-type-button-text"
+            variant="button">Work</TypographyComponent
+          >
+        </div>
+        <div class="experience-type-button-container">
+          <TypographyComponent
+            class="experience-type-button-text"
+            variant="button">Education</TypographyComponent
+          >
+        </div>
+      </div>
+
+      <div class="experience-work-content">
+        <ExperienceComponent
+          title="Desenvolvedor React Native"
+          formattedDate="Out 2021 - Atual"
+          company="GlobalSys - FullTime"
+          companyLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+          description="Em busca do meu primeiro emprego como desenvolvedor, procuro crescer com a empresa e adquirir experiência. Possuo uma base sólida de conhecimento em Git/GitHub; Bash e Linux/Unix. Já desenvolvi projetos completos, expostos no meu GitHub, utilizando NodeJS e ReactJS com TypeScript, seguindo padrões de projeto."
+        />
+
+        <ExperienceComponent
+          title="Desenvolvedor React Native"
+          formattedDate="Out 2021 - Atual"
+          company="GlobalSys - FullTime"
+          companyLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+          description="Em busca do meu primeiro emprego como desenvolvedor, procuro crescer com a empresa e adquirir experiência. Possuo uma base sólida de conhecimento em Git/GitHub; Bash e Linux/Unix. Já desenvolvi projetos completos, expostos no meu GitHub, utilizando NodeJS e ReactJS com TypeScript, seguindo padrões de projeto."
+        />
+      </div>
+
+      <div class="experience-education-content">
+        <ExperienceComponent
+          title="Desenvolvedor React Native"
+          formattedDate="Out 2021 - Atual"
+          company="GlobalSys - FullTime"
+          companyLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+          description="Em busca do meu primeiro emprego como desenvolvedor, procuro crescer com a empresa e adquirir experiência. Possuo uma base sólida de conhecimento em Git/GitHub; Bash e Linux/Unix. Já desenvolvi projetos completos, expostos no meu GitHub, utilizando NodeJS e ReactJS com TypeScript, seguindo padrões de projeto."
+        />
       </div>
     </div>
   </section>
