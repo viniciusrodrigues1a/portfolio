@@ -3,17 +3,35 @@ import IconComponent from "@components/Icon";
 import SpaceComponent from "@components/Space";
 import TypographyComponent from "@components/Typography";
 import ExperienceComponent from "@components/Experience";
+import ButtonComponent from "@components/Button";
 import DefaultLayout from "@layouts/Default.Layout.astro";
 
 import "../styles/pages/index/styles.css";
 
 import profileImage from "../assets/profile.jpg";
-import ButtonComponent from "@components/Button";
 import {
   ThemeSwitchButtonComponent,
   ThemeSwitchButtonUnstyledWrapper,
 } from "@components/ThemeSwitch";
 ---
+
+<script>
+  // Scroll to the top
+  const chevronsUpBtn = document.querySelector(".chevrons-up-container");
+  chevronsUpBtn?.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+
+<script>
+  // Scroll to about me section
+  const aboutMeSection = document.querySelector("section.about-me");
+
+  const chevronDownBtn = document.querySelector(".chevrons-down-wrapper");
+  chevronDownBtn?.addEventListener("click", () =>
+    aboutMeSection?.scrollIntoView({ behavior: "smooth" })
+  );
+</script>
 
 <DefaultLayout>
   <div class="two-circles-icon-wrapper">
@@ -121,13 +139,13 @@ import {
         </div>
       </div>
 
-      <div class="chevrons-down-wrapper">
+      <button type="button" class="chevrons-down-wrapper">
         <IconComponent
           size={64}
           name="chevronsDown"
           color="var(--foreground1)"
         />
-      </div>
+      </button>
     </div>
   </section>
 
@@ -246,10 +264,95 @@ import {
         />
       </div>
     </div>
+
+    <button type="button" class="chevrons-up-container">
+      <div class="chevrons-up-icon-container">
+        <div class="chevrons-up-icon-inner-container">
+          <IconComponent name="chevronsDown" color="var(--foreground)" />
+        </div>
+      </div>
+
+      <TypographyComponent
+        class="chevrons-up-text"
+        variant="button"
+        textAlign="center">Go back to top</TypographyComponent
+      >
+    </button>
   </section>
 
-  <footer>
-    <h1>footer</h1>
+  <footer id="footer">
+    <div class="footer-content">
+      <TypographyComponent
+        class="footer-title"
+        variant="h1-serif"
+        color="var(--foreground)">Let's work together</TypographyComponent
+      >
+
+      <ButtonComponent
+        variant="text"
+        title="viniciusrodrigues.aro@gmail.com"
+        fontWeight="normal"
+        color="var(--foreground2)"
+      />
+    </div>
+
+    <div class="footer-content">
+      <TypographyComponent
+        class="footer-title"
+        variant="h1-serif"
+        color="var(--foreground)">Check out my work here</TypographyComponent
+      >
+      <ButtonComponent
+        variant="text"
+        title="LinkedIn"
+        iconName="externalLink"
+        iconPosition="right"
+        fontWeight="normal"
+        color="var(--foreground2)"
+        iconSize={20}
+        showIcon
+      />
+      <ButtonComponent
+        class="footer-button-mt"
+        variant="text"
+        title="GitHub"
+        iconName="externalLink"
+        iconPosition="right"
+        fontWeight="normal"
+        color="var(--foreground2)"
+        iconSize={20}
+        showIcon
+      />
+    </div>
+
+    <div class="footer-content">
+      <TypographyComponent
+        class="footer-title"
+        variant="h1-serif"
+        color="var(--foreground)">Preferences</TypographyComponent
+      >
+      <ButtonComponent
+        variant="text"
+        title="Change language"
+        iconName="globe"
+        iconPosition="left"
+        fontWeight="normal"
+        color="var(--foreground2)"
+        iconSize={20}
+        showIcon
+      />
+      <ButtonComponent
+        class="footer-button-mt"
+        variant="text"
+        title="Change theme"
+        iconName="moon"
+        iconPosition="left"
+        fontWeight="normal"
+        color="var(--foreground2)"
+        iconSize={20}
+        showIcon
+      />
+    </div>
   </footer>
 
   <div class="bottom-bar-wrapper">

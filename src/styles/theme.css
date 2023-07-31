@@ -3,6 +3,7 @@
   --sans-serif-font-family: "Poppins", sans-serif;
   --primary: #f35f52;
   --secondary: #6993ff;
+  --bottom-bar-color: #191919;
   --background: #141414;
   --background1: #282828;
   --background2: #333333;
@@ -16,6 +17,7 @@
 }
 
 #theme-switch-input:checked ~ * {
+  --bottom-bar-color: #e6e6e6;
   --background: #efefef;
   --background1: #efefef;
   --background2: #fff;

@@ -21,6 +21,7 @@ const {
   fontSize,
   fontWeight,
   letterSpacing,
+  class: className,
 } = Astro.props as ButtonProps;
 
 const defaultFgColor = variant === "text" ? "var(--foreground)" : "#efefef";
@@ -68,6 +69,7 @@ const fgColor = color ?? defaultFgColor;
       contained: variant === "contained",
       "button-with-ripple-animation": variant === "contained",
     },
+    className?.split(" "),
   ]}
 >
   {!title && <slot />}

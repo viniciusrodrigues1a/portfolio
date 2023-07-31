@@ -57,6 +57,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .subtitle-separator {
@@ -69,6 +72,7 @@
   bottom: 0;
   left: 0;
   padding: 24px 20px;
+  z-index: 5;
 }
 
 .two-circles-icon-wrapper {
@@ -80,7 +84,8 @@
 }
 
 .bottom-bar {
-  background-color: var(--background);
+  background-color: var(--bottom-bar-color);
+  box-shadow: 4px 4px 12px 4px rgba(0, 0, 0, 0.25);
   border-radius: 1rem;
   display: flex;
   justify-content: space-between;
@@ -148,10 +153,6 @@
 
 .about-me-social-icons-wrapper svg:not(:first-child) {
   margin-left: 1.5rem;
-}
-
-footer {
-  padding-bottom: 8rem;
 }
 
 .experience {
@@ -253,4 +254,52 @@ footer {
 
 .experience-type-indicator * {
   visibility: hidden;
+}
+
+.chevrons-up-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.75;
+  margin-left: auto;
+  margin-right: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+.chevrons-up-icon-container {
+  display: inline-block;
+  transform: rotate(180deg);
+}
+
+.chevrons-up-icon-container svg {
+  width: 48px;
+  height: 48px;
+}
+
+.chevrons-up-text {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: var(--foreground);
+}
+
+#footer {
+  background-color: var(--background);
+  padding: 3.625rem 1.75rem 8rem 1.75rem;
+}
+
+.footer-title {
+  margin-bottom: 1.25rem;
+}
+
+.footer-content + .footer-content {
+  margin-top: 2.5rem;
+}
+
+.footer-button-mt {
+  margin-top: 1rem;
 }

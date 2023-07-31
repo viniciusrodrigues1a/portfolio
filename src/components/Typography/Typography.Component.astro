@@ -35,7 +35,7 @@ const classList = [...classListByVariant, className?.split(" ") ?? []];
   }
 
   .h1-serif {
-    font-size: 2.25rem;
+    font-size: 1.35rem;
     font-weight: 700;
     font-family: var(--serif-font-family);
     color: var(--foreground);
@@ -49,7 +49,7 @@ const classList = [...classListByVariant, className?.split(" ") ?? []];
   }
 
   .button {
-    font-size: 1.625rem;
+    font-size: 1rem;
     font-weight: 400;
     font-family: var(--sans-serif-font-family);
     color: var(--foreground);
@@ -57,12 +57,17 @@ const classList = [...classListByVariant, className?.split(" ") ?? []];
   }
 
   @media (min-width: 1000px) {
-    .h1-sans {
+    .h1-sans,
+    .h1-serif {
       font-size: 2rem;
     }
 
     .h2-sans {
       font-size: 1.3rem;
+    }
+
+    .button {
+      font-size: 1.325rem;
     }
 
     .body {
@@ -71,12 +76,17 @@ const classList = [...classListByVariant, className?.split(" ") ?? []];
   }
 
   @media (min-width: 1800px) {
-    .h1-sans {
+    .h1-sans,
+    .h1-serif {
       font-size: 2.75rem;
     }
 
     .h2-sans {
       font-size: 1.875rem;
+    }
+
+    .button {
+      font-size: 1.625rem;
     }
 
     .body {
@@ -85,7 +95,8 @@ const classList = [...classListByVariant, className?.split(" ") ?? []];
   }
 
   @media (min-width: 3600px) {
-    .h1-sans {
+    .h1-sans,
+    .h1-serif {
       font-size: 3.4rem;
     }
 

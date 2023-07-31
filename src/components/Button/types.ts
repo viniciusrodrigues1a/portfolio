@@ -44,6 +44,7 @@ interface ButtonBaseProps {
   fontFamily?: TypographyProps["fontFamily"];
   fontWeight?: TypographyProps["fontWeight"];
   letterSpacing?: TypographyProps["letterSpacing"];
+  class?: string;
 }
 
 export type ButtonProps = ButtonBaseProps &
