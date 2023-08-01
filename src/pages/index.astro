@@ -50,16 +50,40 @@ import {
 
       <nav class="top-bar on-top-of-absolute-icon">
         <div class="nav-item">
-          <ButtonComponent variant="text" fontWeight="bold" title="home" />
+          <ButtonComponent
+            id="home-link"
+            class="nav-link"
+            variant="text"
+            fontWeight="bold"
+            title="home"
+          />
         </div>
         <div class="nav-item">
-          <ButtonComponent variant="text" fontWeight="bold" title="about me" />
+          <ButtonComponent
+            id="about-me-link"
+            class="nav-link"
+            variant="text"
+            fontWeight="bold"
+            title="about me"
+          />
         </div>
         <div class="nav-item">
-          <ButtonComponent variant="text" fontWeight="bold" title="projects" />
+          <ButtonComponent
+            id="projects-link"
+            class="nav-link"
+            variant="text"
+            fontWeight="bold"
+            title="projects"
+          />
         </div>
         <div class="nav-item">
-          <ButtonComponent variant="text" fontWeight="bold" title="blog" />
+          <ButtonComponent
+            id="blog-link"
+            class="nav-link"
+            variant="text"
+            fontWeight="bold"
+            title="blog"
+          />
         </div>
         <div class="nav-item">
           <ThemeSwitchButtonComponent />
@@ -101,6 +125,7 @@ import {
             <SpaceComponent direction="vertical" size="2rem" />
 
             <ButtonComponent
+              redirectTo="https://github.com/viniciusrodrigues1a/"
               id="github-button"
               showIcon={true}
               iconName="linkedin"
@@ -280,7 +305,7 @@ import {
     </button>
   </section>
 
-  <footer id="footer">
+  <footer id="footer" class="section">
     <div class="footer-content">
       <TypographyComponent
         class="footer-title"
@@ -289,10 +314,12 @@ import {
       >
 
       <ButtonComponent
+        id="email-footer-button"
         variant="text"
         title="viniciusrodrigues.aro@gmail.com"
         fontWeight="normal"
         color="var(--foreground2)"
+        class="footer-button"
       />
     </div>
 
@@ -303,6 +330,8 @@ import {
         color="var(--foreground)">Check out my work here</TypographyComponent
       >
       <ButtonComponent
+        redirectTo="https://www.linkedin.com/in/vinicius-rodrigues-aro/"
+        id="linkedin-footer-button"
         variant="text"
         title="LinkedIn"
         iconName="externalLink"
@@ -311,8 +340,11 @@ import {
         color="var(--foreground2)"
         iconSize={20}
         showIcon
+        class="footer-button"
       />
       <ButtonComponent
+        redirectTo="https://github.com/viniciusrodrigues1a/"
+        id="github-footer-button"
         class="footer-button-mt"
         variant="text"
         title="GitHub"
@@ -322,6 +354,7 @@ import {
         color="var(--foreground2)"
         iconSize={20}
         showIcon
+        class="footer-button"
       />
     </div>
 
@@ -332,6 +365,7 @@ import {
         color="var(--foreground)">Preferences</TypographyComponent
       >
       <ButtonComponent
+        id="change-language-button"
         variant="text"
         title="Change language"
         iconName="globe"
@@ -340,60 +374,72 @@ import {
         color="var(--foreground2)"
         iconSize={20}
         showIcon
+        class="footer-button"
       />
       <ButtonComponent
+        id="change-theme-button"
         class="footer-button-mt"
         variant="text"
-        title="Change theme"
-        iconName="moon"
-        iconPosition="left"
         fontWeight="normal"
         color="var(--foreground2)"
-        iconSize={20}
-        showIcon
-      />
+      >
+        <ThemeSwitchButtonUnstyledWrapper>
+          <div class="change-theme-button-slot-wrapper">
+            <IconComponent name="moon" size={20} color="var(--foreground2)" />
+            <TypographyComponent variant="button" color="var(--foreground2)">
+              Change theme
+            </TypographyComponent>
+          </div>
+        </ThemeSwitchButtonUnstyledWrapper>
+      </ButtonComponent>
+    </div>
+
+    <div class="bottom-bar-wrapper">
+      <div class="bottom-bar">
+        <div class="bottom-bar-item mobile-bottom-bar-active-item">
+          <IconComponent size={26} name="home" color="var(--foreground2)" />
+          <TypographyComponent
+            class="mobile-bottom-bar-active-item-typography"
+            color="var(--foreground2)"
+            fontSize={14}
+            fontFamily="var(--sans-serif-font-family)">home</TypographyComponent
+          >
+        </div>
+
+        <div class="bottom-bar-item">
+          <IconComponent size={26} name="user" color="var(--foreground2)" />
+          <TypographyComponent
+            color="var(--foreground2)"
+            fontSize={14}
+            fontFamily="var(--sans-serif-font-family)"
+            >about</TypographyComponent
+          >
+        </div>
+
+        <div class="bottom-bar-item">
+          <IconComponent
+            size={26}
+            name="briefcase"
+            color="var(--foreground2)"
+          />
+          <TypographyComponent
+            color="var(--foreground2)"
+            fontSize={14}
+            fontFamily="var(--sans-serif-font-family)"
+            >about</TypographyComponent
+          >
+        </div>
+
+        <div class="bottom-bar-item">
+          <IconComponent size={26} name="archive" color="var(--foreground2)" />
+          <TypographyComponent
+            color="var(--foreground2)"
+            fontSize={14}
+            fontFamily="var(--sans-serif-font-family)"
+            color="var(--foreground2)">about</TypographyComponent
+          >
+        </div>
+      </div>
     </div>
   </footer>
-
-  <div class="bottom-bar-wrapper">
-    <div class="bottom-bar">
-      <div class="bottom-bar-item mobile-bottom-bar-active-item">
-        <IconComponent size={26} name="home" color="var(--foreground2)" />
-        <TypographyComponent
-          class="mobile-bottom-bar-active-item-typography"
-          color="var(--foreground2)"
-          fontSize={14}
-          fontFamily="var(--sans-serif-font-family)">home</TypographyComponent
-        >
-      </div>
-
-      <div class="bottom-bar-item">
-        <IconComponent size={26} name="user" color="var(--foreground2)" />
-        <TypographyComponent
-          color="var(--foreground2)"
-          fontSize={14}
-          fontFamily="var(--sans-serif-font-family)">about</TypographyComponent
-        >
-      </div>
-
-      <div class="bottom-bar-item">
-        <IconComponent size={26} name="briefcase" color="var(--foreground2)" />
-        <TypographyComponent
-          color="var(--foreground2)"
-          fontSize={14}
-          fontFamily="var(--sans-serif-font-family)">about</TypographyComponent
-        >
-      </div>
-
-      <div class="bottom-bar-item">
-        <IconComponent size={26} name="archive" color="var(--foreground2)" />
-        <TypographyComponent
-          color="var(--foreground2)"
-          fontSize={14}
-          fontFamily="var(--sans-serif-font-family)"
-          color="var(--foreground2)">about</TypographyComponent
-        >
-      </div>
-    </div>
-  </div>
 </DefaultLayout>
