@@ -154,7 +154,7 @@
     width: 100%;
     border-bottom: none;
     border-left-width: 4px;
-    border-left-color: #484848;
+    border-left-color: var(--indicator-placeholder-color1);
     border-left-style: solid;
     padding-left: 1.5rem;
     padding-right: 2.5rem;
@@ -181,7 +181,7 @@
 
     border-bottom: none;
     border-left-width: 4px;
-    border-left-color: #6993ff66;
+    border-left-color: var(--indicator-color1);
     border-left-style: solid;
   }
 

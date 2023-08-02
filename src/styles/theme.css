@@ -3,6 +3,10 @@
   --sans-serif-font-family: "Poppins", sans-serif;
   --primary: #f35f52;
   --secondary: #6993ff;
+  --indicator-placeholder-color: #343434;
+  --indicator-placeholder-color1: #484848;
+  --indicator-color: #6993ff33;
+  --indicator-color1: #6993ff66;
   --bottom-bar-color: #191919;
   --background: #141414;
   --background1: #282828;
@@ -17,10 +21,14 @@
 }
 
 #theme-switch-input:checked ~ * {
+  --indicator-placeholder-color: #7b7b7b33;
+  --indicator-placeholder-color1: #7b7b7b66;
+  --indicator-color: #6993ff33;
+  --indicator-color1: #6993ff66;
   --bottom-bar-color: #e6e6e6;
-  --background: #efefef;
+  --background: #dddddd;
   --background1: #efefef;
-  --background2: #fff;
+  --background2: #ffffff;
   --foreground: #141414;
   --foreground1: #333333;
   --foreground2: #818181;

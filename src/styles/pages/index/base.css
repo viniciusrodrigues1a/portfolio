@@ -165,7 +165,7 @@
 
 .experience-type-tabs {
   width: 100%;
-  background-color: #343434;
+  background-color: var(--indicator-placeholder-color);
   display: flex;
   position: relative;
   margin-bottom: 0.25rem;
@@ -176,7 +176,7 @@
   background-color: transparent;
   padding: 1rem 0px;
   border-bottom-width: 4px;
-  border-bottom-color: #484848;
+  border-bottom-color: var(--indicator-placeholder-color1);
   border-bottom-style: solid;
   position: relative;
 }
@@ -210,11 +210,10 @@
 
 .experience-type-indicator {
   width: 50%;
-  background-color: #6993ff33;
+  background-color: var(--indicator-color);
   border-bottom-width: 4px;
-  border-bottom-color: #6993ff66;
+  border-bottom-color: var(--indicator-color1);
   border-bottom-style: solid;
-  opacity: 0.5;
   position: absolute;
   z-index: 1;
   bottom: 0px;
