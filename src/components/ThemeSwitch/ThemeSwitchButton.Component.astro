@@ -29,12 +29,12 @@ import IconComponent from "@components/Icon";
     opacity: 0;
   }
 
-  :global(#theme-switch-input:checked ~ *) .active-indicator {
+  :global(#theme-switch-input:not(:checked) ~ *) .active-indicator {
     left: calc(100% - 38px - 6px);
-    animation: stretch 0.2s ease-out, showContent 0.1s forwards;
+    animation: stretch 0.2s ease-out, showContent 0.2s forwards;
   }
 
-  :global(#theme-switch-input:not(:checked) ~ *) .active-indicator {
+  :global(#theme-switch-input:checked ~ *) .active-indicator {
     left: 6px;
     animation: stretch1 0.2s ease-in, showContent 0.2s forwards;
   }
