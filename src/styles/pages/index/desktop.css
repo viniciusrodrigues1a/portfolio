@@ -198,6 +198,14 @@
     left: 0px;
     top: 50%;
   }
+
+  .section.experience {
+    padding-bottom: 5rem;
+  }
+
+  .chevrons-up-container {
+    margin-top: 8rem;
+  }
 }
 
 @media (min-width: 1500px) {
@@ -255,6 +263,14 @@
 
   .experience-type-button-text {
     font-size: 1.75rem;
+  }
+
+  .section.experience {
+    padding-bottom: 8rem;
+  }
+
+  .chevrons-up-container {
+    margin-top: 12rem;
   }
 }
 
