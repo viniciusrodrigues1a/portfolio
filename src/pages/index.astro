@@ -1,4 +1,11 @@
 ---
+import { t } from "i18next";
+
+import {
+  ThemeSwitchButtonComponent,
+  ThemeSwitchButtonUnstyledWrapper,
+} from "@components/ThemeSwitch";
+import { LanguageSwitchButtonComponent } from "@components/LanguageSwitch";
 import IconComponent from "@components/Icon";
 import SpaceComponent from "@components/Space";
 import TypographyComponent from "@components/Typography";
@@ -9,10 +16,8 @@ import DefaultLayout from "@layouts/Default.Layout.astro";
 import "../styles/pages/index/styles.css";
 
 import profileImage from "../assets/profile.jpg";
-import {
-  ThemeSwitchButtonComponent,
-  ThemeSwitchButtonUnstyledWrapper,
-} from "@components/ThemeSwitch";
+import LanguageSwitchButtonUnstyledWrapper from "@components/LanguageSwitch/LanguageSwitchButtonUnstyledWrapper.Component.astro";
+import LanguageSwitchSelect from "@components/LanguageSwitch/LanguageSwitchSelect.Component.astro";
 ---
 
 <script>
@@ -84,6 +89,9 @@ import {
             fontWeight="bold"
             title="blog"
           />
+        </div>
+        <div class="nav-item">
+          <LanguageSwitchButtonComponent />
         </div>
         <div class="nav-item">
           <ThemeSwitchButtonComponent />
@@ -364,18 +372,31 @@ import {
         variant="h1-serif"
         color="var(--foreground)">Preferences</TypographyComponent
       >
-      <ButtonComponent
-        id="change-language-button"
-        variant="text"
-        title="Change language"
-        iconName="globe"
-        iconPosition="left"
-        fontWeight="normal"
-        color="var(--foreground2)"
-        iconSize={20}
-        showIcon
-        class="footer-button"
-      />
+      <div class="change-language-container">
+        <ButtonComponent
+          id="change-language-button"
+          variant="text"
+          stopPropagation
+        >
+          <LanguageSwitchButtonUnstyledWrapper>
+            <div class="button-slot-wrapper">
+              <IconComponent
+                name="globe"
+                size={20}
+                color="var(--foreground2)"
+              />
+              <TypographyComponent variant="button" color="var(--foreground2)">
+                Change language
+              </TypographyComponent>
+            </div>
+          </LanguageSwitchButtonUnstyledWrapper>
+        </ButtonComponent>
+        <LanguageSwitchSelect
+          buttonId0="language-switch-ptBR-1"
+          buttonId1="language-switch-en-1"
+        />
+      </div>
+
       <ButtonComponent
         id="change-theme-button"
         class="footer-button-mt"
@@ -384,7 +405,7 @@ import {
         color="var(--foreground2)"
       >
         <ThemeSwitchButtonUnstyledWrapper>
-          <div class="change-theme-button-slot-wrapper">
+          <div class="button-slot-wrapper">
             <IconComponent name="moon" size={20} color="var(--foreground2)" />
             <TypographyComponent variant="button" color="var(--foreground2)">
               Change theme

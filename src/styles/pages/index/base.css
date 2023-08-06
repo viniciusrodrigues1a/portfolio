@@ -308,13 +308,18 @@
   margin-top: 1rem;
 }
 
-#change-theme-button {
+#change-theme-button,
+#change-language-button {
   margin-left: -0.75rem;
 }
 
-.change-theme-button-slot-wrapper {
+.button-slot-wrapper {
   display: flex;
   align-items: center;
   gap: 1rem;
   padding: 0.75rem;
+}
+
+.change-language-container {
+  position: relative;
 }

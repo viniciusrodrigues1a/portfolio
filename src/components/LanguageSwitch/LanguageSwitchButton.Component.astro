@@ -1,0 +1,38 @@
+---
+import i18next from "i18next";
+
+import IconComponent from "@components/Icon";
+import TypographyComponent from "@components/Typography";
+import LanguageSwitchButtonUnstyledWrapper from "./LanguageSwitchButtonUnstyledWrapper.Component.astro";
+import LanguageSwitchSelect from "./LanguageSwitchSelect.Component.astro";
+
+const formattedLanguage = i18next.resolvedLanguage.toUpperCase();
+---
+
+<style>
+  .language-switch-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    margin-right: -0.75rem;
+    margin-left: -0.75rem;
+  }
+</style>
+
+<LanguageSwitchButtonUnstyledWrapper>
+  <div class="language-switch-container">
+    <IconComponent name="globe" size={24} color="var(--foreground)" />
+
+    <TypographyComponent variant="button" fontWeight="bold"
+      >{formattedLanguage}</TypographyComponent
+    >
+
+    <IconComponent name="chevronDown" size={24} color="var(--foreground)" />
+  </div>
+
+  <LanguageSwitchSelect
+    buttonId0="language-switch-ptBR-0"
+    buttonId1="language-switch-en-0"
+  />
+</LanguageSwitchButtonUnstyledWrapper>

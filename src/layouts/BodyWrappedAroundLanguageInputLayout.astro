@@ -1,0 +1,38 @@
+---
+import { LanguageSwitchHiddenInputComponent } from "@components/LanguageSwitch";
+---
+
+<style>
+  .content-wrapper {
+    pointer-events: all;
+  }
+</style>
+
+<script>
+  const divElem = document.getElementById("language-switch-wrapper");
+  const languageInputElem = document.getElementById(
+    "language-switch-input"
+  ) as HTMLInputElement | null;
+
+  const navLanguageLabel = document.querySelector(
+    ".nav-item .language-switch-label"
+  ) as HTMLLabelElement | null;
+
+  if (navLanguageLabel) {
+    navLanguageLabel.addEventListener("click", (e: MouseEvent) => {
+      e.stopPropagation();
+    });
+  }
+
+  if (divElem && languageInputElem) {
+    divElem.addEventListener("click", (e: MouseEvent) => {
+      languageInputElem.checked = true;
+    });
+  }
+</script>
+
+<LanguageSwitchHiddenInputComponent />
+
+<div id="language-switch-wrapper" class="content-wrapper">
+  <slot />
+</div>

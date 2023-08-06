@@ -1,0 +1,58 @@
+---
+import ButtonComponent from "@components/Button";
+
+type Props = {
+  buttonId0: string;
+  buttonId1: string;
+};
+
+const { buttonId0, buttonId1 } = Astro.props as Props;
+---
+
+<style>
+  .language-switch-select {
+    position: absolute;
+    z-index: 2;
+    bottom: -6.5rem;
+    left: 0px;
+    background: var(--background2);
+    border-radius: 6px;
+    box-shadow: 4px 4px 8px 1px rgba(0, 0, 0, 0.25);
+    width: max-content;
+  }
+
+  .language-switch-option {
+    text-decoration: none;
+    width: 100%;
+    display: block;
+    padding: 0.5rem 4rem 0.5rem 1rem;
+  }
+
+  :global(#language-switch-input:checked ~ *) .language-switch-select {
+    display: none;
+  }
+</style>
+
+<div class="language-switch-select">
+  <ButtonComponent
+    class="language-switch-option"
+    id={buttonId0}
+    variant="text"
+    color="var(--foreground1)"
+    title="Português (BR)"
+    redirectTo="/ptBR"
+    redirectTarget="_self"
+    stopPropagation
+  />
+
+  <ButtonComponent
+    class="language-switch-option"
+    id={buttonId1}
+    variant="text"
+    color="var(--foreground1)"
+    title="English"
+    redirectTo="/en"
+    redirectTarget="_self"
+    stopPropagation
+  />
+</div>

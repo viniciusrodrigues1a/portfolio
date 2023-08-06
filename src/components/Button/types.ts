@@ -38,6 +38,8 @@ type ButtonPropsIconProps =
 interface ButtonBaseProps {
   id?: string;
   redirectTo?: string;
+  redirectTarget?: string;
+  stopPropagation?: boolean;
   variant?: "contained" | "text";
   color?: string;
   fontSize?: TypographyProps["fontSize"];
