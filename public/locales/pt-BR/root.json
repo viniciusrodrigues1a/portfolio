@@ -1,0 +1,30 @@
+{
+  "intro": {
+    "nav": {
+      "homeButtonLabel": "início",
+      "aboutMeButtonLabel": "sobre mim",
+      "projectsButtonLabel": "projetos",
+      "blogButtonLabel": "blog"
+    },
+    "hero": {
+      "role": "MOBILE DEVELOPER"
+    }
+  },
+  "aboutMe": {
+    "sectionTitle": "SOBRE MIM",
+    "description": "Em busca do meu primeiro emprego como desenvolvedor, procuro crescer com a empresa e adquirir experiência. Possuo uma base sólida de conhecimento em Git/GitHub; Bash e Linux/Unix. Já desenvolvi projetos completos, expostos no meu GitHub, utilizando NodeJS e ReactJS com TypeScript, seguindo padrões de projeto."
+  },
+  "experience": {
+    "sectionTitle": "EXPERIÊNCIA",
+    "workExperienceLabel": "Profissional",
+    "educationExperienceLabel": "Educação",
+    "goBackToTopButtonLabel": "Voltar ao topo"
+  },
+  "footer": {
+    "letsWorkTogetherTitle": "Entre em contato",
+    "checkOutMyWorkTitle": "Veja meu trabalho aqui",
+    "preferencesTitle": "Preferências",
+    "changeLanguageButtonLabel": "Alterar idioma",
+    "changeThemeButtonLabel": "Alterar tema"
+  }
+}

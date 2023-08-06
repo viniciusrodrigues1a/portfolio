@@ -18,6 +18,9 @@ import "../styles/pages/index/styles.css";
 import profileImage from "../assets/profile.jpg";
 import LanguageSwitchButtonUnstyledWrapper from "@components/LanguageSwitch/LanguageSwitchButtonUnstyledWrapper.Component.astro";
 import LanguageSwitchSelect from "@components/LanguageSwitch/LanguageSwitchSelect.Component.astro";
+
+import { workExperiences } from "../experiences/work";
+import { educationalExperiences } from "../experiences/education";
 ---
 
 <script>
@@ -60,7 +63,7 @@ import LanguageSwitchSelect from "@components/LanguageSwitch/LanguageSwitchSelec
             class="nav-link"
             variant="text"
             fontWeight="bold"
-            title="home"
+            title={t("intro.nav.homeButtonLabel")}
           />
         </div>
         <div class="nav-item">
@@ -69,7 +72,7 @@ import LanguageSwitchSelect from "@components/LanguageSwitch/LanguageSwitchSelec
             class="nav-link"
             variant="text"
             fontWeight="bold"
-            title="about me"
+            title={t("intro.nav.aboutMeButtonLabel")}
           />
         </div>
         <div class="nav-item">
@@ -78,7 +81,7 @@ import LanguageSwitchSelect from "@components/LanguageSwitch/LanguageSwitchSelec
             class="nav-link"
             variant="text"
             fontWeight="bold"
-            title="projects"
+            title={t("intro.nav.projectsButtonLabel")}
           />
         </div>
         <div class="nav-item">
@@ -87,7 +90,7 @@ import LanguageSwitchSelect from "@components/LanguageSwitch/LanguageSwitchSelec
             class="nav-link"
             variant="text"
             fontWeight="bold"
-            title="blog"
+            title={t("intro.nav.blogButtonLabel")}
           />
         </div>
         <div class="nav-item">
@@ -107,7 +110,7 @@ import LanguageSwitchSelect from "@components/LanguageSwitch/LanguageSwitchSelec
           <div class="subtitle-separator"></div>
 
           <TypographyComponent color="var(--foreground1)" variant="h2-sans"
-            >MOBILE DEVELOPER</TypographyComponent
+            >{t("root:intro.hero.role")}</TypographyComponent
           >
 
           <div class="mobile-social-links-wrapper">
@@ -187,7 +190,7 @@ import LanguageSwitchSelect from "@components/LanguageSwitch/LanguageSwitchSelec
       <div class="title-underline"></div>
       <div class="title-typography">
         <TypographyComponent color="var(--foreground)" variant="h1-sans"
-          >ABOUT ME</TypographyComponent
+          >{t("aboutMe.sectionTitle")}</TypographyComponent
         >
       </div>
     </div>
@@ -200,12 +203,7 @@ import LanguageSwitchSelect from "@components/LanguageSwitch/LanguageSwitchSelec
           <TypographyComponent
             color="var(--foreground)"
             variant="body"
-            textAlign="justify"
-            >Em busca do meu primeiro emprego como desenvolvedor, procuro
-            crescer com a empresa e adquirir experiência. Possuo uma base sólida
-            de conhecimento em Git/GitHub; Bash e Linux/Unix. Já desenvolvi
-            projetos completos, expostos no meu GitHub, utilizando NodeJS e
-            ReactJS com TypeScript, seguindo padrões de projeto.</TypographyComponent
+            textAlign="justify">{t("aboutMe.description")}</TypographyComponent
           >
         </div>
 
@@ -223,7 +221,7 @@ import LanguageSwitchSelect from "@components/LanguageSwitch/LanguageSwitchSelec
       <div class="title-underline"></div>
       <div class="title-typography">
         <TypographyComponent color="var(--foreground)" variant="h1-sans"
-          >EXPERIENCE</TypographyComponent
+          >{t("experience.sectionTitle")}</TypographyComponent
         >
       </div>
     </div>
@@ -258,43 +256,45 @@ import LanguageSwitchSelect from "@components/LanguageSwitch/LanguageSwitchSelec
         <div class="experience-type-button-container">
           <TypographyComponent
             class="experience-type-button-text"
-            variant="button">Work</TypographyComponent
+            variant="button"
+            >{t("experience.workExperienceLabel")}</TypographyComponent
           >
         </div>
         <div class="experience-type-button-container">
           <TypographyComponent
             class="experience-type-button-text"
-            variant="button">Education</TypographyComponent
+            variant="button"
+            >{t("experience.educationExperienceLabel")}</TypographyComponent
           >
         </div>
       </div>
 
       <div class="experience-work-content">
-        <ExperienceComponent
-          title="Desenvolvedor React Native"
-          formattedDate="Out 2021 - Atual"
-          company="GlobalSys - FullTime"
-          companyLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-          description="Em busca do meu primeiro emprego como desenvolvedor, procuro crescer com a empresa e adquirir experiência. Possuo uma base sólida de conhecimento em Git/GitHub; Bash e Linux/Unix. Já desenvolvi projetos completos, expostos no meu GitHub, utilizando NodeJS e ReactJS com TypeScript, seguindo padrões de projeto."
-        />
-
-        <ExperienceComponent
-          title="Desenvolvedor React Native"
-          formattedDate="Out 2021 - Atual"
-          company="GlobalSys - FullTime"
-          companyLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-          description="Em busca do meu primeiro emprego como desenvolvedor, procuro crescer com a empresa e adquirir experiência. Possuo uma base sólida de conhecimento em Git/GitHub; Bash e Linux/Unix. Já desenvolvi projetos completos, expostos no meu GitHub, utilizando NodeJS e ReactJS com TypeScript, seguindo padrões de projeto."
-        />
+        {
+          workExperiences.map((e) => (
+            <ExperienceComponent
+              title={e.title}
+              formattedDate={e.formattedDate}
+              company={e.company}
+              companyLink={e.companyLink}
+              description={e.description}
+            />
+          ))
+        }
       </div>
 
       <div class="experience-education-content">
-        <ExperienceComponent
-          title="Desenvolvedor React Native"
-          formattedDate="Out 2021 - Atual"
-          company="GlobalSys - FullTime"
-          companyLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-          description="Em busca do meu primeiro emprego como desenvolvedor, procuro crescer com a empresa e adquirir experiência. Possuo uma base sólida de conhecimento em Git/GitHub; Bash e Linux/Unix. Já desenvolvi projetos completos, expostos no meu GitHub, utilizando NodeJS e ReactJS com TypeScript, seguindo padrões de projeto."
-        />
+        {
+          educationalExperiences.map((e) => (
+            <ExperienceComponent
+              title={e.title}
+              formattedDate={e.formattedDate}
+              company={e.company}
+              companyLink={e.companyLink}
+              description={e.description}
+            />
+          ))
+        }
       </div>
     </div>
 
@@ -308,7 +308,8 @@ import LanguageSwitchSelect from "@components/LanguageSwitch/LanguageSwitchSelec
       <TypographyComponent
         class="chevrons-up-text"
         variant="button"
-        textAlign="center">Go back to top</TypographyComponent
+        textAlign="center"
+        >{t("experience.goBackToTopButtonLabel")}</TypographyComponent
       >
     </button>
   </section>
@@ -318,7 +319,8 @@ import LanguageSwitchSelect from "@components/LanguageSwitch/LanguageSwitchSelec
       <TypographyComponent
         class="footer-title"
         variant="h1-serif"
-        color="var(--foreground)">Let's work together</TypographyComponent
+        color="var(--foreground)"
+        >{t("footer.letsWorkTogetherTitle")}</TypographyComponent
       >
 
       <ButtonComponent
@@ -335,7 +337,8 @@ import LanguageSwitchSelect from "@components/LanguageSwitch/LanguageSwitchSelec
       <TypographyComponent
         class="footer-title"
         variant="h1-serif"
-        color="var(--foreground)">Check out my work here</TypographyComponent
+        color="var(--foreground)"
+        >{t("footer.checkOutMyWorkTitle")}</TypographyComponent
       >
       <ButtonComponent
         redirectTo="https://www.linkedin.com/in/vinicius-rodrigues-aro/"
@@ -370,7 +373,8 @@ import LanguageSwitchSelect from "@components/LanguageSwitch/LanguageSwitchSelec
       <TypographyComponent
         class="footer-title"
         variant="h1-serif"
-        color="var(--foreground)">Preferences</TypographyComponent
+        color="var(--foreground)"
+        >{t("footer.preferencesTitle")}</TypographyComponent
       >
       <div class="change-language-container">
         <ButtonComponent
@@ -386,7 +390,7 @@ import LanguageSwitchSelect from "@components/LanguageSwitch/LanguageSwitchSelec
                 color="var(--foreground2)"
               />
               <TypographyComponent variant="button" color="var(--foreground2)">
-                Change language
+                {t("footer.changeLanguageButtonLabel")}
               </TypographyComponent>
             </div>
           </LanguageSwitchButtonUnstyledWrapper>
@@ -408,7 +412,7 @@ import LanguageSwitchSelect from "@components/LanguageSwitch/LanguageSwitchSelec
           <div class="button-slot-wrapper">
             <IconComponent name="moon" size={20} color="var(--foreground2)" />
             <TypographyComponent variant="button" color="var(--foreground2)">
-              Change theme
+              {t("footer.changeThemeButtonLabel")}
             </TypographyComponent>
           </div>
         </ThemeSwitchButtonUnstyledWrapper>

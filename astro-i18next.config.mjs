@@ -2,6 +2,6 @@
 export default {
   defaultLocale: "pt-BR",
   locales: ["pt-BR", "en"],
-  namespaces: ["home"],
-  defaultNamespace: "home",
+  namespaces: ["root"],
+  defaultNamespace: "root",
 };
