@@ -10,7 +10,7 @@ const elementByTypographyVariant: ElementByTypographyVariant = {
   "h1-serif": "h1",
   "h2-sans": "h2",
   body: "p",
-  button: "span",
+  button: "p",
 };
 
 export const getElementByTypographyVariant = (variant: TypographyVariants) =>
