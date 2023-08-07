@@ -4,7 +4,8 @@
       "homeButtonLabel": "início",
       "aboutMeButtonLabel": "sobre mim",
       "projectsButtonLabel": "projetos",
-      "blogButtonLabel": "blog"
+      "blogButtonLabel": "blog",
+      "languageFallbackText": "Idioma:"
     },
     "hero": {
       "role": "MOBILE DEVELOPER"

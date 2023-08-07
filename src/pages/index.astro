@@ -23,26 +23,8 @@ import { workExperiences } from "../experiences/work";
 import { educationalExperiences } from "../experiences/education";
 ---
 
-<script>
-  // Scroll to the top
-  const chevronsUpBtn = document.querySelector(".chevrons-up-container");
-  chevronsUpBtn?.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-</script>
-
-<script>
-  // Scroll to about me section
-  const aboutMeSection = document.querySelector("section.about-me");
-
-  const chevronDownBtn = document.querySelector(".chevrons-down-wrapper");
-  chevronDownBtn?.addEventListener("click", () =>
-    aboutMeSection?.scrollIntoView({ behavior: "smooth" })
-  );
-</script>
-
 <DefaultLayout>
-  <div class="two-circles-icon-wrapper">
+  <div class="two-circles-icon-wrapper" hidden>
     <IconComponent
       name="twoCirclesPattern"
       color="var(--gradient-stop-color-0)"
@@ -52,11 +34,11 @@ import { educationalExperiences } from "../experiences/education";
 
   <section id="intro" class="intro">
     <div class="intro-content">
-      <div class="profile-image-wrapper">
+      <div class="profile-image-wrapper" hidden>
         <img class="profile-image" src={profileImage} alt="" />
       </div>
 
-      <nav class="top-bar on-top-of-absolute-icon">
+      <nav class="top-bar on-top-of-absolute-icon" hidden>
         <div class="nav-item">
           <ButtonComponent
             id="home-link"
@@ -113,14 +95,18 @@ import { educationalExperiences } from "../experiences/education";
             >{t("root:intro.hero.role")}</TypographyComponent
           >
 
-          <div class="mobile-social-links-wrapper">
+          <div class="mobile-social-links-wrapper" hidden>
             <IconComponent
               size={32}
               name="linkedin"
-              color="var(--foreground)"
+              color="var(--foreground, black)"
             />
             <SpaceComponent direction="horizontal" size={24} />
-            <IconComponent size={32} name="github" color="var(--foreground)" />
+            <IconComponent
+              size={32}
+              name="github"
+              color="var(--foreground, black)"
+            />
           </div>
 
           <div class="desktop-social-links-wrapper">
@@ -147,7 +133,7 @@ import { educationalExperiences } from "../experiences/education";
         </div>
 
         <div class="intro-hero-right-side">
-          <div class="clock">
+          <div class="clock" hidden>
             <div class="clock-hour-0"></div>
             <div class="clock-hour-1"></div>
             <div class="clock-hour-2"></div>
@@ -157,15 +143,15 @@ import { educationalExperiences } from "../experiences/education";
             <div class="clock-hour-hand"></div>
           </div>
 
-          <div class="intro-hero-svg">
+          <div class="intro-hero-svg" hidden>
             <IconComponent
               name="person"
-              color="var(--gradient-stop-color-0)"
-              color1="var(--gradient-stop-color-1)"
+              color="var(--gradient-stop-color-0, lightblue)"
+              color1="var(--gradient-stop-color-1, darkblue)"
             />
           </div>
 
-          <div class="lamp-icon-wrapper">
+          <div class="lamp-icon-wrapper" hidden>
             <IconComponent name="lamp" />
 
             <ThemeSwitchButtonUnstyledWrapper>
@@ -175,17 +161,17 @@ import { educationalExperiences } from "../experiences/education";
         </div>
       </div>
 
-      <button type="button" class="chevrons-down-wrapper">
+      <a href="#about-me" target="_self" class="chevrons-down-wrapper" hidden>
         <IconComponent
           size={64}
           name="chevronsDown"
           color="var(--foreground1)"
         />
-      </button>
+      </a>
     </div>
   </section>
 
-  <section class="section about-me">
+  <section id="about-me" class="section about-me">
     <div class="title-wrapper">
       <div class="title-underline"></div>
       <div class="title-typography">
@@ -196,7 +182,13 @@ import { educationalExperiences } from "../experiences/education";
     </div>
 
     <div class="about-me-info">
-      <img class="about-me-img" src={profileImage} alt="" />
+      <img
+        width="200px"
+        height="228px"
+        class="about-me-img"
+        src={profileImage}
+        alt=""
+      />
 
       <div>
         <div class="about-me-description-wrapper">
@@ -208,9 +200,21 @@ import { educationalExperiences } from "../experiences/education";
         </div>
 
         <div class="about-me-social-icons-wrapper">
-          <IconComponent color="var(--foreground)" size={32} name="linkedin" />
-          <IconComponent color="var(--foreground)" size={32} name="github" />
-          <IconComponent color="var(--foreground)" size={32} name="mail" />
+          <IconComponent
+            color="var(--foreground, black)"
+            size={32}
+            name="linkedin"
+          />
+          <IconComponent
+            color="var(--foreground, black)"
+            size={32}
+            name="github"
+          />
+          <IconComponent
+            color="var(--foreground, black)"
+            size={32}
+            name="mail"
+          />
         </div>
       </div>
     </div>
@@ -234,6 +238,7 @@ import { educationalExperiences } from "../experiences/education";
         name="experience"
         value="work"
         checked
+        hidden
       />
       <input
         class="experience-type-radio"
@@ -241,9 +246,10 @@ import { educationalExperiences } from "../experiences/education";
         id="education"
         name="experience"
         value="education"
+        hidden
       />
 
-      <div class="experience-type-tabs">
+      <div class="experience-type-tabs" hidden>
         <label class="experience-type-radio-label" for="work"></label>
         <label class="experience-type-radio-label" for="education"></label>
 
@@ -283,7 +289,7 @@ import { educationalExperiences } from "../experiences/education";
         }
       </div>
 
-      <div class="experience-education-content">
+      <div class="experience-education-content" hidden>
         {
           educationalExperiences.map((e) => (
             <ExperienceComponent
@@ -298,10 +304,10 @@ import { educationalExperiences } from "../experiences/education";
       </div>
     </div>
 
-    <button type="button" class="chevrons-up-container">
-      <div class="chevrons-up-icon-container">
+    <a href="#intro" target="_self" class="chevrons-up-container">
+      <div class="chevrons-up-icon-container" hidden>
         <div class="chevrons-up-icon-inner-container">
-          <IconComponent name="chevronsDown" color="var(--foreground)" />
+          <IconComponent name="chevronsDown" color="var(--foreground, black)" />
         </div>
       </div>
 
@@ -311,7 +317,7 @@ import { educationalExperiences } from "../experiences/education";
         textAlign="center"
         >{t("experience.goBackToTopButtonLabel")}</TypographyComponent
       >
-    </button>
+    </a>
   </section>
 
   <footer id="footer" class="section">
@@ -348,7 +354,7 @@ import { educationalExperiences } from "../experiences/education";
         iconName="externalLink"
         iconPosition="right"
         fontWeight="normal"
-        color="var(--foreground2)"
+        color="var(--foreground2, black)"
         iconSize={20}
         showIcon
         class="footer-button"
@@ -362,7 +368,7 @@ import { educationalExperiences } from "../experiences/education";
         iconName="externalLink"
         iconPosition="right"
         fontWeight="normal"
-        color="var(--foreground2)"
+        color="var(--foreground2, black)"
         iconSize={20}
         showIcon
         class="footer-button"
@@ -381,15 +387,19 @@ import { educationalExperiences } from "../experiences/education";
           id="change-language-button"
           variant="text"
           stopPropagation
+          hidden
         >
           <LanguageSwitchButtonUnstyledWrapper>
             <div class="button-slot-wrapper">
               <IconComponent
                 name="globe"
                 size={20}
-                color="var(--foreground2)"
+                color="var(--foreground2, black)"
               />
-              <TypographyComponent variant="button" color="var(--foreground2)">
+              <TypographyComponent
+                variant="button"
+                color="var(--foreground2, black)"
+              >
                 {t("footer.changeLanguageButtonLabel")}
               </TypographyComponent>
             </div>
@@ -406,12 +416,19 @@ import { educationalExperiences } from "../experiences/education";
         class="footer-button-mt"
         variant="text"
         fontWeight="normal"
-        color="var(--foreground2)"
+        hidden
       >
         <ThemeSwitchButtonUnstyledWrapper>
           <div class="button-slot-wrapper">
-            <IconComponent name="moon" size={20} color="var(--foreground2)" />
-            <TypographyComponent variant="button" color="var(--foreground2)">
+            <IconComponent
+              name="moon"
+              size={20}
+              color="var(--foreground2, black)"
+            />
+            <TypographyComponent
+              variant="button"
+              color="var(--foreground2, black)"
+            >
               {t("footer.changeThemeButtonLabel")}
             </TypographyComponent>
           </div>
@@ -419,7 +436,7 @@ import { educationalExperiences } from "../experiences/education";
       </ButtonComponent>
     </div>
 
-    <div class="bottom-bar-wrapper">
+    <div class="bottom-bar-wrapper" hidden>
       <div class="bottom-bar">
         <div class="bottom-bar-item mobile-bottom-bar-active-item">
           <IconComponent size={26} name="home" color="var(--foreground2)" />

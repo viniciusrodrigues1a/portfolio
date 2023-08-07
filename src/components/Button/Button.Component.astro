@@ -4,6 +4,8 @@ import IconComponent from "@components/Icon";
 
 import type { ButtonProps } from "./types";
 
+const ANIMATION_DURATION_IN_MS = 200;
+
 type Props = ButtonProps;
 
 const {
@@ -24,9 +26,13 @@ const {
   fontWeight,
   letterSpacing,
   class: className,
-} = Astro.props as ButtonProps;
+  ...rest
+} = Astro.props as Props;
 
-const defaultFgColor = variant === "text" ? "var(--foreground)" : "#efefef";
+const defaultFgColor =
+  variant === "text"
+    ? "var(--foreground, black)"
+    : "var(--button-text-color, black)";
 const fgColor = color ?? defaultFgColor;
 ---
 
@@ -62,54 +68,77 @@ const fgColor = color ?? defaultFgColor;
     padding: 1rem 1.875rem;
     border-radius: 4px;
   }
+
+  .button-nojs-anchor-wrapper {
+    text-decoration: none;
+  }
 </style>
 
-<button
-  id={id}
-  class:list={[
+<a class="button-nojs-anchor-wrapper" href={redirectTo} target={redirectTarget}>
+  <button
+    id={id}
+    class:list={[
+      {
+        contained: variant === "contained",
+        "button-with-ripple-animation": true,
+      },
+      className?.split(" "),
+    ]}
+    {...rest}
+  >
+    {!title && <slot />}
     {
-      contained: variant === "contained",
-      "button-with-ripple-animation": true,
-    },
-    className?.split(" "),
-  ]}
->
-  {!title && <slot />}
-  {
-    title && (
-      <>
-        {showIcon && iconPosition === "left" && (
-          <IconComponent
-            name={iconName}
-            color={iconColor ?? fgColor}
-            size={iconSize ?? 28}
-          />
-        )}
+      title && (
+        <>
+          {showIcon && iconPosition === "left" && (
+            <IconComponent
+              name={iconName}
+              color={iconColor ?? fgColor}
+              size={iconSize ?? 28}
+            />
+          )}
 
-        <TypographyComponent
-          variant="button"
-          color={fgColor}
-          fontSize={fontSize}
-          fontFamily={fontFamily}
-          fontWeight={fontWeight}
-          letterSpacing={letterSpacing}
-        >
-          {title}
-        </TypographyComponent>
+          <TypographyComponent
+            variant="button"
+            color={fgColor}
+            fontSize={fontSize}
+            fontFamily={fontFamily}
+            fontWeight={fontWeight}
+            letterSpacing={letterSpacing}
+          >
+            {title}
+          </TypographyComponent>
 
-        {showIcon && iconPosition === "right" && (
-          <IconComponent
-            name={iconName}
-            color={iconColor ?? fgColor}
-            size={iconSize ?? 28}
-          />
-        )}
-      </>
-    )
+          {showIcon && iconPosition === "right" && (
+            <IconComponent
+              name={iconName}
+              color={iconColor ?? fgColor}
+              size={iconSize ?? 28}
+            />
+          )}
+        </>
+      )
+    }
+  </button>
+</a>
+
+<script>
+  const anchors = document.querySelectorAll(".button-nojs-anchor-wrapper");
+
+  for (const anchor of anchors) {
+    anchor.replaceWith(...anchor.childNodes);
   }
-</button>
+</script>
 
-<script define:vars={{ id, redirectTo, redirectTarget, stopPropagation }}>
+<script
+  define:vars={{
+    id,
+    redirectTo,
+    redirectTarget,
+    stopPropagation,
+    ANIMATION_DURATION_IN_MS,
+  }}
+>
   if (!id) {
     return;
   }
@@ -137,10 +166,10 @@ const fgColor = color ?? defaultFgColor;
       circle.style.left = `${event.clientX - rect.left - radius}px`;
       circle.style.top = `${event.clientY - rect.top - radius}px`;
       circle.classList.add("ripple");
-      circle.onanimationend = () => {
+      setTimeout(() => {
         circle.remove();
         callback();
-      };
+      }, ANIMATION_DURATION_IN_MS);
 
       const ripple = button.getElementsByClassName("ripple")[0];
 

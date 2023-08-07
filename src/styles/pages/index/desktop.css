@@ -65,6 +65,11 @@
     display: block;
   }
 
+  .lamp-icon-wrapper,
+  .intro-hero-svg {
+    display: block;
+  }
+
   .intro-hero-right-side .intro-hero-svg svg,
   .intro-hero-right-side .lamp-icon-wrapper svg {
     width: 24rem;

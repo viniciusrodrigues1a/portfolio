@@ -49,6 +49,9 @@ interface ButtonBaseProps {
   class?: string;
 }
 
+type RestProps = Record<string, any>;
+
 export type ButtonProps = ButtonBaseProps &
   ButtonPropsTitleOrChildren &
-  ButtonPropsIconProps;
+  ButtonPropsIconProps &
+  RestProps;

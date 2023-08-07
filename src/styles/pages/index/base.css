@@ -67,6 +67,7 @@
 }
 
 .bottom-bar-wrapper {
+  display: block;
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -243,6 +244,10 @@
   left: 50%;
 }
 
+.experience-education-content {
+  display: block;
+}
+
 .experience-type-radio#work:checked ~ .experience-education-content {
   display: none;
 }
@@ -264,6 +269,7 @@
   margin-right: auto;
   background: none;
   border: none;
+  text-decoration: none;
   cursor: pointer;
   margin-top: 4rem;
   margin-bottom: 1rem;

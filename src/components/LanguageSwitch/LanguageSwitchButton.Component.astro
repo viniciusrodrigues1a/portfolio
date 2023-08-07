@@ -1,5 +1,5 @@
 ---
-import i18next from "i18next";
+import i18next, { t } from "i18next";
 
 import IconComponent from "@components/Icon";
 import TypographyComponent from "@components/Typography";
@@ -18,17 +18,29 @@ const formattedLanguage = i18next.resolvedLanguage.toUpperCase();
     margin-right: -0.75rem;
     margin-left: -0.75rem;
   }
+
+  .language-nocss-fallback {
+    display: none;
+  }
 </style>
 
 <LanguageSwitchButtonUnstyledWrapper>
   <div class="language-switch-container">
-    <IconComponent name="globe" size={24} color="var(--foreground)" />
+    <IconComponent name="globe" size={24} color="var(--foreground, black)" />
+
+    <span class="language-nocss-fallback"
+      >{t("intro.nav.languageFallbackText")}</span
+    >
 
     <TypographyComponent variant="button" fontWeight="bold"
       >{formattedLanguage}</TypographyComponent
     >
 
-    <IconComponent name="chevronDown" size={24} color="var(--foreground)" />
+    <IconComponent
+      name="chevronDown"
+      size={24}
+      color="var(--foreground, white)"
+    />
   </div>
 
   <LanguageSwitchSelect

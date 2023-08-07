@@ -8,7 +8,7 @@ import {
 
 type Props = TypographyProps;
 
-const props = Astro.props as TypographyProps;
+const props = Astro.props as Props;
 const { variant = "body", class: className } = props;
 const As = getElementByTypographyVariant(variant);
 
