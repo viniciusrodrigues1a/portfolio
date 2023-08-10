@@ -294,6 +294,10 @@
   gap: 2.5rem;
 }
 
+.footer-content {
+  position: relative;
+}
+
 .footer-title {
   margin-bottom: 1.25rem;
 }
@@ -323,10 +327,45 @@
   position: relative;
 }
 
+.social-icon-anchor {
+  display: inline-block;
+  cursor: pointer;
+}
+
 .social-icon-anchor + .social-icon-anchor {
   margin-left: 1.5rem;
 }
 
 .bottom-bar-anchor {
   text-decoration: none;
+}
+
+#hidden-email-input {
+  display: none;
+}
+
+.email-clipboard-button {
+  position: relative;
+}
+
+.clipboard-toast-container {
+  position: fixed;
+  bottom: 10rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--foreground);
+  width: 16rem;
+  padding: 0.5rem 0px;
+  border-radius: 2px;
+  text-align: center;
+  font-family: var(--sans-serif-font-family);
+  z-index: 5;
+  box-shadow: 2px 2px 8px 4px rgba(0, 0, 0, 0.15);
+
+  opacity: 1;
+}
+
+.clipboard-hidden {
+  transform: translateX(-50%) translateY(200px);
+  opacity: 0;
 }

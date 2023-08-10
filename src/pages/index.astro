@@ -24,6 +24,13 @@ import { educationalExperiences } from "../experiences/education";
 ---
 
 <DefaultLayout>
+  <input
+    type="text"
+    value="viniciusrodrigues.aro@gmail.com"
+    id="hidden-email-input"
+    hidden
+  />
+
   <div class="two-circles-icon-wrapper" hidden>
     <IconComponent
       name="twoCirclesPattern"
@@ -222,17 +229,13 @@ import { educationalExperiences } from "../experiences/education";
             />
           </a>
 
-          <a
-            class="social-icon-anchor"
-            href="mailto:viniciusrodrigues.aro@gmail.com"
-            target="_blank"
-          >
+          <div class="email-clipboard-button social-icon-anchor">
             <IconComponent
               color="var(--foreground, black)"
               size={32}
               name="mail"
             />
-          </a>
+          </div>
         </div>
       </div>
     </div>
@@ -353,9 +356,7 @@ import { educationalExperiences } from "../experiences/education";
         title="viniciusrodrigues.aro@gmail.com"
         fontWeight="normal"
         color="var(--foreground2)"
-        class="footer-button"
-        redirectTo="mailto:viniciusrodrigues.aro@gmail.com"
-        redirectTarget="_blank"
+        class="email-clipboard-button footer-button"
       />
     </div>
 
@@ -456,6 +457,14 @@ import { educationalExperiences } from "../experiences/education";
       </ButtonComponent>
     </div>
 
+    <div class="clipboard-toast-container clipboard-hidden">
+      <TypographyComponent
+        variant="body"
+        color="var(--background)"
+        textAlign="center">{t("clipboardMessage")}</TypographyComponent
+      >
+    </div>
+
     <div class="bottom-bar-wrapper" hidden>
       <div class="bottom-bar">
         <a class="bottom-bar-anchor" href="#intro">
@@ -517,3 +526,37 @@ import { educationalExperiences } from "../experiences/education";
     </div>
   </footer>
 </DefaultLayout>
+
+<script>
+  function showToast() {
+    const toast = document.querySelector(".clipboard-toast-container");
+
+    if (toast && toast.classList.contains("clipboard-hidden")) {
+      toast?.classList.remove("clipboard-hidden");
+
+      setTimeout(() => {
+        toast?.classList.add("clipboard-hidden");
+      }, 1000);
+    }
+  }
+
+  function copyEmailToClipboard() {
+    const textToCopy = document.getElementById("hidden-email-input") as
+      | HTMLInputElement
+      | undefined;
+
+    if (textToCopy) {
+      textToCopy.select();
+      textToCopy.setSelectionRange(0, 99999);
+
+      navigator.clipboard.writeText(textToCopy.value);
+
+      showToast();
+    }
+  }
+
+  const emailButtons = document.querySelectorAll(".email-clipboard-button");
+  emailButtons.forEach((btn) => {
+    btn.addEventListener("click", copyEmailToClipboard);
+  });
+</script>
