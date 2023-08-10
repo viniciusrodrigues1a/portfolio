@@ -7,7 +7,7 @@
   padding: 10% 2rem 30% 2rem;
 }
 
-.intro-content {
+.section-content {
   width: 100%;
   max-width: 2560px;
   min-height: 100%;
@@ -106,12 +106,8 @@
   background-color: var(--background2);
 }
 
-.title-wrapper {
-  position: relative;
-  display: inline-block;
-}
-
 .title-typography {
+  display: inline-block;
   position: relative;
   z-index: 2;
 }
@@ -124,7 +120,8 @@
   position: absolute;
   bottom: 0.25rem;
   left: -8px;
-  width: 160%;
+  width: 120%;
+  z-index: -1;
 }
 
 .about-me-info {
@@ -286,11 +283,16 @@
 
 #footer {
   background-color: var(--background);
-  padding-bottom: 10rem;
+}
+
+.footer-content-wrapper {
+  max-width: 2560px;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding-bottom: 10rem;
   gap: 2.5rem;
 }
 
