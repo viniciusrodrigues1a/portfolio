@@ -53,6 +53,8 @@ import { educationalExperiences } from "../experiences/education";
             variant="text"
             fontWeight="bold"
             title={t("intro.nav.homeButtonLabel")}
+            redirectTo="#intro"
+            redirectTarget="_self"
           />
         </div>
         <div class="nav-item">
@@ -62,15 +64,19 @@ import { educationalExperiences } from "../experiences/education";
             variant="text"
             fontWeight="bold"
             title={t("intro.nav.aboutMeButtonLabel")}
+            redirectTo="#about-me"
+            redirectTarget="_self"
           />
         </div>
         <div class="nav-item">
           <ButtonComponent
-            id="projects-link"
+            id="experience-link"
             class="nav-link"
             variant="text"
             fontWeight="bold"
-            title={t("intro.nav.projectsButtonLabel")}
+            title={t("intro.nav.experienceButtonLabel")}
+            redirectTo="#about-me"
+            redirectTarget="_self"
           />
         </div>
         <div class="nav-item">
@@ -182,7 +188,7 @@ import { educationalExperiences } from "../experiences/education";
     <div class="section-content">
       <div class="title-wrapper">
         <div class="title-typography">
-        <div class="title-underline"></div>
+          <div class="title-underline"></div>
           <TypographyComponent color="var(--foreground)" variant="h1-sans"
             >{t("aboutMe.sectionTitle")}</TypographyComponent
           >
