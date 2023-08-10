@@ -32,7 +32,7 @@ import { educationalExperiences } from "../experiences/education";
     />
   </div>
 
-  <section id="intro" class="intro">
+  <section id="intro" class="intro scrollable-section">
     <div class="intro-content">
       <div class="profile-image-wrapper" hidden>
         <img class="profile-image" src={profileImage} alt="" />
@@ -171,7 +171,7 @@ import { educationalExperiences } from "../experiences/education";
     </div>
   </section>
 
-  <section id="about-me" class="section about-me">
+  <section id="about-me" class="section about-me scrollable-section">
     <div class="title-wrapper">
       <div class="title-underline"></div>
       <div class="title-typography">
@@ -200,27 +200,45 @@ import { educationalExperiences } from "../experiences/education";
         </div>
 
         <div class="about-me-social-icons-wrapper">
-          <IconComponent
-            color="var(--foreground, black)"
-            size={32}
-            name="linkedin"
-          />
-          <IconComponent
-            color="var(--foreground, black)"
-            size={32}
-            name="github"
-          />
-          <IconComponent
-            color="var(--foreground, black)"
-            size={32}
-            name="mail"
-          />
+          <a
+            class="social-icon-anchor"
+            href="https://www.linkedin.com/in/vinicius-rodrigues-aro/"
+          >
+            <IconComponent
+              color="var(--foreground, black)"
+              size={32}
+              name="linkedin"
+            />
+          </a>
+
+          <a
+            class="social-icon-anchor"
+            href="https://github.com/viniciusrodrigues1a/"
+          >
+            <IconComponent
+              color="var(--foreground, black)"
+              size={32}
+              name="github"
+            />
+          </a>
+
+          <a
+            class="social-icon-anchor"
+            href="mailto:viniciusrodrigues.aro@gmail.com"
+            target="_blank"
+          >
+            <IconComponent
+              color="var(--foreground, black)"
+              size={32}
+              name="mail"
+            />
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section experience">
+  <section id="experience" class="section experience scrollable-section">
     <div class="title-wrapper">
       <div class="title-underline"></div>
       <div class="title-typography">
@@ -320,7 +338,7 @@ import { educationalExperiences } from "../experiences/education";
     </a>
   </section>
 
-  <footer id="footer" class="section">
+  <footer id="footer" class="section scrollable-section">
     <div class="footer-content">
       <TypographyComponent
         class="footer-title"
@@ -336,6 +354,8 @@ import { educationalExperiences } from "../experiences/education";
         fontWeight="normal"
         color="var(--foreground2)"
         class="footer-button"
+        redirectTo="mailto:viniciusrodrigues.aro@gmail.com"
+        redirectTarget="_blank"
       />
     </div>
 
@@ -438,49 +458,61 @@ import { educationalExperiences } from "../experiences/education";
 
     <div class="bottom-bar-wrapper" hidden>
       <div class="bottom-bar">
-        <div class="bottom-bar-item mobile-bottom-bar-active-item">
-          <IconComponent size={26} name="home" color="var(--foreground2)" />
-          <TypographyComponent
-            class="mobile-bottom-bar-active-item-typography"
-            color="var(--foreground2)"
-            fontSize={14}
-            fontFamily="var(--sans-serif-font-family)">home</TypographyComponent
-          >
-        </div>
+        <a class="bottom-bar-anchor" href="#intro">
+          <div class="bottom-bar-item">
+            <IconComponent size={26} name="home" color="var(--foreground1)" />
+            <TypographyComponent
+              color="var(--foreground1)"
+              fontSize={14}
+              fontFamily="var(--sans-serif-font-family)"
+              >{t("intro.nav.homeButtonLabel")}</TypographyComponent
+            >
+          </div>
+        </a>
 
-        <div class="bottom-bar-item">
-          <IconComponent size={26} name="user" color="var(--foreground2)" />
-          <TypographyComponent
-            color="var(--foreground2)"
-            fontSize={14}
-            fontFamily="var(--sans-serif-font-family)"
-            >about</TypographyComponent
-          >
-        </div>
+        <a class="bottom-bar-anchor" href="#about-me">
+          <div class="bottom-bar-item">
+            <IconComponent size={26} name="user" color="var(--foreground1)" />
+            <TypographyComponent
+              color="var(--foreground1)"
+              fontSize={14}
+              fontFamily="var(--sans-serif-font-family)"
+              >{t("intro.nav.aboutMeButtonLabel")}</TypographyComponent
+            >
+          </div>
+        </a>
 
-        <div class="bottom-bar-item">
-          <IconComponent
-            size={26}
-            name="briefcase"
-            color="var(--foreground2)"
-          />
-          <TypographyComponent
-            color="var(--foreground2)"
-            fontSize={14}
-            fontFamily="var(--sans-serif-font-family)"
-            >about</TypographyComponent
-          >
-        </div>
+        <a class="bottom-bar-anchor" href="#experience">
+          <div class="bottom-bar-item">
+            <IconComponent
+              size={26}
+              name="briefcase"
+              color="var(--foreground1)"
+            />
+            <TypographyComponent
+              color="var(--foreground1)"
+              fontSize={14}
+              fontFamily="var(--sans-serif-font-family)"
+              >{t("intro.nav.experienceButtonLabel")}</TypographyComponent
+            >
+          </div>
+        </a>
 
-        <div class="bottom-bar-item">
-          <IconComponent size={26} name="archive" color="var(--foreground2)" />
-          <TypographyComponent
-            color="var(--foreground2)"
-            fontSize={14}
-            fontFamily="var(--sans-serif-font-family)"
-            color="var(--foreground2)">about</TypographyComponent
-          >
-        </div>
+        <a class="bottom-bar-anchor" href="#footer">
+          <div class="bottom-bar-item">
+            <IconComponent
+              size={26}
+              name="archive"
+              color="var(--foreground1)"
+            />
+            <TypographyComponent
+              color="var(--foreground1)"
+              fontSize={14}
+              fontFamily="var(--sans-serif-font-family)"
+              >{t("intro.nav.contactButtonLabel")}</TypographyComponent
+            >
+          </div>
+        </a>
       </div>
     </div>
   </footer>
