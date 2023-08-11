@@ -1,3 +1,32 @@
 {
-  "title": "Hello, world!"
+  "clipboardMessage": "Text copied!",
+  "intro": {
+    "nav": {
+      "homeButtonLabel": "home",
+      "aboutMeButtonLabel": "about me",
+      "experienceButtonLabel": "experience",
+      "contactButtonLabel": "contact",
+      "languageFallbackText": "Language:"
+    },
+    "hero": {
+      "role": "MOBILE DEVELOPER"
+    }
+  },
+  "aboutMe": {
+    "sectionTitle": "ABOUT ME",
+    "description": "Em busca do meu primeiro emprego como desenvolvedor, procuro crescer com a empresa e adquirir experiência. Possuo uma base sólida de conhecimento em Git/GitHub; Bash e Linux/Unix. Já desenvolvi projetos completos, expostos no meu GitHub, utilizando NodeJS e ReactJS com TypeScript, seguindo padrões de projeto."
+  },
+  "experience": {
+    "sectionTitle": "EXPERIENCE",
+    "workExperienceLabel": "Professional",
+    "educationExperienceLabel": "Education",
+    "goBackToTopButtonLabel": "Go back to top"
+  },
+  "footer": {
+    "letsWorkTogetherTitle": "Let's work together",
+    "checkOutMyWorkTitle": "Check out my work here",
+    "preferencesTitle": "Preferences",
+    "changeLanguageButtonLabel": "Change language",
+    "changeThemeButtonLabel": "Change theme"
+  }
 }
