@@ -77,3 +77,76 @@
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
+
+#leaf0,
+#leaf1,
+#leaf2,
+#leaf3,
+#leaf4,
+#leaf5 {
+  animation-name: leafMoving;
+  animation-duration: 2s;
+  animation-delay: 0.15s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+
+#leaf2 {
+  animation-delay: 0.6s;
+}
+
+#leaf3 {
+  animation-delay: 0.9s;
+}
+
+#leaf4 {
+  animation-delay: 1.2s;
+}
+
+@keyframes leafMoving {
+  0%,
+  100% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(2px, 0px);
+  }
+}
+
+#flower-inner,
+#thumbs-up-inner,
+.clock-inner {
+  animation-name: floating;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+#thumbs-up-inner {
+  animation-duration: 2.5s;
+}
+
+.clock-inner {
+  animation-duration: 2s;
+}
+
+#flower {
+  transition: all 0.5s cubic-bezier(0.59, 0.94, 0.51, 1.17);
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 15px);
+  }
+  100% {
+    transform: translate(0, -0px);
+  }
+}
+
+.no-animation {
+  animation: none !important;
+}

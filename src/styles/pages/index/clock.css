@@ -1,14 +1,17 @@
 .clock {
-  margin: 0 auto;
   width: 10%;
-  aspect-ratio: 1;
-  position: relative;
-  background-color: #c4daf2;
-  border: 4px solid #134150;
-  border-radius: 50%;
   position: absolute;
   top: 3rem;
   right: 5rem;
+}
+
+.clock-inner {
+  background-color: #c4daf2;
+  border: 4px solid #134150;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  margin: 0 auto;
+  position: relative;
 }
 
 .clock-hour-hand {

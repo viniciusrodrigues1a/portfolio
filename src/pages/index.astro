@@ -147,13 +147,15 @@ import { educationalExperiences } from "../experiences/education";
 
         <div class="intro-hero-right-side">
           <div class="clock" hidden>
-            <div class="clock-hour-0"></div>
-            <div class="clock-hour-1"></div>
-            <div class="clock-hour-2"></div>
-            <div class="clock-hour-3"></div>
-            <div class="clock-center-marker"></div>
-            <div class="clock-minute-hand"></div>
-            <div class="clock-hour-hand"></div>
+            <div class="clock-inner no-animation">
+              <div class="clock-hour-0"></div>
+              <div class="clock-hour-1"></div>
+              <div class="clock-hour-2"></div>
+              <div class="clock-hour-3"></div>
+              <div class="clock-center-marker"></div>
+              <div class="clock-minute-hand"></div>
+              <div class="clock-hour-hand"></div>
+            </div>
           </div>
 
           <div class="intro-hero-svg" hidden>
@@ -577,4 +579,87 @@ import { educationalExperiences } from "../experiences/education";
   emailButtons.forEach((btn) => {
     btn.addEventListener("click", copyEmailToClipboard);
   });
+</script>
+
+<script>
+  function interpolate(
+    inputRange: number[],
+    outputRange: number[],
+    value: number
+  ) {
+    const [x1, x2] = inputRange;
+    const [y1, y2] = outputRange;
+
+    // Clamp the value within the input range
+    const clampedValue = Math.max(x1, Math.min(x2, value));
+
+    // Perform linear interpolation
+    const interpolatedValue =
+      y1 + ((clampedValue - x1) * (y2 - y1)) / (x2 - x1);
+
+    return interpolatedValue;
+  }
+
+  function interpolateTranslationByScroll() {
+    const halfViewport = window.innerHeight / 2;
+
+    const lowerTranslateBound = 0;
+    const upperTranslateBound = 150;
+
+    return interpolate(
+      [0, halfViewport],
+      [lowerTranslateBound, upperTranslateBound],
+      window.scrollY
+    );
+  }
+
+  function animateElement(
+    element: HTMLElement | null,
+    elementInner: HTMLElement | null
+  ) {
+    if (!element || !elementInner) {
+      return;
+    }
+
+    elementInner.classList.remove("no-animation");
+
+    const translateByPixelAmount = -interpolateTranslationByScroll();
+    element.style.transform = `translateY(${translateByPixelAmount}px)`;
+  }
+
+  function removeAnimationForElement(
+    element: HTMLElement | null,
+    elementInner: HTMLElement | null
+  ) {
+    if (!element || !elementInner) {
+      return;
+    }
+
+    elementInner.classList.add("no-animation");
+    element.style.transform = "translateY(0px)";
+  }
+
+  const flower = document.getElementById("flower");
+  const flowerInner = document.getElementById("flower-inner");
+  const thumbsUp = document.getElementById("thumbs-up");
+  const thumbsUpInner = document.getElementById("thumbs-up-inner");
+  const clock = document.querySelector(".clock") as HTMLElement | null;
+  const clockInner = document.querySelector(
+    ".clock-inner"
+  ) as HTMLElement | null;
+
+  function handleScroll() {
+    const threshold = 50;
+    if (window.scrollY > threshold) {
+      animateElement(flower, flowerInner);
+      animateElement(thumbsUp, thumbsUpInner);
+      animateElement(clock, clockInner);
+    } else {
+      removeAnimationForElement(flower, flowerInner);
+      removeAnimationForElement(thumbsUp, thumbsUpInner);
+      removeAnimationForElement(clock, clockInner);
+    }
+  }
+
+  window.addEventListener("scroll", handleScroll);
 </script>
