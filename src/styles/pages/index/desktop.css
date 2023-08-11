@@ -26,6 +26,10 @@
 }
 
 @media (min-width: 1180px) {
+  .footer-content-wrapper {
+    padding-bottom: 0px;
+  }
+
   .intro {
     padding: 3rem 5.625rem 5.625rem;
     min-height: 600px;
