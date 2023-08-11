@@ -14,13 +14,46 @@
   },
   "aboutMe": {
     "sectionTitle": "SOBRE MIM",
-    "description": "Em busca do meu primeiro emprego como desenvolvedor, procuro crescer com a empresa e adquirir experiência. Possuo uma base sólida de conhecimento em Git/GitHub; Bash e Linux/Unix. Já desenvolvi projetos completos, expostos no meu GitHub, utilizando NodeJS e ReactJS com TypeScript, seguindo padrões de projeto."
+    "description": "Desenvolvedor mobile focado em React Native com interesse no desenvolvimento nativo Android e arquitetura Serverless. Já desenvolvi aplicações mobile desde o início até o fim que foram publicadas para produção, resolvendo problemas como processamento de vídeos em paralelo na núvem; animações e gestos no mobile. Tenho habilidade em modificar código nativo Android em aplicativos React Native e já utilizei ferramentas de debug do Android Studio para identificar problemas."
   },
   "experience": {
     "sectionTitle": "EXPERIÊNCIA",
     "workExperienceLabel": "Profissional",
     "educationExperienceLabel": "Educação",
-    "goBackToTopButtonLabel": "Voltar ao topo"
+    "goBackToTopButtonLabel": "Voltar ao topo",
+    "work": {
+      "globalsysRole": "Desenvolvedor React Native",
+      "globalsysDate": "08/2022 - o momento",
+      "globalsysCompany": "Globalsys Soluções em TI · Tempo integral",
+      "globalsysDescription": "Atuei no desenvolvimento de um aplicativo do ramo imobiliário em React Native, com recursos avançados como mapas, animações e internacionalização. Liderando o desenvolvimento da biblioteca de componentes do aplicativo, utilizando Storybook e React Native Web para compartilhar componentes entre o aplicativo e o backoffice, seguindo o Style Guide. Além disso, trabalhei em um aplicativo de e-commerce usando VTEX IO, consumindo APIs em GraphQL e Rest, e participei do desenvolvimento da biblioteca de componentes do aplicativo.",
+
+      "vizziamRole": "Desenvolvedor Full Stack",
+      "vizziamDate": "08/2022 - 03/2023",
+      "vizziamCompany": "Vizziam · Freelance",
+      "vizziamDescription": "Desenvolvi de forma independente um aplicativo de gravação de vídeos em 360° para plataformas rotatórias, até a terceira versão, e publiquei na Play Store. Integrei o app com uma biblioteca de In-app purchases para React Native, gerenciando planos de assinatura. Utilizei FFmpeg para filtragem de vídeos, com opção de processamento local ou remoto através de uma função serverless Lambda e armazenamento em um bucket S3. A aplicação possui arquitetura offline-first e utiliza do Realm SDK para React Native. Implementei animações e controles sensíveis ao toque com as bibliotecas Gesture Handler e Reanimated no editor de filtros do app.",
+
+      "denvxRole": "Desenvolvedor Full Stack",
+      "denvxDate": "02/2023 - 03/2023",
+      "denvxCompany": "DenvX · Freelance",
+      "denvxDescription": "Fui responsável por recriar uma aplicação em React Native para o combate à endemias, que vêm sendo usada por prefeituras, com o objetivo de expandir para novas cidades. O aplicativo possui recursos avançados como mapas, geolocalização e uma arquitetura offline-first com RealmDB. A distribuição do app é feita através do AppCenter e atualizações são realizadas on-the-fly com o CodePush. Além disso, recriei o backend utilizando NodeJS, seguindo o padrão Clean Architecture, com  suítes de testes de unidade e integração que somam mais de 150 testes no total. O backend está conteinerizado com Docker e Docker Compose e roda no Heroku."
+    },
+    "education": {
+      "programmingLanguagesPartATitle": "Programming Languages, Part A @ Coursera",
+      "programmingLanguagesPartADate": "02/2022",
+      "programmingLanguagesPartADescription": "Oferecido pela Universidade de Washington, através da plataforma Coursera, esta é a Parte A de uma série de cursos que cobrem conceitos fundamentais de linguagens de programação, com ênfase em programação funcional. Durante esse curso, pude aprender conceitos teóricos mais a fundo, como: Escopo léxico; closures e currying; inferência de tipos; equivalência e side-effects no contexto de linguagens funcionais; polimorfismo; tail recursion.",
+
+      "programmingLanguagesPartBTitle": "Programming Languages, Part B @ Coursera",
+      "programmingLanguagesPartBDate": "06/2020",
+      "programmingLanguagesPartBDescription": "Durante esse curso, pude dar continuidade ao estudo de conceitos teóricos, como: tipagem dinâmica vs estática; laziness, thunks e streams; memoization e a implementação de uma simples linguagem de programação.",
+
+      "bootcampGoStackTitle": "Bootcamp GoStack - Treinamento imersivo web e mobile @ Rocketseat",
+      "bootcampGoStackDate": "04/2022",
+      "bootcampGoStackDescription": "Durante o bootcamp tive a oportunidade de aprender mais a fundo conceitos importantes do ecossistema NodeJS, ReactJS e React Native, como: testes automatizados com Jest, Docker e Docker Compose, filas de processamento no backend, envio de e-mails entre outros. ",
+
+      "python3Title": "Python 3 - Curso Completo do Básico ao Avançado @ Udemy",
+      "python3Date": "11/2019",
+      "python3Description": "Neste período, tive a oportunidade de aprender lógica de programação com Python e conceitos de Orientação a Objetos."
+    }
   },
   "footer": {
     "letsWorkTogetherTitle": "Entre em contato",

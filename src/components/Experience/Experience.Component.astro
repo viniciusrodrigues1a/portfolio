@@ -66,11 +66,15 @@ const { title, formattedDate, company, companyLink, description } =
     color="var(--foreground2)">{formattedDate}</TypographyComponent
   >
 
-  <a href={companyLink} target="_blank">
-    <TypographyComponent class="experience-company-text" variant="body"
-      >{company}</TypographyComponent
-    >
-  </a>
+  {
+    company && (
+      <a href={companyLink} target="_blank">
+        <TypographyComponent class="experience-company-text" variant="body">
+          {company}
+        </TypographyComponent>
+      </a>
+    )
+  }
 
   <TypographyComponent class="experience-company-description" variant="body"
     >{description}</TypographyComponent

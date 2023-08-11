@@ -4,6 +4,14 @@ import { changeLanguage } from "i18next";
 import IndexPage from "../index.astro";
 
 changeLanguage("pt-BR");
+
+// eslint-disable-next-line import/first
+import { getWorkExperiences } from "../../experiences/work";
+// eslint-disable-next-line import/first
+import { getEducationalExperiences } from "../../experiences/education";
 ---
 
-<IndexPage />
+<IndexPage
+  workExperiences={getWorkExperiences()}
+  educationalExperiences={getEducationalExperiences()}
+/>

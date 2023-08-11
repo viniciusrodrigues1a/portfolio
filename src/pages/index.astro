@@ -1,5 +1,5 @@
 ---
-import { t } from "i18next";
+import i18next, { t } from "i18next";
 
 import {
   ThemeSwitchButtonComponent,
@@ -19,8 +19,12 @@ import profileImage from "../assets/profile.jpg";
 import LanguageSwitchButtonUnstyledWrapper from "@components/LanguageSwitch/LanguageSwitchButtonUnstyledWrapper.Component.astro";
 import LanguageSwitchSelect from "@components/LanguageSwitch/LanguageSwitchSelect.Component.astro";
 
-import { workExperiences } from "../experiences/work";
-import { educationalExperiences } from "../experiences/education";
+import type { ExperienceProps } from "@components/Experience/types";
+
+const { workExperiences, educationalExperiences } = Astro.props as {
+  workExperiences: ExperienceProps[];
+  educationalExperiences: ExperienceProps[];
+};
 ---
 
 <DefaultLayout>
@@ -303,7 +307,7 @@ import { educationalExperiences } from "../experiences/education";
 
         <div class="experience-work-content">
           {
-            workExperiences.map((e) => (
+            workExperiences?.map((e) => (
               <ExperienceComponent
                 title={e.title}
                 formattedDate={e.formattedDate}
@@ -317,7 +321,7 @@ import { educationalExperiences } from "../experiences/education";
 
         <div class="experience-education-content" hidden>
           {
-            educationalExperiences.map((e) => (
+            educationalExperiences?.map((e) => (
               <ExperienceComponent
                 title={e.title}
                 formattedDate={e.formattedDate}

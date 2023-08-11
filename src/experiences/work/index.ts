@@ -1,3 +1,9 @@
-import { globalsysExperience } from "./globalsys";
+import { getDenvxExperience } from "./denvx";
+import { getGlobalsysExperience } from "./globalsys";
+import { getVizziamExperience } from "./vizziam";
 
-export const workExperiences = [globalsysExperience, globalsysExperience];
+export const getWorkExperiences = () => [
+  getGlobalsysExperience(),
+  getVizziamExperience(),
+  getDenvxExperience(),
+];

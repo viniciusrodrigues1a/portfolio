@@ -14,13 +14,46 @@
   },
   "aboutMe": {
     "sectionTitle": "ABOUT ME",
-    "description": "Em busca do meu primeiro emprego como desenvolvedor, procuro crescer com a empresa e adquirir experiência. Possuo uma base sólida de conhecimento em Git/GitHub; Bash e Linux/Unix. Já desenvolvi projetos completos, expostos no meu GitHub, utilizando NodeJS e ReactJS com TypeScript, seguindo padrões de projeto."
+    "description": "Mobile developer focused on React Native with interest in Android native development and Serverless architectures. I have developed applications from scratch that have been published to production, solving problems such as processing videos in parallel in the cloud; animations and gestures etc."
   },
   "experience": {
     "sectionTitle": "EXPERIENCE",
     "workExperienceLabel": "Professional",
     "educationExperienceLabel": "Education",
-    "goBackToTopButtonLabel": "Go back to top"
+    "goBackToTopButtonLabel": "Go back to top",
+    "work": {
+      "globalsysRole": "React Native Developer",
+      "globalsysDate": "08/2022 - current",
+      "globalsysCompany": "Globalsys Soluções em TI · Tempo integral",
+      "globalsysDescription": "Worked on the development of a real state application in React Native, with advanced features such as maps, animations, and internationalization. I led the development of the app’s component library, developed using Storybook and React Native Web to share components between the app and the backoffice website, following the Style Guide. I also worked on an e-commerce application using VTEX IO, consuming Rest and GraphQL apis, and took part in the development of the app’s component library.",
+
+      "vizziamRole": "Full Stack Developer",
+      "vizziamDate": "08/2022 - 03/2023",
+      "vizziamCompany": "Vizziam · Freelance",
+      "vizziamDescription": "I independently developed a video recording application for 360° rotating platforms up to its third version and published it on Play Store. I integrated the app with an In-app purchases library for React Native to manage subscription plans. I used FFmpeg for video filtering, with the option of processing the video locally or remotely through a serverless Lambda function, and storing in an S3 Bucket. The application has an offline-first architecture and uses the Realm SDK for React Native. I implemented animations and touch-sensitive controls using the Gesture Handler and Reanimated libraries.",
+
+      "denvxRole": "Full Stack Developer",
+      "denvxDate": "02/2023 - 03/2023",
+      "denvxCompany": "DenvX · Freelance",
+      "denvxDescription": "I was responsible for recreating a React Native application for combating endemic diseases, which has been used by some cities in Brazil, with the goal of expanding to new cities. The application has advanced features such as maps, geolocation, and an offline-first architecture with RealmDB. The app is distributed through AppCenter, and updates are made on-the-fly with CodePush. I also recreated the backend using NodeJS, following the Clean Architecture pattern, with unit and integration test suites that add up to more than 150 tests in total. The backend is containerized with Docker and Docker Compose and runs on Heroku."
+    },
+    "education": {
+      "programmingLanguagesPartATitle": "Programming Languages, Part A @ Coursera",
+      "programmingLanguagesPartADate": "02/2022",
+      "programmingLanguagesPartADescription": "Course offered by University of Washington, through Coursera, this is the Part A of a series of courses that talk about fundamental concepts of programming, with emphasis on functional programming. During this course, I got a better understanding of theorical concepts, like: Lexical scope; closures and currying; type inference; equivalence and side-effects in the context of functional languages; polymorphism; tail recursion.",
+
+      "programmingLanguagesPartBTitle": "Programming Languages, Part B @ Coursera",
+      "programmingLanguagesPartBDate": "06/2020",
+      "programmingLanguagesPartBDescription": "During this course, I was able to continue my studies of functional programming, and studied the following topics: dynamic vs static typing; laziness, thunks and streams; memoization and the implementation of a simple programming language with Scheme macros.",
+
+      "bootcampGoStackTitle": "Bootcamp GoStack - Treinamento imersivo web e mobile @ Rocketseat",
+      "bootcampGoStackDate": "04/2022",
+      "bootcampGoStackDescription": "During the bootcamp I had the opportunity to learn important concepts around the NodeJS, ReactJS and React Native stack, like: automated tests with Jest, Docker and Compose, processing queues and mail delivery.",
+
+      "python3Title": "Python 3 - Curso Completo do Básico ao Avançado @ Udemy",
+      "python3Date": "11/2019",
+      "python3Description": "In this period, I had the opportunity to learn programming logic with Python, and OOP concepts."
+    }
   },
   "footer": {
     "letsWorkTogetherTitle": "Let's work together",
