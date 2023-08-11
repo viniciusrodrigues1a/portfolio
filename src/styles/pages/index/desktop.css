@@ -28,6 +28,7 @@
 @media (min-width: 1180px) {
   .intro {
     padding: 3rem 5.625rem 5.625rem;
+    min-height: 600px;
   }
 
   .section {
@@ -214,6 +215,10 @@
 }
 
 @media (min-width: 1500px) {
+  .intro {
+    min-height: 720px;
+  }
+
   .intro-hero-right-side .intro-hero-svg svg {
     width: 28rem;
   }
@@ -234,6 +239,7 @@
 @media (min-width: 1800px) {
   .intro {
     padding: 5.625rem;
+    min-height: 900px;
   }
 
   .section {
@@ -282,6 +288,7 @@
 @media (min-width: 2500px) {
   .intro {
     padding: 7.625rem;
+    min-height: 1024px;
   }
 
   .section {
@@ -325,6 +332,10 @@
 }
 
 @media (min-width: 3600px) {
+  .intro {
+    min-height: 1440px;
+  }
+
   .intro-hero-right-side .intro-hero-svg svg {
     width: 62rem;
   }
