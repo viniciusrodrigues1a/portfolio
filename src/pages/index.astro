@@ -541,6 +541,48 @@ import { getEducationalExperiences } from "src/experiences/education";
 </DefaultLayout>
 
 <script>
+  const themeTag = "@viniciusrodrigues/theme";
+  const themeSwitchInputElement = document.getElementById(
+    "theme-switch-input"
+  ) as HTMLInputElement | null;
+
+  function setTheme(theme: "dark" | "light") {
+    localStorage.setItem(themeTag, theme);
+
+    if (!themeSwitchInputElement) {
+      return;
+    }
+
+    themeSwitchInputElement.checked = theme === "dark" ? false : true;
+  }
+
+  function detectTheme() {
+    const colorSchemeMediaMatches = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+    const isPreferenceDarkTheme = localStorage.getItem(themeTag) === "dark";
+    const prefersDarkMode =
+      (colorSchemeMediaMatches && isPreferenceDarkTheme === null) ||
+      isPreferenceDarkTheme;
+
+    if (prefersDarkMode) {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  }
+
+  themeSwitchInputElement?.addEventListener("change", (e) => {
+    const target = e.target as HTMLInputElement;
+    const theme = target.checked ? "light" : "dark";
+
+    setTheme(theme);
+  });
+
+  detectTheme();
+</script>
+
+<script>
   function showToast() {
     const toast = document.querySelector(".clipboard-toast-container");
 
