@@ -1,12 +1,12 @@
 import "i18next";
 
-import rootNamespace from "../../public/locales/pt-BR/root.json";
+import homeNamespace from "../../public/locales/pt-BR/home.json";
 
 declare module "i18next" {
   interface CustomTypeOptions {
-    defaultNS: "root";
+    defaultNS: "home";
     resources: {
-      root: typeof rootNamespace;
+      home: typeof homeNamespace;
     };
   }
 }
