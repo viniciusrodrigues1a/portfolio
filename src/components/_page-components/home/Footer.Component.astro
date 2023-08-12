@@ -1,0 +1,199 @@
+---
+import { t } from "i18next";
+
+import IconComponent from "@components/Icon";
+import TypographyComponent from "@components/Typography";
+import ButtonComponent from "@components/Button";
+import { ThemeSwitchButtonUnstyledWrapper } from "@components/ThemeSwitch";
+import {
+  LanguageSwitchButtonUnstyledWrapperComponent,
+  LanguageSwitchSelectComponent,
+} from "@components/LanguageSwitch";
+---
+
+<footer id="footer" class="section scrollable-section">
+  <div class="footer-content-wrapper">
+    <div class="footer-content">
+      <TypographyComponent
+        class="footer-title"
+        variant="h1-serif"
+        color="var(--foreground)"
+        >{t("footer.letsWorkTogetherTitle")}</TypographyComponent
+      >
+
+      <ButtonComponent
+        id="email-footer-button"
+        variant="text"
+        title="viniciusrodrigues.aro@gmail.com"
+        fontWeight="normal"
+        color="var(--foreground2)"
+        class="email-clipboard-button footer-button"
+      />
+    </div>
+
+    <div class="footer-content">
+      <TypographyComponent
+        class="footer-title"
+        variant="h1-serif"
+        color="var(--foreground)"
+        >{t("footer.checkOutMyWorkTitle")}</TypographyComponent
+      >
+      <ButtonComponent
+        redirectTo="https://www.linkedin.com/in/vinicius-rodrigues-aro/"
+        id="linkedin-footer-button"
+        variant="text"
+        title="LinkedIn"
+        iconName="externalLink"
+        iconPosition="right"
+        fontWeight="normal"
+        color="var(--foreground2, black)"
+        iconSize={20}
+        showIcon
+        class="footer-button"
+      />
+      <ButtonComponent
+        redirectTo="https://github.com/viniciusrodrigues1a/"
+        id="github-footer-button"
+        class="footer-button-mt"
+        variant="text"
+        title="GitHub"
+        iconName="externalLink"
+        iconPosition="right"
+        fontWeight="normal"
+        color="var(--foreground2, black)"
+        iconSize={20}
+        showIcon
+        class="footer-button"
+      />
+    </div>
+
+    <div class="footer-content">
+      <TypographyComponent
+        class="footer-title"
+        variant="h1-serif"
+        color="var(--foreground)"
+        >{t("footer.preferencesTitle")}</TypographyComponent
+      >
+      <div class="change-language-container">
+        <ButtonComponent
+          id="change-language-button"
+          variant="text"
+          stopPropagation
+          hidden
+        >
+          <LanguageSwitchButtonUnstyledWrapperComponent>
+            <div class="button-slot-wrapper">
+              <IconComponent
+                name="globe"
+                size={20}
+                color="var(--foreground2, black)"
+              />
+              <TypographyComponent
+                variant="button"
+                color="var(--foreground2, black)"
+              >
+                {t("footer.changeLanguageButtonLabel")}
+              </TypographyComponent>
+            </div>
+          </LanguageSwitchButtonUnstyledWrapperComponent>
+        </ButtonComponent>
+        <LanguageSwitchSelectComponent
+          buttonId0="language-switch-ptBR-1"
+          buttonId1="language-switch-en-1"
+        />
+      </div>
+
+      <ButtonComponent
+        id="change-theme-button"
+        class="footer-button-mt"
+        variant="text"
+        fontWeight="normal"
+        hidden
+      >
+        <ThemeSwitchButtonUnstyledWrapper>
+          <div class="button-slot-wrapper">
+            <IconComponent
+              name="moon"
+              size={20}
+              color="var(--foreground2, black)"
+            />
+            <TypographyComponent
+              variant="button"
+              color="var(--foreground2, black)"
+            >
+              {t("footer.changeThemeButtonLabel")}
+            </TypographyComponent>
+          </div>
+        </ThemeSwitchButtonUnstyledWrapper>
+      </ButtonComponent>
+    </div>
+
+    <div class="clipboard-toast-container clipboard-hidden">
+      <TypographyComponent
+        variant="body"
+        color="var(--background)"
+        textAlign="center">{t("clipboardMessage")}</TypographyComponent
+      >
+    </div>
+
+    <div class="bottom-bar-wrapper" hidden>
+      <div class="bottom-bar">
+        <a class="bottom-bar-anchor" href="#intro">
+          <div class="bottom-bar-item">
+            <IconComponent size={26} name="home" color="var(--foreground1)" />
+            <TypographyComponent
+              color="var(--foreground1)"
+              fontSize={14}
+              fontFamily="var(--sans-serif-font-family)"
+              >{t("intro.nav.homeButtonLabel")}</TypographyComponent
+            >
+          </div>
+        </a>
+
+        <a class="bottom-bar-anchor" href="#about-me">
+          <div class="bottom-bar-item">
+            <IconComponent size={26} name="user" color="var(--foreground1)" />
+            <TypographyComponent
+              color="var(--foreground1)"
+              fontSize={14}
+              fontFamily="var(--sans-serif-font-family)"
+              >{t("intro.nav.aboutMeButtonLabel")}</TypographyComponent
+            >
+          </div>
+        </a>
+
+        <a class="bottom-bar-anchor" href="#experience">
+          <div class="bottom-bar-item">
+            <IconComponent
+              size={26}
+              name="briefcase"
+              color="var(--foreground1)"
+            />
+            <TypographyComponent
+              color="var(--foreground1)"
+              fontSize={14}
+              fontFamily="var(--sans-serif-font-family)"
+              >{t("intro.nav.experienceButtonLabel")}</TypographyComponent
+            >
+          </div>
+        </a>
+
+        <a class="bottom-bar-anchor" href="#footer">
+          <div class="bottom-bar-item">
+            <IconComponent
+              size={26}
+              name="archive"
+              color="var(--foreground1)"
+            />
+            <TypographyComponent
+              color="var(--foreground1)"
+              fontSize={14}
+              fontFamily="var(--sans-serif-font-family)"
+              >{t("intro.nav.contactButtonLabel")}</TypographyComponent
+            >
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

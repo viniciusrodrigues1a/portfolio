@@ -1,0 +1,112 @@
+---
+import { t } from "i18next";
+
+import IconComponent from "@components/Icon";
+import TypographyComponent from "@components/Typography";
+import ExperienceComponent from "@components/Experience";
+
+import { getWorkExperiences } from "src/experiences/work";
+import { getEducationalExperiences } from "src/experiences/education";
+---
+
+<section id="experience" class="section experience scrollable-section">
+  <div class="section-content">
+    <div class="title-wrapper">
+      <div class="title-typography">
+        <div class="title-underline"></div>
+        <TypographyComponent color="var(--foreground)" variant="h1-sans"
+          >{t("experience.sectionTitle")}</TypographyComponent
+        >
+      </div>
+    </div>
+
+    <div class="experience-content-container">
+      <input
+        class="experience-type-radio"
+        type="radio"
+        id="work"
+        name="experience"
+        value="work"
+        checked
+        hidden
+      />
+      <input
+        class="experience-type-radio"
+        type="radio"
+        id="education"
+        name="experience"
+        value="education"
+        hidden
+      />
+
+      <div class="experience-type-tabs" hidden>
+        <label class="experience-type-radio-label" for="work"></label>
+        <label class="experience-type-radio-label" for="education"></label>
+
+        <div class="experience-type-button-container experience-type-indicator">
+          <TypographyComponent
+            class="experience-type-button-text"
+            variant="button">-</TypographyComponent
+          >
+        </div>
+        <div class="experience-type-button-container">
+          <TypographyComponent
+            class="experience-type-button-text"
+            variant="button"
+            >{t("experience.workExperienceLabel")}</TypographyComponent
+          >
+        </div>
+        <div class="experience-type-button-container">
+          <TypographyComponent
+            class="experience-type-button-text"
+            variant="button"
+            >{t("experience.educationExperienceLabel")}</TypographyComponent
+          >
+        </div>
+      </div>
+
+      <div class="experience-work-content">
+        {
+          getWorkExperiences()?.map((e) => (
+            <ExperienceComponent
+              title={e.title}
+              formattedDate={e.formattedDate}
+              company={e.company}
+              companyLink={e.companyLink}
+              description={e.description}
+            />
+          ))
+        }
+      </div>
+
+      <div class="experience-education-content" hidden>
+        {
+          getEducationalExperiences()?.map((e) => (
+            <ExperienceComponent
+              title={e.title}
+              formattedDate={e.formattedDate}
+              company={e.company}
+              companyLink={e.companyLink}
+              description={e.description}
+            />
+          ))
+        }
+      </div>
+    </div>
+
+    <a href="#intro" target="_self" class="chevrons-up-container">
+      <div class="chevrons-up-icon-container" hidden>
+        <div class="chevrons-up-icon-inner-container">
+          <IconComponent name="chevronsDown" color="var(--foreground, black)" />
+        </div>
+      </div>
+
+      <TypographyComponent
+        class="chevrons-up-text"
+        variant="button"
+        textAlign="center"
+        >{t("experience.goBackToTopButtonLabel")}</TypographyComponent
+      >
+    </a>
+  </div>
+</section>

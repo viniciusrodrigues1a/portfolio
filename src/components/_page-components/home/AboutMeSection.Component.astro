@@ -1,0 +1,75 @@
+---
+import { t } from "i18next";
+
+import IconComponent from "@components/Icon";
+import TypographyComponent from "@components/Typography";
+
+import profileImage from "../../../assets/profile.jpg";
+---
+
+<section id="about-me" class="section about-me scrollable-section">
+  <div class="section-content">
+    <div class="title-wrapper">
+      <div class="title-typography">
+        <div class="title-underline"></div>
+        <TypographyComponent color="var(--foreground)" variant="h1-sans"
+          >{t("aboutMe.sectionTitle")}</TypographyComponent
+        >
+      </div>
+    </div>
+
+    <div class="about-me-info">
+      <img
+        width="200px"
+        height="228px"
+        class="about-me-img"
+        src={profileImage}
+        alt=""
+      />
+
+      <div>
+        <div class="about-me-description-wrapper">
+          <TypographyComponent
+            color="var(--foreground)"
+            variant="body"
+            textAlign="justify">{t("aboutMe.description")}</TypographyComponent
+          >
+        </div>
+
+        <div class="about-me-social-icons-wrapper">
+          <a
+            class="social-icon-anchor"
+            href="https://www.linkedin.com/in/vinicius-rodrigues-aro/"
+            target="_blank"
+          >
+            <IconComponent
+              color="var(--foreground, black)"
+              size={32}
+              name="linkedin"
+            />
+          </a>
+
+          <a
+            class="social-icon-anchor"
+            href="https://github.com/viniciusrodrigues1a/"
+            target="_blank"
+          >
+            <IconComponent
+              color="var(--foreground, black)"
+              size={32}
+              name="github"
+            />
+          </a>
+
+          <div class="email-clipboard-button social-icon-anchor">
+            <IconComponent
+              color="var(--foreground, black)"
+              size={32}
+              name="mail"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

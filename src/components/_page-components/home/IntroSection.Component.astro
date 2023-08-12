@@ -1,0 +1,149 @@
+---
+import { t } from "i18next";
+
+import {
+  ThemeSwitchButtonComponent,
+  ThemeSwitchButtonUnstyledWrapper,
+} from "@components/ThemeSwitch";
+import { LanguageSwitchButtonComponent } from "@components/LanguageSwitch";
+import IconComponent from "@components/Icon";
+import SpaceComponent from "@components/Space";
+import TypographyComponent from "@components/Typography";
+import ButtonComponent from "@components/Button";
+
+import profileImage from "../../../assets/profile.jpg";
+---
+
+<section id="intro" class="intro scrollable-section">
+  <div class="section-content">
+    <div class="profile-image-wrapper" hidden>
+      <img class="profile-image" src={profileImage} alt="" />
+    </div>
+
+    <nav class="top-bar on-top-of-absolute-icon" hidden>
+      <div class="nav-item">
+        <ButtonComponent
+          id="home-link"
+          class="nav-link"
+          variant="text"
+          fontWeight="bold"
+          title={t("intro.nav.homeButtonLabel")}
+          redirectTo="#intro"
+          redirectTarget="_self"
+        />
+      </div>
+      <div class="nav-item">
+        <ButtonComponent
+          id="about-me-link"
+          class="nav-link"
+          variant="text"
+          fontWeight="bold"
+          title={t("intro.nav.aboutMeButtonLabel")}
+          redirectTo="#about-me"
+          redirectTarget="_self"
+        />
+      </div>
+      <div class="nav-item">
+        <ButtonComponent
+          id="experience-link"
+          class="nav-link"
+          variant="text"
+          fontWeight="bold"
+          title={t("intro.nav.experienceButtonLabel")}
+          redirectTo="#about-me"
+          redirectTarget="_self"
+        />
+      </div>
+      <div class="nav-item">
+        <LanguageSwitchButtonComponent />
+      </div>
+      <div class="nav-item">
+        <ThemeSwitchButtonComponent />
+      </div>
+    </nav>
+
+    <div class="intro-hero-wrapper">
+      <div class="intro-hero on-top-of-absolute-icon">
+        <TypographyComponent class="title" variant="h1-sans">
+          VINÍCIUS RODRIGUES DE ARO
+        </TypographyComponent>
+
+        <div class="subtitle-separator"></div>
+
+        <TypographyComponent color="var(--foreground1)" variant="h2-sans">
+          {t("intro.hero.role")}
+        </TypographyComponent>
+
+        <div class="mobile-social-links-wrapper" hidden>
+          <IconComponent
+            size={32}
+            name="linkedin"
+            color="var(--foreground, black)"
+          />
+          <SpaceComponent direction="horizontal" size={24} />
+          <IconComponent
+            size={32}
+            name="github"
+            color="var(--foreground, black)"
+          />
+        </div>
+
+        <div class="desktop-social-links-wrapper">
+          <ButtonComponent
+            redirectTo="https://www.linkedin.com/in/vinicius-rodrigues-aro/"
+            id="linkedin-button"
+            showIcon={true}
+            iconName="linkedin"
+            iconPosition="left"
+            title="LinkedIn"
+          />
+
+          <SpaceComponent direction="vertical" size="2rem" />
+
+          <ButtonComponent
+            redirectTo="https://github.com/viniciusrodrigues1a/"
+            id="github-button"
+            showIcon={true}
+            iconName="github"
+            iconPosition="left"
+            title="GitHub"
+          />
+        </div>
+      </div>
+
+      <div class="intro-hero-right-side">
+        <div class="clock" hidden>
+          <div class="clock-inner no-animation">
+            <div class="clock-hour-0"></div>
+            <div class="clock-hour-1"></div>
+            <div class="clock-hour-2"></div>
+            <div class="clock-hour-3"></div>
+            <div class="clock-center-marker"></div>
+            <div class="clock-minute-hand"></div>
+            <div class="clock-hour-hand"></div>
+          </div>
+        </div>
+
+        <div class="intro-hero-svg" hidden>
+          <IconComponent
+            name="person"
+            color="var(--gradient-stop-color-0, lightblue)"
+            color1="var(--gradient-stop-color-1, darkblue)"
+          />
+        </div>
+
+        <div class="lamp-icon-wrapper" hidden>
+          <IconComponent name="lamp" />
+
+          <ThemeSwitchButtonUnstyledWrapper>
+            <div class="lamp-theme-switch"></div>
+          </ThemeSwitchButtonUnstyledWrapper>
+        </div>
+      </div>
+    </div>
+
+    <a href="#about-me" target="_self" class="chevrons-down-wrapper" hidden>
+      <IconComponent size={64} name="chevronsDown" color="var(--foreground1)" />
+    </a>
+  </div>
+</section>
