@@ -118,7 +118,7 @@
 #thumbs-up-inner,
 .clock-inner {
   animation-name: floating;
-  animation-duration: 4s;
+  animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
 }
@@ -143,7 +143,7 @@
     transform: translate(0, 15px);
   }
   100% {
-    transform: translate(0, -0px);
+    transform: translate(0, 0px);
   }
 }
 
