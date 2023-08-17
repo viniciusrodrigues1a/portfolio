@@ -14,7 +14,7 @@
   },
   "aboutMe": {
     "sectionTitle": "SOBRE MIM",
-    "description": "Desenvolvedor mobile focado em React Native com interesse no desenvolvimento nativo Android e arquitetura Serverless. Já desenvolvi aplicações mobile desde o início até o fim que foram publicadas para produção, resolvendo problemas como processamento de vídeos em paralelo na núvem; animações e gestos no mobile. Tenho habilidade em modificar código nativo Android em aplicativos React Native e já utilizei ferramentas de debug do Android Studio para identificar problemas."
+    "description": "Desenvolvedor mobile focado em React Native com interesse no desenvolvimento nativo Android e arquitetura Serverless. Já desenvolvi aplicações mobile desde o início até o fim que foram publicadas para produção, resolvendo problemas como processamento de vídeos em paralelo na núvem; animações e gestos no mobile."
   },
   "experience": {
     "sectionTitle": "EXPERIÊNCIA",
@@ -25,7 +25,7 @@
       "globalsysRole": "Desenvolvedor React Native",
       "globalsysDate": "08/2022 - o momento",
       "globalsysCompany": "Globalsys Soluções em TI · Tempo integral",
-      "globalsysDescription": "Atuei no desenvolvimento de um aplicativo do ramo imobiliário em React Native, com recursos avançados como mapas, animações e internacionalização. Liderando o desenvolvimento da biblioteca de componentes do aplicativo, utilizando Storybook e React Native Web para compartilhar componentes entre o aplicativo e o backoffice, seguindo o Style Guide. Além disso, trabalhei em um aplicativo de e-commerce usando VTEX IO, consumindo APIs em GraphQL e Rest, e participei do desenvolvimento da biblioteca de componentes do aplicativo.",
+      "globalsysDescription": "Atuei no desenvolvimento de um aplicativo do ramo imobiliário em React Native, com recursos avançados como mapas, animações e internacionalização. Participando do desenvolvimento da biblioteca de componentes do aplicativo, utilizando Storybook e React Native Web para compartilhar componentes entre o aplicativo e o backoffice, seguindo o Style Guide. Além disso, trabalhei em um aplicativo de e-commerce usando VTEX IO, consumindo APIs em GraphQL e Rest, e participei do desenvolvimento da biblioteca de componentes do aplicativo.",
 
       "vizziamRole": "Desenvolvedor Full Stack",
       "vizziamDate": "08/2022 - 03/2023",
