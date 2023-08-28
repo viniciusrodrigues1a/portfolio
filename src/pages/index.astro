@@ -12,13 +12,6 @@ import {
 ---
 
 <DefaultLayout>
-  <input
-    type="text"
-    value="viniciusrodrigues.aro@gmail.com"
-    id="hidden-email-input"
-    hidden
-  />
-
   <div class="two-circles-icon-wrapper" hidden>
     <IconComponent
       name="twoCirclesPattern"
@@ -76,40 +69,6 @@ import {
   });
 
   detectTheme();
-</script>
-
-<script>
-  function showToast() {
-    const toast = document.querySelector(".clipboard-toast-container");
-
-    if (toast && toast.classList.contains("clipboard-hidden")) {
-      toast?.classList.remove("clipboard-hidden");
-
-      setTimeout(() => {
-        toast?.classList.add("clipboard-hidden");
-      }, 1000);
-    }
-  }
-
-  function copyEmailToClipboard() {
-    const textToCopy = document.getElementById("hidden-email-input") as
-      | HTMLInputElement
-      | undefined;
-
-    if (textToCopy) {
-      textToCopy.select();
-      textToCopy.setSelectionRange(0, 99999);
-
-      navigator.clipboard.writeText(textToCopy.value);
-
-      showToast();
-    }
-  }
-
-  const emailButtons = document.querySelectorAll(".email-clipboard-button");
-  emailButtons.forEach((btn) => {
-    btn.addEventListener("click", copyEmailToClipboard);
-  });
 </script>
 
 <script>

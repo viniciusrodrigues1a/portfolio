@@ -5,6 +5,7 @@ import IconComponent from "@components/Icon";
 import TypographyComponent from "@components/Typography";
 
 import profileImage from "../../../assets/profile.jpg";
+import ButtonComponent from "@components/Button";
 ---
 
 <section id="about-me" class="section about-me scrollable-section">
@@ -37,37 +38,47 @@ import profileImage from "../../../assets/profile.jpg";
         </div>
 
         <div class="about-me-social-icons-wrapper">
-          <a
+          <ButtonComponent
+            redirectTo="https://www.linkedin.com/in/vinicius-rodrigues-aro/"
+            redirectTarget="_blank"
+            id="linkedin-about-me-button"
+            variant="text"
             class="social-icon-anchor"
-            href="https://www.linkedin.com/in/vinicius-rodrigues-aro/"
-            target="_blank"
           >
             <IconComponent
               color="var(--foreground, black)"
               size={32}
               name="linkedin"
             />
-          </a>
+          </ButtonComponent>
 
-          <a
+          <ButtonComponent
+            redirectTo="https://github.com/viniciusrodrigues1a/"
+            redirectTarget="_blank"
+            id="github-about-me-button"
+            variant="text"
             class="social-icon-anchor"
-            href="https://github.com/viniciusrodrigues1a/"
-            target="_blank"
           >
             <IconComponent
               color="var(--foreground, black)"
               size={32}
               name="github"
             />
-          </a>
+          </ButtonComponent>
 
-          <div class="email-clipboard-button social-icon-anchor">
+          <ButtonComponent
+            redirectTo="mailto:viniciusrodrigues.aro@gmail.com"
+            redirectTarget="_blank"
+            id="email-about-me-button"
+            variant="text"
+            class="social-icon-anchor"
+          >
             <IconComponent
               color="var(--foreground, black)"
               size={32}
               name="mail"
             />
-          </div>
+          </ButtonComponent>
         </div>
       </div>
     </div>
