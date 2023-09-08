@@ -16,6 +16,9 @@
     "sectionTitle": "SOBRE MIM",
     "description": "Desenvolvedor mobile focado em React Native com interesse no desenvolvimento nativo Android e arquitetura Serverless. Já desenvolvi aplicações mobile desde o início até o fim que foram publicadas para produção, resolvendo problemas como processamento de vídeos em paralelo na núvem; animações e gestos no mobile."
   },
+  "projects": {
+    "sectionTitle": "PROJETOS"
+  },
   "experience": {
     "sectionTitle": "EXPERIÊNCIA",
     "workExperienceLabel": "Profissional",

@@ -1,0 +1,22 @@
+---
+import TypographyComponent from "@components/Typography";
+import ProjectShowcaseComponent from "@components/ProjectShowcase";
+import { t } from "i18next";
+---
+
+<section id="projects" class="section">
+  <div class="section-content">
+    <div class="title-wrapper">
+      <div class="title-typography">
+        <div class="title-underline"></div>
+        <TypographyComponent color="var(--foreground)" variant="h1-sans">
+          {t("projects.sectionTitle")}</TypographyComponent
+        >
+      </div>
+    </div>
+
+    <div class="projects-list-container">
+      <ProjectShowcaseComponent />
+    </div>
+  </div>
+</section>

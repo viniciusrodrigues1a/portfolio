@@ -106,6 +106,10 @@
   background-color: var(--background2);
 }
 
+#projects {
+  background-color: var(--background2);
+}
+
 .title-typography {
   display: inline-block;
   position: relative;
@@ -127,7 +131,6 @@
 .about-me-info {
   display: flex;
   flex-direction: row;
-  margin-top: 2.5rem;
 }
 
 .about-me-img {
@@ -148,10 +151,6 @@
 
 .experience {
   background-color: var(--background1);
-}
-
-.experience-content-container {
-  margin-top: 2.5rem;
 }
 
 .experience-type-tabs {
@@ -337,4 +336,10 @@
 
 .bottom-bar-anchor {
   text-decoration: none;
+}
+
+.projects-list-container,
+.experience-content-container,
+.about-me-info {
+  margin-top: 2.5rem;
 }
