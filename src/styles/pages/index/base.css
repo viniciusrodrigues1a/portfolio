@@ -343,3 +343,9 @@
 .about-me-info {
   margin-top: 2.5rem;
 }
+
+.projects-list-container {
+  display: grid;
+  align-items: center;
+  gap: 2rem;
+}

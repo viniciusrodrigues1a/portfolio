@@ -2,6 +2,8 @@
 import TypographyComponent from "@components/Typography";
 import ProjectShowcaseComponent from "@components/ProjectShowcase";
 import { t } from "i18next";
+
+const projects = await Astro.glob("../../../projects/*.md");
 ---
 
 <section id="projects" class="section">
@@ -16,7 +18,7 @@ import { t } from "i18next";
     </div>
 
     <div class="projects-list-container">
-      <ProjectShowcaseComponent />
+      {projects.map((project) => <ProjectShowcaseComponent />)}
     </div>
   </div>
 </section>

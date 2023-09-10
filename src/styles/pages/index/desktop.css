@@ -216,6 +216,11 @@
   .chevrons-up-container {
     margin-top: 8rem;
   }
+
+  .projects-list-container {
+    grid-template-areas: "a b";
+    gap: 4rem;
+  }
 }
 
 @media (min-width: 1500px) {
