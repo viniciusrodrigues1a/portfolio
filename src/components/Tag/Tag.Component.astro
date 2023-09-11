@@ -1,0 +1,79 @@
+---
+import type { svgIconNames } from "../../icons/svgs/_types";
+
+import TypographyComponent from "@components/Typography";
+import IconComponent from "@components/Icon";
+
+import { tagToColor } from "./mappers";
+
+type Props = {
+  name?: string;
+  iconName?: svgIconNames;
+  badgeAmount?: number;
+};
+
+const { name, iconName, badgeAmount } = Astro.props as Props;
+
+let fgColor;
+let bgColor;
+
+if (name) {
+  fgColor = tagToColor[name]?.fg ?? "white";
+  bgColor = tagToColor[name]?.bg ?? "black";
+} else if (iconName) {
+  fgColor = "var(--foreground)";
+  bgColor = "var(--background1)";
+}
+---
+
+<style define:vars={{ fgColor, bgColor }}>
+  .tag-container {
+    background-color: var(--bgColor);
+    padding: 0.25rem 0.375rem;
+    border-radius: 0.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .tag-text {
+    color: var(--fgColor);
+  }
+
+  .tag-badge-container {
+    position: absolute;
+    top: -1rem;
+    right: -0.75rem;
+    background-color: var(--background);
+    width: 28px;
+    height: 28px;
+    border-radius: 9999px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -2px 2px 4px 1px rgba(0, 0, 0, 0.25);
+  }
+</style>
+
+<div class="tag-container">
+  {
+    name && (
+      <TypographyComponent variant="body" class="tag-text">
+        {name}
+      </TypographyComponent>
+    )
+  }
+
+  {
+    iconName && (
+      <>
+        <IconComponent name={iconName} size={28} color={fgColor} />
+
+        <div class="tag-badge-container">
+          <TypographyComponent>{badgeAmount}</TypographyComponent>
+        </div>
+      </>
+    )
+  }
+</div>

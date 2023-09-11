@@ -1,19 +1,31 @@
 ---
+import type { Project } from "../../projects/types";
+
 import ButtonComponent from "@components/Button";
 import TypographyComponent from "@components/Typography";
+import TagComponent from "@components/Tag";
 import showcaseFallbackImage from "../../assets/showcase-fallback.jpg";
+
+type Props = {
+  project: Project;
+};
+
+const { project } = Astro.props as Props;
+
+const first3Techs = project.techStack.slice(0, 3);
+const restOfTechs = project.techStack.slice(3, project.techStack.length);
 ---
 
 <style>
-  .project-showcase-button {
+  .project-showcase-container {
     position: relative;
     width: 100%;
     aspect-ratio: 1.7;
     overflow: hidden;
-    border-radius: 1rem;
     margin: 0 auto;
   }
 
+  .project-showcase-button,
   .project-showcase-img,
   .project-showcase-img-overlay,
   .project-showcase-content-overlay {
@@ -42,27 +54,108 @@ import showcaseFallbackImage from "../../assets/showcase-fallback.jpg";
     top: 0px;
     left: 0px;
     padding: 2rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .project-showcase-description {
     margin-top: 0.5rem;
-    opacity: 0.9;
+  }
+
+  .project-showcase-tech-stack-container {
+    align-self: flex-end;
+    display: grid;
+    grid-template-areas: "a b c d";
+    gap: 1rem;
+    position: absolute;
+    right: 1.75rem;
+    bottom: 2rem;
+  }
+
+  .project-showcase-more-tags {
+    position: relative;
+  }
+
+  .project-showcase-more-tags:hover > .project-showcase-more-tags-expanded {
+    display: block;
+  }
+
+  .project-showcase-more-tags-expanded {
+    position: absolute;
+    padding: 1rem 1rem 2rem;
+    width: 25rem;
+    bottom: 2rem;
+    right: -1rem;
+    display: none;
+  }
+
+  .project-showcase-more-tags-expanded-content {
+    background-color: var(--background1);
+    border-radius: 0.25rem;
+    padding: 1.25rem 1.5rem;
+    min-height: 6rem;
+    max-height: 8rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    overflow-y: scroll;
+  }
+
+  .project-showcase-more-tags-expanded-content::after {
+    content: "";
+    position: absolute;
+    bottom: 1rem;
+    right: 2rem;
+    width: 0px;
+    height: 0px;
+    border: 8px solid transparent;
+    border-bottom: 0;
+    border-top: 16px solid var(--background1);
   }
 </style>
 
-<ButtonComponent id="TODO" class="project-showcase-button" variant="text">
-  <img class="project-showcase-img" src={showcaseFallbackImage} />
+<div class="project-showcase-container">
+  <ButtonComponent id="TODO" class="project-showcase-button" variant="text">
+    <img class="project-showcase-img" src={showcaseFallbackImage} />
 
-  <div class="project-showcase-img-overlay"></div>
+    <div class="project-showcase-img-overlay"></div>
 
-  <div class="project-showcase-content-overlay">
-    <TypographyComponent color="var(--foreground)" variant="h1-serif"
-      >Infinitum</TypographyComponent
-    >
+    <div class="project-showcase-content-overlay">
+      <div>
+        <TypographyComponent color="white" variant="h1-serif"
+          >{project.title}</TypographyComponent
+        >
 
-    <TypographyComponent
-      class="project-showcase-description"
-      color="var(--foreground)">Bug tracker - 2021</TypographyComponent
-    >
+        <TypographyComponent
+          class="project-showcase-description"
+          color="#DDDDDD"
+          >{project.shortDescription} - {project.date}</TypographyComponent
+        >
+      </div>
+    </div>
+  </ButtonComponent>
+
+  <div class="project-showcase-tech-stack-container">
+    {first3Techs.map((tech) => <TagComponent name={tech} />)}
+
+    {
+      project.techStack.length > 3 && (
+        <div class="project-showcase-more-tags">
+          <TagComponent
+            iconName="moreHorizontal"
+            badgeAmount={restOfTechs.length}
+          />
+
+          <div class="project-showcase-more-tags-expanded">
+            <div class="project-showcase-more-tags-expanded-content">
+              {restOfTechs.map((tech) => (
+                <TagComponent name={tech} />
+              ))}
+            </div>
+          </div>
+        </div>
+      )
+    }
   </div>
-</ButtonComponent>
+</div>
