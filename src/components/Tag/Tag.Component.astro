@@ -40,20 +40,6 @@ if (name) {
   .tag-text {
     color: var(--fgColor);
   }
-
-  .tag-badge-container {
-    position: absolute;
-    top: -1rem;
-    right: -0.75rem;
-    background-color: var(--background);
-    width: 28px;
-    height: 28px;
-    border-radius: 9999px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: -2px 2px 4px 1px rgba(0, 0, 0, 0.25);
-  }
 </style>
 
 <div class="tag-container">
@@ -65,15 +51,5 @@ if (name) {
     )
   }
 
-  {
-    iconName && (
-      <>
-        <IconComponent name={iconName} size={28} color={fgColor} />
-
-        <div class="tag-badge-container">
-          <TypographyComponent>{badgeAmount}</TypographyComponent>
-        </div>
-      </>
-    )
-  }
+  {iconName && <IconComponent name={iconName} size={28} color={fgColor} />}
 </div>

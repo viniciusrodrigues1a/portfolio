@@ -1,6 +1,7 @@
 ---
 title: "Infinitum"
-shortDescription: "Bug tracker"
+type: "Bug tracker"
+shortDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tincidunt venenatis turpis, non egestas felis sollicitudin sed. Sed mi leo, auctor ut tincidunt ac, eleifend ac turpis."
 date: "2021"
 techStack:
   [

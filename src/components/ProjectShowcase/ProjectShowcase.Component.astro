@@ -14,6 +14,11 @@ const { project } = Astro.props as Props;
 
 const first3Techs = project.techStack.slice(0, 3);
 const restOfTechs = project.techStack.slice(3, project.techStack.length);
+
+const tagsContainerId = `project-${project.title}-tags-container`;
+const seeProjectButtonId = `project-${project.title}-button`;
+const moreTagsButtonId = `project-${project.title}-more-tags-button`;
+const hiddenInputId = `project-${project.title}-expand-tags-input`;
 ---
 
 <style>
@@ -23,27 +28,31 @@ const restOfTechs = project.techStack.slice(3, project.techStack.length);
     aspect-ratio: 1.7;
     overflow: hidden;
     margin: 0 auto;
+    border-radius: 1rem;
   }
 
-  .project-showcase-button,
+  .project-showcase-content,
   .project-showcase-img,
   .project-showcase-img-overlay,
   .project-showcase-content-overlay {
     width: 100%;
     height: 100%;
-    border-radius: 1rem;
   }
 
   .project-showcase-img {
     object-fit: cover;
   }
 
-  .project-showcase-button:hover > .project-showcase-img {
+  .project-showcase-content:hover > .project-showcase-img {
     transform: scale(1.25);
   }
 
+  .project-showcase-content:hover > .project-showcase-img-overlay {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
   .project-showcase-img-overlay {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.7);
     position: absolute;
     top: 0px;
     left: 0px;
@@ -78,6 +87,13 @@ const restOfTechs = project.techStack.slice(3, project.techStack.length);
   }
 
   .project-showcase-more-tags:hover > .project-showcase-more-tags-expanded {
+    /*display: block;*/
+  }
+
+  .project-showcase-hidden-input:checked
+    ~ *
+    .project-showcase-more-tags-expanded {
+    margi-top: 32rem;
     display: block;
   }
 
@@ -113,10 +129,60 @@ const restOfTechs = project.techStack.slice(3, project.techStack.length);
     border-bottom: 0;
     border-top: 16px solid var(--background1);
   }
+
+  .project-showcase-badge {
+    pointer-events: none;
+    position: absolute;
+    top: -1rem;
+    right: -0.75rem;
+    background-color: var(--background);
+    width: 28px;
+    height: 28px;
+    border-radius: 9999px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -2px 2px 4px 1px rgba(0, 0, 0, 0.25);
+    z-index: 1;
+  }
+
+  .project-showcase-more-tags-button {
+    border-radius: 0.25rem;
+    position: relative;
+  }
+
+  .project-showcase-hidden-input,
+  .project-showcase-hidden-label {
+    opacity: 0;
+  }
+
+  .project-showcase-hidden-input {
+    position: absolute;
+    bottom: 2rem;
+    right: 1.75rem;
+  }
+
+  .project-showcase-hidden-label {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+    cursor: pointer;
+  }
 </style>
 
 <div class="project-showcase-container">
-  <ButtonComponent id="TODO" class="project-showcase-button" variant="text">
+  <input
+    class="project-showcase-hidden-input"
+    id={hiddenInputId}
+    type="checkbox"
+    autocomplete="off"
+    hidden
+  />
+
+  <div class="project-showcase-content">
     <img class="project-showcase-img" src={showcaseFallbackImage} />
 
     <div class="project-showcase-img-overlay"></div>
@@ -129,26 +195,65 @@ const restOfTechs = project.techStack.slice(3, project.techStack.length);
 
         <TypographyComponent
           class="project-showcase-description"
-          color="#DDDDDD"
-          >{project.shortDescription} - {project.date}</TypographyComponent
+          color="#DDDDDD">{project.type} - {project.date}</TypographyComponent
         >
+
+        {/* TODO: animate */}
+        <TypographyComponent
+          class="project-showcase-description"
+          color="#DDDDDD">{project.shortDescription}</TypographyComponent
+        >
+
+        {/* TODO: internationalize */}
+        <ButtonComponent
+          id={seeProjectButtonId}
+          variant="text"
+          title="Ver projeto"
+          iconName="externalLink"
+          iconPosition="right"
+          fontWeight="normal"
+          color="var(--primary)"
+          iconSize={20}
+          showIcon
+          class="footer-button"
+        />
       </div>
     </div>
-  </ButtonComponent>
+  </div>
 
+  {/* TODO: make it responsive */}
   <div class="project-showcase-tech-stack-container">
     {first3Techs.map((tech) => <TagComponent name={tech} />)}
 
     {
       project.techStack.length > 3 && (
         <div class="project-showcase-more-tags">
-          <TagComponent
-            iconName="moreHorizontal"
-            badgeAmount={restOfTechs.length}
-          />
+          <div>
+            <div class="project-showcase-badge">
+              <TypographyComponent>{restOfTechs.length}</TypographyComponent>
+            </div>
+
+            <ButtonComponent
+              class="project-showcase-more-tags-button"
+              variant="text"
+              id={moreTagsButtonId}
+            >
+              <TagComponent
+                iconName="moreHorizontal"
+                badgeAmount={restOfTechs.length}
+              />
+
+              <label class="project-showcase-hidden-label" for={hiddenInputId}>
+                expandir tags {/* TODO: internationalize */}
+              </label>
+            </ButtonComponent>
+          </div>
 
           <div class="project-showcase-more-tags-expanded">
-            <div class="project-showcase-more-tags-expanded-content">
+            <div
+              id={tagsContainerId}
+              class="project-showcase-more-tags-expanded-content"
+            >
               {restOfTechs.map((tech) => (
                 <TagComponent name={tech} />
               ))}
@@ -159,3 +264,24 @@ const restOfTechs = project.techStack.slice(3, project.techStack.length);
     }
   </div>
 </div>
+
+<script define:vars={{ hiddenInputId, moreTagsButtonId, tagsContainerId }}>
+const expandedTagsContainer = document.querySelector(`#${tagsContainerId}`);
+const button = document.querySelector(`#${moreTagsButtonId}`);
+
+expandedTagsContainer?.addEventListener("click", (e) => e.stopPropagation());
+button?.addEventListener("click", (e) => e.stopPropagation());
+
+const input = document.querySelector(`#${hiddenInputId}`);
+
+if (input) {
+  document.body.addEventListener("click", (e) => {
+    const hasTargetedInput = e.target?.id === hiddenInputId;
+    if (hasTargetedInput) {
+      return;
+    }
+
+    input.checked = false;
+  });
+}
+</script>
