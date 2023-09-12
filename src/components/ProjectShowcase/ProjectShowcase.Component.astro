@@ -1,4 +1,5 @@
 ---
+import { t } from "i18next";
 import type { Project } from "../../projects/types";
 
 import ButtonComponent from "@components/Button";
@@ -195,11 +196,10 @@ const hiddenInputId = `project-${project.title}-expand-tags-input`;
           color="#DDDDDD">{project.shortDescription}</TypographyComponent
         >
 
-        {/* TODO: internationalize */}
         <ButtonComponent
           id={seeProjectButtonId}
           variant="text"
-          title="Ver projeto"
+          title={t("projects.seeProjectDetail")}
           iconName="externalLink"
           iconPosition="right"
           fontWeight="normal"
@@ -235,7 +235,7 @@ const hiddenInputId = `project-${project.title}-expand-tags-input`;
               />
 
               <label class="project-showcase-hidden-label" for={hiddenInputId}>
-                expandir tags {/* TODO: internationalize */}
+                {t("projects.expandProjectTags")}
               </label>
             </ButtonComponent>
           </div>
