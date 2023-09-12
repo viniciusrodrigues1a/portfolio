@@ -52,6 +52,22 @@ const hiddenInputId = `project-${project.title}-expand-tags-input`;
     background-color: rgba(0, 0, 0, 0.7);
   }
 
+  .project-showcase-hover-detail {
+    display: none;
+  }
+
+  .project-showcase-content:hover .project-showcase-hover-detail {
+    display: block;
+  }
+
+  .project-showcase-type {
+    display: block;
+  }
+
+  .project-showcase-content:hover .project-showcase-type {
+    display: none;
+  }
+
   .project-showcase-img-overlay {
     background-color: rgba(0, 0, 0, 0.6);
     position: absolute;
@@ -69,8 +85,13 @@ const hiddenInputId = `project-${project.title}-expand-tags-input`;
     justify-content: space-between;
   }
 
+  .project-showcase-type,
   .project-showcase-description {
     margin-top: 0.5rem;
+  }
+
+  .project-showcase-button-container {
+    margin-top: 1rem;
   }
 
   .project-showcase-tech-stack-container {
@@ -185,29 +206,31 @@ const hiddenInputId = `project-${project.title}-expand-tags-input`;
           >{project.title}</TypographyComponent
         >
 
-        <TypographyComponent
-          class="project-showcase-description"
-          color="#DDDDDD">{project.type} - {project.date}</TypographyComponent
+        <TypographyComponent class="project-showcase-type" color="#DDDDDD"
+          >{project.type} - {project.date}</TypographyComponent
         >
 
-        {/* TODO: animate */}
-        <TypographyComponent
-          class="project-showcase-description"
-          color="#DDDDDD">{project.shortDescription}</TypographyComponent
-        >
+        <div class="project-showcase-hover-detail">
+          <TypographyComponent
+            class="project-showcase-description"
+            color="#DDDDDD">{project.shortDescription}</TypographyComponent
+          >
 
-        <ButtonComponent
-          id={seeProjectButtonId}
-          variant="text"
-          title={t("projects.seeProjectDetail")}
-          iconName="externalLink"
-          iconPosition="right"
-          fontWeight="normal"
-          color="var(--primary)"
-          iconSize={20}
-          showIcon
-          class="footer-button"
-        />
+          <div class="project-showcase-button-container">
+            <ButtonComponent
+              id={seeProjectButtonId}
+              variant="text"
+              title={t("projects.seeProjectDetail")}
+              iconName="externalLink"
+              iconPosition="right"
+              fontWeight="normal"
+              color="var(--primary)"
+              iconSize={20}
+              showIcon
+              class="footer-button"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </div>
