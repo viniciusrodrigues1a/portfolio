@@ -26,6 +26,7 @@ const hiddenInputId = `project-${project.title}-expand-tags-input`;
   .project-showcase-container {
     position: relative;
     width: 100%;
+    min-height: 18rem;
     aspect-ratio: 1.7;
     overflow: hidden;
     margin: 0 auto;
@@ -44,28 +45,12 @@ const hiddenInputId = `project-${project.title}-expand-tags-input`;
     object-fit: cover;
   }
 
-  .project-showcase-content:hover > .project-showcase-img {
-    transform: scale(1.25);
-  }
-
-  .project-showcase-content:hover > .project-showcase-img-overlay {
-    background-color: rgba(0, 0, 0, 0.7);
-  }
-
   .project-showcase-hover-detail {
     display: none;
   }
 
-  .project-showcase-content:hover .project-showcase-hover-detail {
-    display: block;
-  }
-
   .project-showcase-type {
     display: block;
-  }
-
-  .project-showcase-content:hover .project-showcase-type {
-    display: none;
   }
 
   .project-showcase-img-overlay {
@@ -102,6 +87,7 @@ const hiddenInputId = `project-${project.title}-expand-tags-input`;
     position: absolute;
     right: 1.75rem;
     bottom: 2rem;
+    visibility: hidden;
   }
 
   .project-showcase-more-tags {
@@ -184,6 +170,50 @@ const hiddenInputId = `project-${project.title}-expand-tags-input`;
     z-index: 2;
     cursor: pointer;
   }
+
+  @media (hover: hover) {
+    .project-showcase-content:hover > .project-showcase-img {
+      transform: scale(1.25);
+    }
+
+    .project-showcase-content:hover > .project-showcase-img-overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .project-showcase-content:hover .project-showcase-hover-detail {
+      display: block;
+    }
+
+    .project-showcase-content:hover .project-showcase-type {
+      display: none;
+    }
+  }
+
+  @media (hover: none) {
+    .project-showcase-img-overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .project-showcase-hover-detail {
+      display: block;
+    }
+  }
+
+  @media (min-width: 500px) {
+    .project-showcase-tech-stack-container {
+      visibility: visible;
+    }
+
+    .project-showcase-container {
+      min-height: 24rem;
+    }
+  }
+
+  @media (min-width: 1180px) {
+    .project-showcase-container {
+      min-height: 32rem;
+    }
+  }
 </style>
 
 <div class="project-showcase-container">
@@ -235,7 +265,6 @@ const hiddenInputId = `project-${project.title}-expand-tags-input`;
     </div>
   </div>
 
-  {/* TODO: make it responsive */}
   <div class="project-showcase-tech-stack-container">
     {first3Techs.map((tech) => <TagComponent name={tech} />)}
 
