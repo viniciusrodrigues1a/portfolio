@@ -3,6 +3,7 @@ export type TypographyVariants =
   | "h2-sans"
   | "button"
   | "body"
+  | "small"
   | "h1-serif";
 
 export type FontStyleProps = Partial<{

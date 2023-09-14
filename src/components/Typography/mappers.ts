@@ -11,6 +11,7 @@ const elementByTypographyVariant: ElementByTypographyVariant = {
   "h2-sans": "h2",
   body: "p",
   button: "p",
+  small: "p"
 };
 
 export const getElementByTypographyVariant = (variant: TypographyVariants) =>
@@ -52,5 +53,6 @@ export const getClassListByVariant = (
     "h2-sans": variant === "h2-sans",
     body: variant === "body",
     button: variant === "button",
+    small: variant === "small"
   },
 ];

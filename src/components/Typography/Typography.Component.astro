@@ -56,6 +56,13 @@ const classList = [...classListByVariant, className?.split(" ") ?? []];
     letter-spacing: 0.08rem;
   }
 
+  .small {
+    font-size: 0.85rem;
+    font-weight: 400;
+    font-family: var(--sans-serif-font-family);
+    color: var(--foreground);
+  }
+
   @media (min-width: 1000px) {
     .h1-sans,
     .h1-serif {
@@ -72,6 +79,10 @@ const classList = [...classListByVariant, className?.split(" ") ?? []];
 
     .body {
       font-size: 1.125rem;
+    }
+
+    .small {
+      font-size: 1rem;
     }
   }
 
@@ -92,6 +103,10 @@ const classList = [...classListByVariant, className?.split(" ") ?? []];
     .body {
       font-size: 1.35rem;
     }
+
+    .small {
+      font-size: 1.125rem;
+    }
   }
 
   @media (min-width: 3600px) {
@@ -110,6 +125,10 @@ const classList = [...classListByVariant, className?.split(" ") ?? []];
 
     .body {
       font-size: 1.5rem;
+    }
+
+    .small {
+      font-size: 1.35rem;
     }
   }
 </style>
