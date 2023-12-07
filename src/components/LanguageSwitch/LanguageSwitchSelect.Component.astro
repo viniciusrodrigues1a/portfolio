@@ -4,9 +4,12 @@ import ButtonComponent from "@components/Button";
 type Props = {
   buttonId0: string;
   buttonId1: string;
+  appendURL?: string;
 };
 
-const { buttonId0, buttonId1 } = Astro.props as Props;
+const { buttonId0, buttonId1, appendURL } = Astro.props as Props;
+
+const sanitizedAppendURL = appendURL?.replace("/", "") ?? "";
 ---
 
 <style>
@@ -40,7 +43,7 @@ const { buttonId0, buttonId1 } = Astro.props as Props;
     variant="text"
     color="var(--foreground1)"
     title="Português (BR)"
-    redirectTo="/ptBR"
+    redirectTo={"/ptBR" + "/" + sanitizedAppendURL}
     redirectTarget="_self"
     stopPropagation
   />
@@ -51,7 +54,7 @@ const { buttonId0, buttonId1 } = Astro.props as Props;
     variant="text"
     color="var(--foreground1)"
     title="English"
-    redirectTo="/en"
+    redirectTo={"/en" + "/" + sanitizedAppendURL}
     redirectTarget="_self"
     stopPropagation
   />

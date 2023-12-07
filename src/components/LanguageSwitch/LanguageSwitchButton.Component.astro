@@ -6,6 +6,12 @@ import TypographyComponent from "@components/Typography";
 import LanguageSwitchButtonUnstyledWrapper from "./LanguageSwitchButtonUnstyledWrapper.Component.astro";
 import LanguageSwitchSelect from "./LanguageSwitchSelect.Component.astro";
 
+export type Props = {
+  appendURL?: string;
+};
+
+const { appendURL } = Astro.props;
+
 const formattedLanguage = i18next.resolvedLanguage.toUpperCase();
 ---
 
@@ -46,5 +52,6 @@ const formattedLanguage = i18next.resolvedLanguage.toUpperCase();
   <LanguageSwitchSelect
     buttonId0="language-switch-ptBR-0"
     buttonId1="language-switch-en-0"
+    appendURL={appendURL}
   />
 </LanguageSwitchButtonUnstyledWrapper>

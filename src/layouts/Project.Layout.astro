@@ -1,5 +1,5 @@
 ---
-import { t } from "i18next";
+import { t, changeLanguage } from "i18next";
 
 import DefaultLayout from "@layouts/Default.Layout.astro";
 
@@ -12,7 +12,13 @@ import { FooterComponent } from "@components/_page-components/home";
 import { ThemeSwitchButtonComponent } from "@components/ThemeSwitch";
 import { LanguageSwitchButtonComponent } from "@components/LanguageSwitch";
 
-const { frontmatter } = Astro.props;
+const { frontmatter, url } = Astro.props;
+
+const markdownURL = url.split("/").pop(); // ignore locale path
+
+if (frontmatter.language) {
+  changeLanguage(frontmatter.language);
+}
 
 const imageDesktop = await import(frontmatter.imageDesktop);
 const imageMobile = await import(frontmatter.imageMobile);
@@ -60,7 +66,7 @@ const imageMobile = await import(frontmatter.imageMobile);
             />
           </div>
           <div class="nav-item">
-            <LanguageSwitchButtonComponent />
+            <LanguageSwitchButtonComponent appendURL={markdownURL} />
           </div>
           <div class="nav-item">
             <ThemeSwitchButtonComponent />
