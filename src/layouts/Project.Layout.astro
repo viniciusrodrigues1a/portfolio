@@ -25,89 +25,96 @@ const imageMobile = await import(frontmatter.imageMobile);
 ---
 
 <DefaultLayout>
-  <div class="bg-[var(--background2)] px-5 pt-8 pb-28 lg:pt-12 lg:px-20">
-    <div class="max-w-[2560px] mx-auto">
-      <header>
-        <div class="flex flex-row items-center gap-4 md:hidden">
-          <IconComponent
-            class="w-6 h-6"
-            name="arrowLeft"
-            color="var(--foreground)"
-          />
-          <TypographyComponent color="var(--foreground)" variant="h1-serif"
-            >{frontmatter.title}</TypographyComponent
-          >
-        </div>
-
-        <nav
-          class="top-bar on-top-of-absolute-icon max-[1179px]:!flex max-[1179px]:!w-max max-[1179px]:!items-center max-[1179px]:!gap-12 max-md:!hidden"
-          hidden
-        >
-          <div class="nav-item">
-            <ButtonComponent
-              id="home-link"
-              class="nav-link"
-              variant="text"
-              fontWeight="bold"
-              title={t("intro.nav.homeButtonLabel")}
-              redirectTo="/"
-              redirectTarget="_self"
+  <div class="min-h-full flex flex-col justify-between">
+    <div
+      class="bg-[var(--background2)] px-5 pt-8 pb-28 lg:pt-12 lg:px-20 flex-grow"
+    >
+      <div class="max-w-[2560px] mx-auto">
+        <header>
+          <div class="flex flex-row items-center gap-4 md:hidden">
+            <IconComponent
+              class="w-6 h-6"
+              name="arrowLeft"
+              color="var(--foreground)"
             />
+            <TypographyComponent color="var(--foreground)" variant="h1-serif"
+              >{frontmatter.title}</TypographyComponent
+            >
           </div>
-          <div class="nav-item">
-            <ButtonComponent
-              id="experience-link"
-              class="nav-link"
-              variant="text"
-              fontWeight="bold"
-              title={t("projectDetail.nav.moreProjectsButtonLabel")}
-              redirectTo="/#projects"
-              redirectTarget="_self"
-            />
-          </div>
-          <div class="nav-item">
-            <LanguageSwitchButtonComponent appendURL={markdownURL} />
-          </div>
-          <div class="nav-item">
-            <ThemeSwitchButtonComponent />
-          </div>
-        </nav>
-      </header>
 
-      <main class="lg:flex lg:flex-col-reverse">
-        <div class="lg:mt-16">
-          <TypographyComponent
-            class="hidden lg:block"
-            color="var(--foreground)"
-            variant="h1-serif">{frontmatter.title}</TypographyComponent
+          <nav
+            class="top-bar on-top-of-absolute-icon max-[1179px]:!flex max-[1179px]:!w-max max-[1179px]:!items-center max-[1179px]:!gap-12 max-md:!hidden"
+            hidden
           >
+            <div class="nav-item">
+              <ButtonComponent
+                id="home-link"
+                class="nav-link"
+                variant="text"
+                fontWeight="bold"
+                title={t("intro.nav.homeButtonLabel")}
+                redirectTo="/"
+                redirectTarget="_self"
+              />
+            </div>
+            <div class="nav-item">
+              <ButtonComponent
+                id="experience-link"
+                class="nav-link"
+                variant="text"
+                fontWeight="bold"
+                title={t("projectDetail.nav.moreProjectsButtonLabel")}
+                redirectTo="/#projects"
+                redirectTarget="_self"
+              />
+            </div>
+            <div class="nav-item">
+              <LanguageSwitchButtonComponent appendURL={markdownURL} />
+            </div>
+            <div class="nav-item">
+              <ThemeSwitchButtonComponent />
+            </div>
+          </nav>
+        </header>
 
-          <span
-            class="mt-4 block text-[var(--foreground)] opacity-40 font-poppins text-base qhd:text-xl"
-            >{frontmatter.type} - {frontmatter.date}</span
-          >
+        <main class="lg:flex lg:flex-col-reverse">
+          <div class="lg:mt-16">
+            <TypographyComponent
+              class="hidden lg:block"
+              color="var(--foreground)"
+              variant="h1-serif">{frontmatter.title}</TypographyComponent
+            >
 
-          <p
-            class="font-poppins text-[var(--foreground)] opacity-80 mt-6 text-base desktop:text-lg qhd:text-2xl"
-          >
-            {frontmatter.shortDescription}
-          </p>
-        </div>
+            <span
+              class="mt-4 block text-[var(--foreground)] opacity-40 font-poppins text-base qhd:text-xl"
+              >{frontmatter.type} - {frontmatter.date}</span
+            >
 
-        <div class="lg:mt-12">
-          <div
-            class="w-[90%] aspect-projectImageDesktop mx-auto mt-12 lg:flex lg:w-[70%] desktop:w-[50%] lg:aspect-projectImageMobile lg:gap-24 qhd:w-[40%]"
-          >
-            <img class="w-[100%] lg:w-auto" src={imageDesktop.default} />
-
-            <img class="hidden lg:w-auto lg:block" src={imageMobile.default} />
+            <p
+              class="font-poppins text-[var(--foreground)] opacity-80 mt-6 text-base desktop:text-lg qhd:text-2xl"
+            >
+              {frontmatter.shortDescription}
+            </p>
           </div>
 
-          <slot />
-        </div>
-      </main>
+          <div class="lg:mt-12">
+            <div
+              class="w-[90%] aspect-projectImageDesktop mx-auto mt-12 lg:flex lg:w-[70%] desktop:w-[50%] lg:aspect-projectImageMobile lg:gap-24 qhd:w-[40%]"
+            >
+              <img class="w-[100%] lg:w-auto" src={imageDesktop.default} />
+
+              <img
+                class="hidden lg:w-auto lg:block"
+                src={imageMobile.default}
+              />
+            </div>
+
+            <slot />
+          </div>
+        </main>
+      </div>
     </div>
-  </div>
 
-  <FooterComponent showBottomBar={false} />
+    <FooterComponent showBottomBar={false} />
+  </div>
 </DefaultLayout>
