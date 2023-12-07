@@ -61,5 +61,10 @@
     "preferencesTitle": "Preferences",
     "changeLanguageButtonLabel": "Change language",
     "changeThemeButtonLabel": "Change theme"
+  },
+  "projectDetail": {
+    "nav": {
+      "moreProjectsButtonLabel": "more projects"
+    }
   }
 }

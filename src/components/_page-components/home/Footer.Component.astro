@@ -9,10 +9,23 @@ import {
   LanguageSwitchButtonUnstyledWrapperComponent,
   LanguageSwitchSelectComponent,
 } from "@components/LanguageSwitch";
+
+export type Props = {
+  showBottomBar?: boolean;
+};
+
+const { showBottomBar = true } = Astro.props;
 ---
 
 <footer id="footer" class="section">
-  <div class="footer-content-wrapper">
+  <div
+    class:list={[
+      "footer-content-wrapper",
+      {
+        "footer-no-padding": !showBottomBar,
+      },
+    ]}
+  >
     <div class="footer-content">
       <TypographyComponent
         class="footer-title"
@@ -131,64 +144,80 @@ import {
       </ButtonComponent>
     </div>
 
-    <div class="bottom-bar-wrapper" hidden>
-      <div class="bottom-bar">
-        <a class="bottom-bar-anchor" href="#intro">
-          <div class="bottom-bar-item">
-            <IconComponent size={26} name="home" color="var(--foreground1)" />
-            <TypographyComponent
-              color="var(--foreground1)"
-              fontSize={14}
-              fontFamily="var(--sans-serif-font-family)"
-              >{t("intro.nav.homeButtonLabel")}</TypographyComponent
-            >
-          </div>
-        </a>
+    {
+      showBottomBar && (
+        <div class="bottom-bar-wrapper" hidden>
+          <div class="bottom-bar">
+            <a class="bottom-bar-anchor" href="#intro">
+              <div class="bottom-bar-item">
+                <IconComponent
+                  size={26}
+                  name="home"
+                  color="var(--foreground1)"
+                />
+                <TypographyComponent
+                  color="var(--foreground1)"
+                  fontSize={14}
+                  fontFamily="var(--sans-serif-font-family)"
+                >
+                  {t("intro.nav.homeButtonLabel")}
+                </TypographyComponent>
+              </div>
+            </a>
 
-        <a class="bottom-bar-anchor" href="#about-me">
-          <div class="bottom-bar-item">
-            <IconComponent size={26} name="user" color="var(--foreground1)" />
-            <TypographyComponent
-              color="var(--foreground1)"
-              fontSize={14}
-              fontFamily="var(--sans-serif-font-family)"
-              >{t("intro.nav.aboutMeButtonLabel")}</TypographyComponent
-            >
-          </div>
-        </a>
+            <a class="bottom-bar-anchor" href="#about-me">
+              <div class="bottom-bar-item">
+                <IconComponent
+                  size={26}
+                  name="user"
+                  color="var(--foreground1)"
+                />
+                <TypographyComponent
+                  color="var(--foreground1)"
+                  fontSize={14}
+                  fontFamily="var(--sans-serif-font-family)"
+                >
+                  {t("intro.nav.aboutMeButtonLabel")}
+                </TypographyComponent>
+              </div>
+            </a>
 
-        <a class="bottom-bar-anchor" href="#experience">
-          <div class="bottom-bar-item">
-            <IconComponent
-              size={26}
-              name="briefcase"
-              color="var(--foreground1)"
-            />
-            <TypographyComponent
-              color="var(--foreground1)"
-              fontSize={14}
-              fontFamily="var(--sans-serif-font-family)"
-              >{t("intro.nav.experienceButtonLabel")}</TypographyComponent
-            >
-          </div>
-        </a>
+            <a class="bottom-bar-anchor" href="#experience">
+              <div class="bottom-bar-item">
+                <IconComponent
+                  size={26}
+                  name="briefcase"
+                  color="var(--foreground1)"
+                />
+                <TypographyComponent
+                  color="var(--foreground1)"
+                  fontSize={14}
+                  fontFamily="var(--sans-serif-font-family)"
+                >
+                  {t("intro.nav.experienceButtonLabel")}
+                </TypographyComponent>
+              </div>
+            </a>
 
-        <a class="bottom-bar-anchor" href="#footer">
-          <div class="bottom-bar-item">
-            <IconComponent
-              size={26}
-              name="archive"
-              color="var(--foreground1)"
-            />
-            <TypographyComponent
-              color="var(--foreground1)"
-              fontSize={14}
-              fontFamily="var(--sans-serif-font-family)"
-              >{t("intro.nav.contactButtonLabel")}</TypographyComponent
-            >
+            <a class="bottom-bar-anchor" href="#footer">
+              <div class="bottom-bar-item">
+                <IconComponent
+                  size={26}
+                  name="archive"
+                  color="var(--foreground1)"
+                />
+                <TypographyComponent
+                  color="var(--foreground1)"
+                  fontSize={14}
+                  fontFamily="var(--sans-serif-font-family)"
+                >
+                  {t("intro.nav.contactButtonLabel")}
+                </TypographyComponent>
+              </div>
+            </a>
           </div>
-        </a>
-      </div>
-    </div>
+        </div>
+      )
+    }
   </div>
 </footer>

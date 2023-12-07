@@ -295,6 +295,10 @@
   gap: 2.5rem;
 }
 
+.footer-no-padding {
+  padding-bottom: 0px !important;
+}
+
 .footer-content {
   position: relative;
 }

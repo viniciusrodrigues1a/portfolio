@@ -20,4 +20,5 @@ export type svgIconNames =
   | "person"
   | "lamp"
   | "twoCirclesPattern"
-  | "dotPattern";
+  | "dotPattern"
+  | "arrowLeft";

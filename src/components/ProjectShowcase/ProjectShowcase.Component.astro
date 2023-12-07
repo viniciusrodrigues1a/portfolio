@@ -9,9 +9,10 @@ import showcaseFallbackImage from "../../assets/showcase-fallback.jpg";
 
 type Props = {
   project: Project;
+  url?: string;
 };
 
-const { project } = Astro.props as Props;
+const { project, url } = Astro.props as Props;
 
 const first3Techs = project.techStack.slice(0, 3);
 const restOfTechs = project.techStack.slice(3, project.techStack.length);
@@ -246,20 +247,26 @@ const hiddenInputId = `project-${project.title}-expand-tags-input`;
             color="#DDDDDD">{project.shortDescription}</TypographyComponent
           >
 
-          <div class="project-showcase-button-container">
-            <ButtonComponent
-              id={seeProjectButtonId}
-              variant="text"
-              title={t("projects.seeProjectDetail")}
-              iconName="externalLink"
-              iconPosition="right"
-              fontWeight="normal"
-              color="var(--primary)"
-              iconSize={20}
-              showIcon
-              class="footer-button"
-            />
-          </div>
+          {
+            url && (
+              <div class="project-showcase-button-container">
+                <ButtonComponent
+                  id={seeProjectButtonId}
+                  redirectTo={url}
+                  redirectTarget="_self"
+                  variant="text"
+                  title={t("projects.seeProjectDetail")}
+                  iconName="externalLink"
+                  iconPosition="right"
+                  fontWeight="normal"
+                  color="var(--primary)"
+                  iconSize={20}
+                  showIcon
+                  class="footer-button"
+                />
+              </div>
+            )
+          }
         </div>
       </div>
     </div>
@@ -309,22 +316,22 @@ const hiddenInputId = `project-${project.title}-expand-tags-input`;
 </div>
 
 <script define:vars={{ hiddenInputId, moreTagsButtonId, tagsContainerId }}>
-const expandedTagsContainer = document.querySelector(`#${tagsContainerId}`);
-const button = document.querySelector(`#${moreTagsButtonId}`);
+  const expandedTagsContainer = document.querySelector(`#${tagsContainerId}`);
+  const button = document.querySelector(`#${moreTagsButtonId}`);
 
-expandedTagsContainer?.addEventListener("click", (e) => e.stopPropagation());
-button?.addEventListener("click", (e) => e.stopPropagation());
+  expandedTagsContainer?.addEventListener("click", (e) => e.stopPropagation());
+  button?.addEventListener("click", (e) => e.stopPropagation());
 
-const input = document.querySelector(`#${hiddenInputId}`);
+  const input = document.querySelector(`#${hiddenInputId}`);
 
-if (input) {
-  document.body.addEventListener("click", (e) => {
-    const hasTargetedInput = e.target?.id === hiddenInputId;
-    if (hasTargetedInput) {
-      return;
-    }
+  if (input) {
+    document.body.addEventListener("click", (e) => {
+      const hasTargetedInput = e.target?.id === hiddenInputId;
+      if (hasTargetedInput) {
+        return;
+      }
 
-    input.checked = false;
-  });
-}
+      input.checked = false;
+    });
+  }
 </script>

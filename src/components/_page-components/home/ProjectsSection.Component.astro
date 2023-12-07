@@ -4,7 +4,7 @@ import ProjectShowcaseComponent from "@components/ProjectShowcase";
 import { t } from "i18next";
 import type { Project } from "src/projects/types";
 
-const projects = await Astro.glob("../../../projects/*.md");
+const projects = await Astro.glob("../../../pages/*.md");
 ---
 
 <section id="projects" class="section">
@@ -21,7 +21,10 @@ const projects = await Astro.glob("../../../projects/*.md");
     <div class="projects-list-container">
       {
         projects.map((project) => (
-          <ProjectShowcaseComponent project={project.frontmatter as Project} />
+          <ProjectShowcaseComponent
+            project={project.frontmatter as Project}
+            url={project.url}
+          />
         ))
       }
     </div>
