@@ -16,6 +16,11 @@
     "sectionTitle": "ABOUT ME",
     "description": "Mobile developer focused on React Native with interest in Android native development and Serverless architectures. I have developed applications from scratch that have been published to production, solving problems such as processing videos in parallel in the cloud; animations and gestures etc."
   },
+  "projects": {
+    "sectionTitle": "PROJECTS",
+    "seeProjectDetail": "Project details",
+    "expandProjectTags": "Expand tags"
+  },
   "experience": {
     "sectionTitle": "EXPERIENCE",
     "workExperienceLabel": "Professional",
