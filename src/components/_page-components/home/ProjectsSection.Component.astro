@@ -1,10 +1,20 @@
 ---
 import TypographyComponent from "@components/Typography";
 import ProjectShowcaseComponent from "@components/ProjectShowcase";
-import { t } from "i18next";
+import i18next, { t } from "i18next";
 import type { Project } from "src/projects/types";
 
-const projects = await Astro.glob("../../../pages/*.md");
+const language = i18next.resolvedLanguage.split("-").join("");
+
+let projects;
+switch (language) {
+  case "en":
+    projects = await Astro.glob(`../../../pages/en/*.mdx`);
+    break;
+  case "ptBR":
+    projects = await Astro.glob(`../../../pages/ptBR/*.mdx`);
+    break;
+}
 ---
 
 <section id="projects" class="section">

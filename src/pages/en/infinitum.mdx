@@ -1,0 +1,68 @@
+---
+layout: "../../layouts/Project.Layout.astro"
+imageDesktop: "../assets/infinitum-desktop.png"
+imageMobile: "../assets/infinitum-mobile.png"
+title: "Infinitum"
+type: "Bug tracker"
+shortDescription: "Bug tracking system for project management and issue tracking."
+longDescription: "Bug tracking system for project management and issue tracking in real time."
+date: "2021"
+language: en
+techStack:
+  [
+    "TypeScript",
+    "React",
+    "Node.js",
+    "Clean Architecture",
+    "Jest",
+    "Docker",
+    "WebSockets",
+    "MongoDB",
+    "PostgreSQL",
+    "Redis",
+    "i18n",
+    "l10n"
+  ]
+---
+
+import TypographyComponent from "@components/Typography";
+
+<TypographyComponent
+  class="mt-8 mb-4"
+  color="var(--foreground)"
+  variant="h1-serif">
+    Features
+</TypographyComponent>
+
+• Real time collaboration. <br />
+• Manage projects. <br />
+• Manage teams in a project. <br />
+• A dashboard featuring graphs displaying statistics regarding your issues. <br />
+• Kanban and List visualizations for project issues <br />
+• Internationalization and localization <br />
+• Push notifications and via e-mail <br />
+
+<TypographyComponent
+  class="mt-8 mb-4"
+  color="var(--foreground)"
+  variant="h1-serif">
+    Techs used
+</TypographyComponent>
+
+🧪 Unit and integration testing with Jest
+<br />
+🔑 JWT authentication using the jsonwebtoken library
+<br />
+📦 Email processing queue using the Bull library and Redis database
+<br />
+📨 Sending emails with the Nodemailer library
+<br />
+📑 MongoDB database for storing notifications
+<br />
+↔️ Establishing bidirectional connection with Socket.IO for real-time collaboration
+<br />
+🐋 Containerization with Docker for process isolation
+<br />
+🚢 Container orchestration with Docker Compose
+<br />
+🏗️ Layered architecture following the Clean Architecture principles

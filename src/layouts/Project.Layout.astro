@@ -1,5 +1,5 @@
 ---
-import { t, changeLanguage } from "i18next";
+import i18next, { t, changeLanguage } from "i18next";
 
 import DefaultLayout from "@layouts/Default.Layout.astro";
 
@@ -12,8 +12,12 @@ import { FooterComponent } from "@components/_page-components/home";
 import { ThemeSwitchButtonComponent } from "@components/ThemeSwitch";
 import { LanguageSwitchButtonComponent } from "@components/LanguageSwitch";
 
-const { frontmatter, url } = Astro.props;
+const {
+  frontmatter,
+  content: { url },
+} = Astro.props;
 
+const language = i18next.resolvedLanguage.split("-").join("");
 const markdownURL = url.split("/").pop(); // ignore locale path
 
 if (frontmatter.language) {
@@ -23,6 +27,12 @@ if (frontmatter.language) {
 const imageDesktop = await import(frontmatter.imageDesktop);
 const imageMobile = await import(frontmatter.imageMobile);
 ---
+
+<style>
+  .slot-container {
+    @apply text-[var(--foreground)];
+  }
+</style>
 
 <DefaultLayout>
   <div class="min-h-full flex flex-col justify-between">
@@ -53,7 +63,7 @@ const imageMobile = await import(frontmatter.imageMobile);
                 variant="text"
                 fontWeight="bold"
                 title={t("intro.nav.homeButtonLabel")}
-                redirectTo="/"
+                redirectTo={"/" + language}
                 redirectTarget="_self"
               />
             </div>
@@ -64,7 +74,7 @@ const imageMobile = await import(frontmatter.imageMobile);
                 variant="text"
                 fontWeight="bold"
                 title={t("projectDetail.nav.moreProjectsButtonLabel")}
-                redirectTo="/#projects"
+                redirectTo={"/" + language + "#projects"}
                 redirectTarget="_self"
               />
             </div>
@@ -92,9 +102,12 @@ const imageMobile = await import(frontmatter.imageMobile);
 
             <p
               class="font-poppins text-[var(--foreground)] opacity-80 mt-6 text-base desktop:text-lg qhd:text-2xl"
-            >
-              {frontmatter.shortDescription}
-            </p>
+              set:html={frontmatter.longDescription}
+            />
+
+            <div class="slot-container">
+              <slot />
+            </div>
           </div>
 
           <div class="lg:mt-12">
@@ -108,8 +121,6 @@ const imageMobile = await import(frontmatter.imageMobile);
                 src={imageMobile.default}
               />
             </div>
-
-            <slot />
           </div>
         </main>
       </div>

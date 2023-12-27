@@ -1,0 +1,68 @@
+---
+layout: "../../layouts/Project.Layout.astro"
+imageDesktop: "../assets/infinitum-desktop.png"
+imageMobile: "../assets/infinitum-mobile.png"
+title: "Infinitum"
+type: "Bug tracker"
+shortDescription: "Sistema de <i>bug tracking</i> para gerenciamento de projetos e rastreamento de problemas."
+longDescription: "Sistema de <i>bug tracking</i> para gerenciamento de projetos e rastreamento de problemas em tempo real. TCC apresentado à ETEC Elias Nechar, como parte dos requisitos para a obtenção do título de Técnico em Desenvolvimento de Sistemas."
+date: "2021"
+language: ptBR
+techStack:
+  [
+    "TypeScript",
+    "React",
+    "Node.js",
+    "Clean Architecture",
+    "Jest",
+    "Docker",
+    "WebSockets",
+    "MongoDB",
+    "PostgreSQL",
+    "Redis",
+    "i18n",
+    "l10n"
+  ]
+---
+
+import TypographyComponent from "@components/Typography";
+
+<TypographyComponent
+  class="mt-8 mb-4"
+  color="var(--foreground)"
+  variant="h1-serif">
+    Funcionalidades
+</TypographyComponent>
+
+• Colaboração em tempo real. <br />
+• Gerenciamento de projetos. <br />
+• Gerenciamento de pessoas em um projeto. <br />
+• Dashboard com gráficos com estatísticas sobre seus tickets. <br />
+• Visualização em lista e kanban para os tickets de um projeto. <br />
+• Internacionalização e localização. <br />
+• Notificações push e por e-mail. <br />
+
+<TypographyComponent
+  class="mt-8 mb-4"
+  color="var(--foreground)"
+  variant="h1-serif">
+    Tecnologias
+</TypographyComponent>
+
+🧪 Testes de unidade e de integração com biblioteca Jest
+<br />
+🔑 Autenticação JWT com a biblioteca jsonwebtoken
+<br />
+📦 Fila de processamento de e-mails com biblioteca Bull e banco de dados Redis
+<br />
+📨 Envio de e-mails com biblioteca Nodemailer
+<br />
+📑 Banco de dados MongoDB para armazenamento de notificações
+<br />
+↔️ Estabelecendo conexão bidirecional com Socket.IO para atualizar informações em tempo real
+<br />
+🐋 Conteinerização com Docker para isolar processos
+<br />
+🚢 Orquestração de contêineres com Docker Compose
+<br />
+🏗️ Arquitetura em camadas, seguindo a Clean Architecture

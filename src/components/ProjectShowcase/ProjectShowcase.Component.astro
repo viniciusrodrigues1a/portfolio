@@ -14,6 +14,8 @@ type Props = {
 
 const { project, url } = Astro.props as Props;
 
+console.log(url);
+
 const first3Techs = project.techStack.slice(0, 3);
 const restOfTechs = project.techStack.slice(3, project.techStack.length);
 
@@ -244,8 +246,9 @@ const hiddenInputId = `project-${project.title}-expand-tags-input`;
         <div class="project-showcase-hover-detail">
           <TypographyComponent
             class="project-showcase-description"
-            color="#DDDDDD">{project.shortDescription}</TypographyComponent
-          >
+            color="#DDDDDD"
+            set:html={project.shortDescription}
+          />
 
           {
             url && (
