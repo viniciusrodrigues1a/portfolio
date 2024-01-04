@@ -21,4 +21,5 @@ export type svgIconNames =
   | "lamp"
   | "twoCirclesPattern"
   | "dotPattern"
-  | "arrowLeft";
+  | "arrowLeft"
+  | "linkedinOutline";
