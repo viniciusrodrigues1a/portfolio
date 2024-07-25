@@ -254,6 +254,13 @@
   visibility: hidden;
 }
 
+.footer-chevrons-up-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0px;
+}
+
 .chevrons-up-container {
   display: flex;
   flex-direction: column;
@@ -265,8 +272,6 @@
   border: none;
   text-decoration: none;
   cursor: pointer;
-  margin-top: 4rem;
-  margin-bottom: 1rem;
   padding: 0.5rem;
 }
 
