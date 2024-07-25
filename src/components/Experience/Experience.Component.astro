@@ -24,6 +24,10 @@ const { title, formattedDate, company, companyLink, description } =
     opacity: 0.9;
     position: relative;
     display: inline-block;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 100%;
   }
 
   .experience-company-text:hover {
