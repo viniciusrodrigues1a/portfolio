@@ -353,3 +353,8 @@
   align-items: center;
   gap: 2rem;
 }
+
+.intro-hero-title,
+.intro-hero-subtitle {
+  text-align: center !important;
+}

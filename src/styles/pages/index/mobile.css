@@ -81,4 +81,9 @@
   .experience-type-button-text {
     font-size: 1.5rem;
   }
+
+  .intro-hero-title,
+  .intro-hero-subtitle {
+    text-align: left !important;
+  }
 }
