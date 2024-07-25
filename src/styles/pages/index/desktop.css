@@ -221,6 +221,15 @@
     grid-template-areas: "a b";
     gap: 4rem;
   }
+
+  .intro-hero-title,
+  .intro-hero-subtitle {
+    text-align: left !important;
+  }
+
+  .intro .section-content {
+    min-height: 100%;
+  }
 }
 
 @media (min-width: 1500px) {
