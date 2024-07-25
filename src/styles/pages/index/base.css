@@ -260,7 +260,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 3rem 0px;
+  padding: 3rem 0px;
+  background: var(--background2);
 }
 
 .chevrons-up-container {

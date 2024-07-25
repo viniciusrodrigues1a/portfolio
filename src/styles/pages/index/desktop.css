@@ -213,10 +213,6 @@
     padding-bottom: 5rem;
   }
 
-  .chevrons-up-container {
-    margin-top: 8rem;
-  }
-
   .projects-list-container {
     grid-template-areas: "a b";
     gap: 4rem;
@@ -301,10 +297,6 @@
 
   .section.experience {
     padding-bottom: 8rem;
-  }
-
-  .chevrons-up-container {
-    margin-top: 12rem;
   }
 }
 
