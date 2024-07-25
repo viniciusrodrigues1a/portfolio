@@ -29,6 +29,10 @@ const imageMobile = await import(`../assets/${frontmatter.imageMobile}.png`);
 ---
 
 <style>
+  #showcase-back-button {
+    border-radius: 9999px;
+  }
+
   .slot-container {
     @apply text-[var(--foreground)];
   }
@@ -41,12 +45,21 @@ const imageMobile = await import(`../assets/${frontmatter.imageMobile}.png`);
     >
       <div class="max-w-[2560px] mx-auto">
         <header>
-          <div class="flex flex-row items-center gap-4 md:hidden">
-            <IconComponent
-              class="w-6 h-6"
-              name="arrowLeft"
-              color="var(--foreground)"
-            />
+          <div class="flex flex-row items-center gap-2 md:hidden">
+            <ButtonComponent
+              id="showcase-back-button"
+              variant="text"
+              redirectTo={"/" + language}
+              redirectTarget="_self"
+            >
+              <div class="p-2 rounded-full">
+                <IconComponent
+                  class="w-6 h-6"
+                  name="arrowLeft"
+                  color="var(--foreground)"
+                />
+              </div>
+            </ButtonComponent>
             <TypographyComponent color="var(--foreground)" variant="h1-serif"
               >{frontmatter.title}</TypographyComponent
             >
