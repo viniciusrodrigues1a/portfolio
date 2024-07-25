@@ -51,6 +51,8 @@
 }
 
 .chevrons-down-wrapper {
+  width: max-content;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
