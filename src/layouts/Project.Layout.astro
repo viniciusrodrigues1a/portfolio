@@ -24,8 +24,8 @@ if (frontmatter.language) {
   changeLanguage(frontmatter.language);
 }
 
-const imageDesktop = await import(frontmatter.imageDesktop);
-const imageMobile = await import(frontmatter.imageMobile);
+const imageDesktop = await import(`../assets/${frontmatter.imageDesktop}.png`);
+const imageMobile = await import(`../assets/${frontmatter.imageMobile}.png`);
 ---
 
 <style>
