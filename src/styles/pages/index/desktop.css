@@ -222,6 +222,11 @@
     gap: 4rem;
   }
 
+  /* Remove this when grid grows bigger than a single item */
+  .projects-list-container > :first-child {
+    grid-column: 1 / span 2;
+  }
+
   .intro-hero-title,
   .intro-hero-subtitle {
     text-align: left !important;
