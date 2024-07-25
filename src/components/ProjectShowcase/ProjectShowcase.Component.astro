@@ -14,8 +14,6 @@ type Props = {
 
 const { project, url } = Astro.props as Props;
 
-console.log(url);
-
 const first3Techs = project.techStack.slice(0, 3);
 const restOfTechs = project.techStack.slice(3, project.techStack.length);
 
